@@ -1,0 +1,60 @@
+box:
+    id: node:latest
+
+build:
+    steps:
+        - script:
+            name: build webapp with webpack
+            code: npm install && npm run build
+        - script:
+            name: create-credentials folder
+            code: mkdir ./assets/credentials
+        - create-file:
+            name: create contentfulCredentials
+            filename: ./assets/credentials/contentful.json
+            overwrite: false
+            content: $CONTENTFUL_CREDENTIALS
+        - script:
+            name: copy api files
+            code: cp -a ./. "$WERCKER_OUTPUT_DIR"
+
+push-to-ttregistry:
+    steps:
+        - script:
+            name: cleanup docker image
+            code: |
+                rm -rf /pipeline/cache
+                rm -rf /root/.cache
+                rm -rf /pipeline/source/src/app
+        - internal/docker-push:
+            registry: https://registry.ttrks.de/v2
+            repository: registry.ttrks.de/hotel-edison_web-app
+            username: $REGISTRY_USERNAME
+            password: $REGISTRY_PASSWORD
+            tag: $WERCKER_GIT_COMMIT,latest
+            author: $WERCKER_STARTED_BY
+            ports: "3000"
+            working-dir: "/pipeline/source"
+            entrypoint: "npm start"
+
+deploy:
+    steps:
+        - add-to-known_hosts:
+            hostname: $TOBIASTRINKS_DROPLET_HOSTNAME
+        - mktemp:
+          envvar: KEY_TEMP_FILE
+        - create-file:
+          name: write key
+          filename: $KEY_TEMP_FILE
+          content: $TOBIASTRINKS_DROPLET_PRIVATE
+          overwrite: true
+          hide-from-log: true
+        - script:
+            name: stop application
+            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH down
+        - script:
+            name: remove image
+            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker rmi registry.ttrks.de/hotel-edison_web-app
+        - script:
+            name: pull image and restart
+            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH up -d
