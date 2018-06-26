@@ -4,9 +4,6 @@ box:
 build:
     steps:
         - script:
-            name: build webapp with webpack
-            code: npm install && npm run build
-        - script:
             name: create-credentials folder
             code: mkdir ./assets/credentials
         - create-file:
@@ -15,7 +12,10 @@ build:
             overwrite: false
             content: $CONTENTFUL_CREDENTIALS
         - script:
-            name: copy api files
+            name: build webapp with nuxt (webpack)
+            code: npm install && npm run build
+        - script:
+            name: copy application files
             code: cp -a ./. "$WERCKER_OUTPUT_DIR"
 
 push-to-ttregistry:
