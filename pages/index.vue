@@ -12,7 +12,7 @@ export default {
       return {
         arrangements: res.items
       };
-    }).catch(console.log);
+    });
   }
 }
 </script>

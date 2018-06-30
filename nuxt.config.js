@@ -36,6 +36,6 @@ module.exports = {
     }
   },
   router: {
-    middleware: 'authentication'
+    middleware: ['authentication', 'logging']
   }
 }

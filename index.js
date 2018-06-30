@@ -1,13 +1,15 @@
 const { Nuxt, Builder } = require('nuxt');
 const app = require('express')();
+const Logger = require('./logger');
+global.logger = new Logger();
+
 const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 3000;
+const port = 3000;
 app.set('port', port);
 
 // Import and Set Nuxt.js options
 let config = require('./nuxt.config.js');
 config.dev = (process.env.NODE_ENV !== 'production');
-
 
 // Init Nuxt.js
 const nuxt = new Nuxt(config);
@@ -20,25 +22,9 @@ new Builder(nuxt).build()
     process.exit(1)
   });
 
-// Development error handler
-if (app.get('env') === 'development') {
-  app.use((err, req, res) => {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    })
-  })
-}
-
-// Production error handler
-app.use((err, req, res) => {
-  console.log(err);
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  })
+app.use(function(err, req, res, next) {
+  global.logger.logReq(500, req.method, req.path, JSON.stringify(err));
+  res.status(500);
 });
 
 // Listen the server
