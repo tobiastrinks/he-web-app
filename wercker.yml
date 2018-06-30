@@ -11,9 +11,10 @@ build:
             filename: ./assets/credentials/contentful.json
             overwrite: false
             content: $CONTENTFUL_CREDENTIALS
+        - npm-install
         - script:
             name: build webapp with nuxt (webpack)
-            code: npm install && npm run build
+            code: npm run build
         - script:
             name: copy application files
             code: cp -a ./. "$WERCKER_OUTPUT_DIR"
@@ -25,7 +26,6 @@ push-to-ttregistry:
             code: |
                 rm -rf /pipeline/cache
                 rm -rf /root/.cache
-                rm -rf /pipeline/source/src/app
         - internal/docker-push:
             registry: https://registry.ttrks.de/v2
             repository: registry.ttrks.de/hotel-edison_web-app
@@ -33,9 +33,8 @@ push-to-ttregistry:
             password: $REGISTRY_PASSWORD
             tag: $WERCKER_GIT_COMMIT,latest
             author: $WERCKER_STARTED_BY
-            ports: "3000"
             working-dir: "/pipeline/source"
-            entrypoint: "npm start"
+            cmd: npm start
 
 deploy:
     steps:
