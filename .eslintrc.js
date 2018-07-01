@@ -10,12 +10,18 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
+    'plugin:vue/essential',
+    'standard'
   ],
   // required to lint *.vue files
   plugins: [
     'vue'
   ],
   // add your custom rules here
-  rules: {}
-}
+  rules: {
+    'indent': ['error', 4],
+    'semi': ['error', 'always'],
+    'no-trailing-spaces': ['error', { 'skipBlankLines': true }],
+    allowEmptyReject: true
+  }
+};
