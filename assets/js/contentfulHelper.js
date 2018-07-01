@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class ContentfulHelper {
     constructor () {
-        this.accessToken = require('../credentials/contentful').token;
+        this.accessToken = process.env.CONTENTFUL_TOKEN;
         this.spaceId = 's723by1y55ws';
         this.baseUrl = `https://cdn.contentful.com/spaces/${this.spaceId}/environments/master`;
         this.language = 'de-DE';

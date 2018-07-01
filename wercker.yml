@@ -3,14 +3,6 @@ box:
 
 build:
     steps:
-        - script:
-            name: create-credentials folder
-            code: mkdir ./assets/credentials
-        - create-file:
-            name: create contentfulCredentials
-            filename: ./assets/credentials/contentful.json
-            overwrite: false
-            content: $CONTENTFUL_CREDENTIALS
         - npm-install
         - script:
             name: build webapp with nuxt (webpack)
