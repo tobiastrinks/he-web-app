@@ -1,7 +1,6 @@
 const { Nuxt, Builder } = require('nuxt');
 const app = require('express')();
-const Logger = require('./logger');
-global.logger = new Logger();
+const { logReq } = require('./logger');
 
 const host = process.env.HOST || '0.0.0.0';
 const port = 3000;
@@ -19,11 +18,11 @@ app.use(nuxt.render);
 new Builder(nuxt).build()
   .catch((error) => {
     console.error(error); // eslint-disable-line no-console
-    process.exit(1)
+    process.exit(1);
   });
 
-app.use(function(err, req, res, next) {
-  global.logger.logReq(500, req.method, req.path, JSON.stringify(err));
+app.use(function (err, req, res, next) {
+  logReq(500, req.method, req.path, JSON.stringify(err));
   res.status(500);
 });
 

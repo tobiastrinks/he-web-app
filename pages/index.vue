@@ -1,18 +1,18 @@
 <template>
-  <div>{{arrangements}}</div>
+  <HomeComponent/>
 </template>
 
 <script>
-import Contentful from '~/assets/js/contentfulHelper';
-const contentful = new Contentful;
+import { fetchPage } from '~/assets/js/pageStoreHelper';
+import HomeComponent from '~/components/Home/Home';
 
 export default {
-  asyncData () {
-    return contentful.getByContentType('arrangement').then(res => {
-      return {
-        arrangements: res.items
-      };
-    });
+  name: 'Home',
+  components: {
+    HomeComponent
+  },
+  fetch ({ store }) {
+    return fetchPage('home', store);
   }
-}
+};
 </script>

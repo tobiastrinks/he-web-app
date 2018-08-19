@@ -25,17 +25,20 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty'
+      };
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   },
-  router: {
-    middleware: ['authentication', 'logging']
-  }
-}
+  serverMiddleware: [
+    '~/middleware/loggingMiddleware'
+  ]
+};

@@ -12,6 +12,7 @@ dist
 
 # IDE
 .idea
+webpack.config.js
 
 #logs
 logs

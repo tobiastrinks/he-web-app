@@ -1,20 +1,32 @@
-import axios from 'axios';
+import { CONTENTFUL_DELIVERY_TOKEN } from '~/assets/config/externalApiConfig';
+
+const contentful = require('contentful');
 
 export default class ContentfulHelper {
-    constructor () {
-        this.accessToken = process.env.CONTENTFUL_TOKEN;
-        this.spaceId = 's723by1y55ws';
-        this.baseUrl = `https://cdn.contentful.com/spaces/${this.spaceId}/environments/master`;
-        this.language = 'de-DE';
-    }
+  constructor () {
+    this.language = 'de-DE';
 
-    getByContentType (contentType) {
-        return new Promise((resolve, reject) => {
-            axios.get(`${this.baseUrl}/entries?locale=${this.language}&content_type=${contentType}`, {
-                headers: {
-                    Authorization: `Bearer ${this.accessToken}`
-                }
-            }).then(res => resolve(res.data)).catch(reject);
+    this.client = contentful.createClient({
+      space: 's723by1y55ws',
+      accessToken: CONTENTFUL_DELIVERY_TOKEN
+    });
+  }
+
+  getByContentTypes (contentTypes) {
+    return new Promise((resolve, reject) => {
+      this.client.getEntries({
+        'sys.contentType.sys.id[in]': contentTypes.join(',')
+      }).then((entries) => {
+        const result = {};
+        contentTypes.forEach(contentType => {
+          result[contentType] = entries.items.filter(item => (
+            item.sys.contentType.sys.id === contentType
+          )).map(item => (
+            item.fields
+          ))[0];
         });
-    }
+        resolve(result);
+      }).catch(reject);
+    });
+  }
 }

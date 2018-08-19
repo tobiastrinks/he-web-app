@@ -14,14 +14,17 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "contentful": "latest",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "express": "^4.16.3",
+    "fs": "0.0.1-security",
     "log-to-file": "^1.2.2",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-styled-components": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
