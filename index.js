@@ -1,6 +1,16 @@
 const { Nuxt, Builder } = require('nuxt');
 const app = require('express')();
+const Raven = require('raven');
 const { logReq } = require('./logger');
+
+// Must configure Raven before doing anything else with it
+Raven.config(process.env.SENTRY_DNS).install();
+
+// The request handler must be the first middleware on the app
+app.use(Raven.requestHandler());
+
+// The error handler must be before any other error middleware
+app.use(Raven.errorHandler());
 
 const host = process.env.HOST || '0.0.0.0';
 const port = 3000;

@@ -24,7 +24,8 @@
     "fs": "0.0.1-security",
     "log-to-file": "^1.2.2",
     "nuxt": "^1.0.0",
-    "vue-styled-components": "latest"
+    "vue-styled-components": "latest",
+    "raven": "^2.6.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
