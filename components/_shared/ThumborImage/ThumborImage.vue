@@ -1,6 +1,6 @@
 <template>
   <no-ssr placeholder="Loading...">
-    <ThumborImageRendering :store="store" :dimensions="dimensions" />
+    <ThumborImageRendering :store="store" :dimensions="dimensions" :cover="cover" />
   </no-ssr>
 </template>
 
@@ -9,16 +9,7 @@ import ThumborImageRendering from './ThumborImageRendering/ThumborImageRendering
 
 export default {
   name: 'ThumborImage',
-  props: {
-    store: {
-      type: Object,
-      required: true
-    },
-    dimensions: {
-      type: Object,
-      required: true
-    }
-  },
+  props: ['store', 'dimensions', 'cover'],
   components: {
     ThumborImageRendering
   }
