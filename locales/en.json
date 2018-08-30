@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "items": {
+      "hotel": "HOTEL",
+      "rooms": "ROOMS & PRICES",
+      "restaurant": "RESTAURANT",
+      "arrangements": "SHORT TRIPS",
+      "contact": "CONTACT",
+      "request": "REQUEST ROOM"
+    }
+  }
+}

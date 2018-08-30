@@ -24,14 +24,20 @@
     "fs": "0.0.1-security",
     "log-to-file": "^1.2.2",
     "nuxt": "^1.0.0",
-    "vue-styled-components": "latest",
-    "raven": "^2.6.3"
+    "raven": "^2.6.3",
+    "vue": "2.5.16",
+    "vue-i18n": "^8.0.0",
+    "vue-intl": "^2.1.1",
+    "vue-visual": "^0.5.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.3",
+    "pug": "^2.0.3",
+    "sass-loader": "^7.1.0"
   }
 }

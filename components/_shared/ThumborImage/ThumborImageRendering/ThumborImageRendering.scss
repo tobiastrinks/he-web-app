@@ -1,0 +1,17 @@
+@import '~/assets/style/variables.scss';
+
+.thumbor-image-rendering {
+  width: 100%;
+
+  .vv-visual, img {
+    width: 100%;
+  }
+
+  &.cover {
+    height: 100%;
+
+    .vv-visual {
+      height: 100%;
+    }
+  }
+}

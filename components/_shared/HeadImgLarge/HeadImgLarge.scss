@@ -1,0 +1,65 @@
+@import '~/assets/style/variables.scss';
+
+.head-img-large {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.head-img-large-images {
+  width: 100%;
+  height: 90%;
+}
+
+.head-img-large-headline {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+
+  font-family: $font-secondary;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  line-height: 55%;
+
+  @media #{$md} {
+    font-size: 80px;
+  }
+
+  @media #{$lg} {
+    font-size: 100px;
+  }
+
+  @media #{$xl} {
+    font-size: 120px;
+  }
+}
+
+.head-img-large-subheadline {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 90%;
+  padding-top: 10px;
+
+  font-family: $font-secondary;
+  text-align: center;
+  font-size: 30px;
+  color: $color-primary;
+
+  @media #{$md} {
+    font-size: 40px;
+  }
+
+  @media #{$lg} {
+    font-size: 45px;
+  }
+
+  @media #{$xl} {
+    font-size: 50px;
+  }
+}

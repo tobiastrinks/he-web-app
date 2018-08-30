@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Nav />
-    <nuxt/>
+    <nuxt />
   </div>
 </template>
 
@@ -9,13 +9,12 @@
 import Nav from '~/components/_shared/Nav/Nav';
 
 export default {
-  components: { Nav }
+  components: {
+    Nav
+  }
 };
 </script>
 
-<style>
-  body, p {
-    padding: 0;
-    margin: 0;
-  }
+<style scoped lang="scss">
+  @import 'default';
 </style>

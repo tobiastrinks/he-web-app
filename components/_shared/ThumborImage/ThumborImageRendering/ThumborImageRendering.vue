@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="thumbor-image-rendering" :class="{cover}">
     <visual
       :image="imgUrl"
       :background="cover ? 'cover' : ''"
-      :height="cover ? '100%' : ''"
     >
     </visual>
     <img v-show="false" @load="imageLoaded" :src="loadingImgUrl" />
@@ -14,6 +13,7 @@
 import { THUMBOR_URL } from '~/assets/config/externalApiConfig';
 import { getActiveBreakpoint } from '~/assets/js/responsiveHelper';
 import VueVisual from 'vue-visual';
+import 'vue-visual/index.css';
 
 export default {
   name: 'ThumborImageRendering',
@@ -43,12 +43,12 @@ export default {
   },
   methods: {
     handleResize () {
-      const activeBreakpoint = getActiveBreakpoint(window.innerWidth);
+      const activeBreakpoint = getActiveBreakpoint(window.innerWidth, Object.keys(this.dimensions));
       const newDimensions = this.dimensions[activeBreakpoint];
 
       if (
         newDimensions &&
-        (newDimensions[0] > this.activeDimensions[0] || newDimensions[1] > this.activeDimensions[1])
+        (newDimensions[0] > this.activeDimensions[0])
       ) {
         this.loadImage(newDimensions);
       }
@@ -83,3 +83,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  @import 'ThumborImageRendering';
+</style>

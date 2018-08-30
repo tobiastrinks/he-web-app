@@ -1,0 +1,23 @@
+@import '~/assets/style/variables.scss';
+
+.nav-language {
+  margin-right: 30px;
+}
+
+.nav-language-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20px;
+  height: 100%;
+}
+
+.nav-language-icon-img {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.nav-language-icon-img:hover {
+  transform: scale(1.3, 1.3);
+  cursor: pointer;
+}

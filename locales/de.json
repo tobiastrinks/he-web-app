@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "items": {
+      "hotel": "HOTEL",
+      "rooms": "ZIMMER & PREISE",
+      "restaurant": "RESTAURANT",
+      "arrangements": "KURZURLAUB",
+      "contact": "KONTAKT & ANREISE",
+      "request": "ZIMMER ANFRAGEN"
+    }
+  }
+}

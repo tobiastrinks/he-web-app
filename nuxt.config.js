@@ -1,7 +1,4 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'hotel-edison',
     meta: [
@@ -13,17 +10,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** Run ESLint on save
-    */
     extend (config, { isDev, isClient }) {
       config.node = {
         fs: 'empty'
@@ -38,7 +26,11 @@ module.exports = {
       }
     }
   },
+  css: [
+    '~/assets/style/global.scss'
+  ],
   serverMiddleware: [
     '~/middleware/loggingMiddleware'
-  ]
+  ],
+  plugins: ['~/plugins/i18n.js']
 };

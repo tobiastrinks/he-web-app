@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700');
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+$font-primary: 'Open Sans Condensed', sans-serif;
+$font-secondary: 'Passion One', cursive;
+
+$color-primary: #F2C34A;
+$color-grey: #A6A7A6;
+
+$break-small: 320px;
+$break-large: 1024px;
+
+$sm: "screen and (min-width : 0px)";
+$md: "screen and (min-width : 900px)";
+$lg: "screen and (min-width : 1280px)";
+$xl: "screen and (min-width : 1500px)";
