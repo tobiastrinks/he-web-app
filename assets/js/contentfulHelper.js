@@ -1,5 +1,3 @@
-import { CONTENTFUL_DELIVERY_TOKEN } from '~/assets/config/externalApiConfig';
-
 const contentful = require('contentful');
 
 export default class ContentfulHelper {
@@ -8,7 +6,7 @@ export default class ContentfulHelper {
 
     this.client = contentful.createClient({
       space: 's723by1y55ws',
-      accessToken: CONTENTFUL_DELIVERY_TOKEN
+      accessToken: process.env.contentfulDeliveryToken
     });
   }
 
