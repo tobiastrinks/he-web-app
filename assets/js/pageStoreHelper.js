@@ -35,7 +35,7 @@ export const fetchPage = (page, store) => {
     if (isStateContentEmpty(store.state[storeName])) {
       missingModules.push(pageModule);
     }
-    contentfulHelper.getByContentTypes(missingModules.map(item => item.contentType))
+    contentfulHelper.getByContentTypesAndLocale(missingModules.map(item => item.contentType), store.state.locale)
       .then((contentResponse) => {
         for (let contentType in contentResponse) {
           const storeName = getStoreNameFromPageModuleByContentType(pageModule, contentType);

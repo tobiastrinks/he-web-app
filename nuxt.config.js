@@ -34,6 +34,11 @@ module.exports = {
   css: [
     '~/assets/style/global.scss'
   ],
+  router: {
+    middleware: [
+      'localeMiddleware'
+    ]
+  },
   serverMiddleware: [
     '~/middleware/loggingMiddleware'
   ],

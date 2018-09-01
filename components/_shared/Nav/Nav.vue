@@ -1,8 +1,8 @@
 <template>
-  <div class="nav">
+  <div class="nav" :class="{noOpacity}">
     <div class="nav-left">
       <div class="nav-logo">
-        <nuxt-link to="/">
+        <LocaleLink to="/">
           <ThumborImage
             :store="content.logo"
             :dimensions="{
@@ -11,7 +11,7 @@
               lg: [500,0]
             }"
           />
-        </nuxt-link>
+        </LocaleLink>
       </div>
       <div class="nav-text">
         <NavItem intlId="nav.items.hotel" to="/hotel" />
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="nav-right">
-      <NavLanguage />
+      <NavLocale />
       <NavItem intlId="nav.items.request" to="/buchungsanfrage" :marked="true" />
     </div>
   </div>
@@ -30,19 +30,41 @@
 
 <script>
 import ThumborImage from '~/components/_shared/ThumborImage/ThumborImage';
+import LocaleLink from '~/components/_shared/LocaleLink/LocaleLink';
 import NavItem from './NavItem/NavItem';
-import NavLanguage from './NavLanguage/NavLanguage';
+import NavLocale from './NavLocale/NavLocale';
 
 export default {
   name: 'Nav',
   components: {
     ThumborImage,
+    LocaleLink,
     NavItem,
-    NavLanguage
+    NavLocale
+  },
+  data: () => {
+    return {
+      noOpacity: false
+    };
   },
   computed: {
     store () { return this.$store.state.navStore; },
     content () { return this.store.content; }
+  },
+  methods: {
+    handleScroll () {
+      this.noOpacity = (window.scrollY > 0);
+    }
+  },
+  created () {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  },
+  beforeDestroy () {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
   }
 };
 </script>

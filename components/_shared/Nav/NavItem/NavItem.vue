@@ -1,19 +1,21 @@
 <template>
-  <nuxt-link :to="to">
+  <LocaleLink :to="to">
     <div class="nav-item" :class="{marked}">
       <IntlText
         :id="intlId"
       />
     </div>
-  </nuxt-link>
+  </LocaleLink>
 </template>
 
 <script>
 import IntlText from '@/components/_shared/IntlText/IntlText';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'NavItem',
   components: {
+    LocaleLink,
     IntlText
   },
   props: {
