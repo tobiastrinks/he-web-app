@@ -1,6 +1,6 @@
 <template>
   <no-ssr placeholder="Loading...">
-    <ThumborImageRendering :store="store" :dimensions="dimensions" :cover="cover" />
+    <ThumborImageRendering :store="store" :staticUrl="staticUrl" :dimensions="dimensions" :cover="cover" />
   </no-ssr>
 </template>
 
@@ -9,7 +9,7 @@ import ThumborImageRendering from './ThumborImageRendering/ThumborImageRendering
 
 export default {
   name: 'ThumborImage',
-  props: ['store', 'dimensions', 'cover'],
+  props: ['store', 'staticUrl', 'dimensions', 'cover'],
   components: {
     ThumborImageRendering
   }

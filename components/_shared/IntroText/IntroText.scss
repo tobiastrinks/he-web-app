@@ -1,0 +1,16 @@
+@import '~/assets/style/variables.scss';
+
+.intro-text {
+  margin: 20px auto;
+  width: 580px;
+  max-width: 95%;
+  text-align: center;
+
+  @media #{$lg} {
+    margin: 40px auto;
+  }
+
+  @media #{$xl} {
+    margin: 60px auto;
+  }
+}

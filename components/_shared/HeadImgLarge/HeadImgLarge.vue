@@ -17,6 +17,16 @@
       <p class="head-img-large-subheadline">
         {{subHeadline}}
       </p>
+      <div class="head-img-large-sun">
+        <ThumborImage
+          static-url="_shared/sun-transparent.png"
+          :dimensions="{
+            sm: [500, 0],
+            md: [700, 0],
+            lg: [1000, 0]
+          }"
+        />
+      </div>
     </div>
 </template>
 
