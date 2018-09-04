@@ -16,6 +16,7 @@
         <IntroText :content="content.introduction" />
       </div>
       <HomeOverview :items="content.overviewItems" />
+      <HomeFocus />
     </div>
   </div>
 </template>
@@ -24,10 +25,12 @@
 import HeadImgLarge from '@/components/_shared/HeadImgLarge/HeadImgLarge';
 import IntroText from '@/components/_shared/IntroText/IntroText';
 import HomeOverview from '@/components/Home/HomeOverview/HomeOverview';
+import HomeFocus from '@/components/Home/HomeFocus/HomeFocus';
 
 export default {
   components: {
     HomeOverview,
+    HomeFocus,
     IntroText,
     HeadImgLarge
   },

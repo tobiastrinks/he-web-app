@@ -1,0 +1,15 @@
+@import '~/assets/style/variables.scss';
+
+.home-focus-slider {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.offer-pane-wrapper {
+  padding: 20px;
+
+  @media #{$md} {
+    padding: 20px 50px;
+  }
+}

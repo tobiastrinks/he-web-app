@@ -1,0 +1,82 @@
+@import '~/assets/style/variables.scss';
+
+.offer-pane {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+
+  @media #{$md} {
+    display: flex;
+    height: 400px;
+  }
+
+  @media #{$lg} {
+    height: 430px;
+  }
+
+  @media #{$xl} {
+    height: 460px;
+  }
+
+  .offer-pane-row {
+    position: relative;
+
+    @media #{$md} {
+      width: 50%;
+    }
+
+    &.img {
+      height: 200px;
+
+      @media #{$md} {
+        height: 100%;
+      }
+    }
+
+    &.text {
+      padding: 30px 15px 15px;
+
+      @media #{$md} {
+        padding: 0;
+      }
+    }
+
+    .offer-pane-row-center {
+
+      @media #{$md} {
+        position: absolute;
+        left: 13%;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 80%;
+        max-width: 580px;
+      }
+    }
+  }
+
+  .offer-pane-headline {
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: left;
+
+    @media #{$md} {
+      margin-bottom: 25px;
+    }
+  }
+
+  .offer-pane-description {
+    text-align: justify;
+  }
+
+  .offer-pane-button {
+    margin-top: 20px;
+    text-align: right;
+
+    @media #{$md} {
+      position: absolute;
+      right: 7%;
+      bottom: 20px;
+    }
+  }
+}

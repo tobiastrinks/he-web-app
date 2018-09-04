@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import HomeOverviewItem from '@/components/Home/HomeOverview/HomeOverviewItem/HomeOverviewItem';
+import HomeOverviewItem from '@/components/Home/HomeOverviewItem/HomeOverviewItem';
 export default {
   name: 'HomeOverview',
   components: {HomeOverviewItem},

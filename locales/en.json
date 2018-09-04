@@ -8,5 +8,11 @@
       "contact": "CONTACT",
       "request": "REQUEST ROOM"
     }
+  },
+  "home": {
+    "focus": {
+      "headline": "SPOTLIGHT",
+      "subheadline": "...this is potentially quite interesting to you!"
+    }
   }
 }

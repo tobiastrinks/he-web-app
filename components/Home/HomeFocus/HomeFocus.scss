@@ -1,0 +1,36 @@
+@import '~/assets/style/variables.scss';
+
+.home-focus {
+  margin-top: 50px;
+  text-align: center;
+
+  @media #{$md} {
+    margin-top: 80px;
+  }
+
+  @media #{$lg} {
+    margin-top: 100px;
+  }
+
+  @media #{$xl} {
+    margin-top: 130px;
+  }
+
+  .home-focus-head {
+    margin-bottom: 30px;
+
+    .home-focus-headline {
+      font-size: 150%;
+      font-weight: 600;
+    }
+
+    .hr-short {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .home-focus-subheadline {
+      font-weight: 600;
+    }
+  }
+}

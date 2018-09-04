@@ -2,12 +2,18 @@
 
 .button {
   border: 1px solid #000;
+  min-width: 130px;
   padding: 12px 30px;
+  text-align: center;
   font-size: 80%;
   font-weight: 600;
   color: #000;
   background-color: transparent;
   transition: transform .5s;
+
+  @media #{$md} {
+    min-width: 160px;
+  }
 
   &:hover {
     cursor: pointer;

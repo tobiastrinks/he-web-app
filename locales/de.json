@@ -8,5 +8,11 @@
       "contact": "KONTAKT & ANREISE",
       "request": "ZIMMER ANFRAGEN"
     }
+  },
+  "home": {
+    "focus": {
+      "headline": "IM FOKUS",
+      "subheadline": "...das könnte Ihnen ganz besonders gut gefallen!"
+    }
   }
 }
