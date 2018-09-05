@@ -9,11 +9,15 @@ export const state = () => ({
         }
       }
     }
-  }
+  },
+  mobileOpen: false
 });
 
 export const mutations = {
   setContent: (state, content) => {
     state.content = content;
+  },
+  setMobileOpen: (state, content) => {
+    state.mobileOpen = content;
   }
 };

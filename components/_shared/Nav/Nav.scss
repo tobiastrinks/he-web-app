@@ -6,36 +6,102 @@
   left: 0;
   top: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  padding: 0 0 0 30px;
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 1s;
 
-  @media #{$sm} {
-    padding: 0 0 0 50px;
-  }
-
   &.noOpacity {
     background-color: #fff;
+    border-bottom: 1px solid $color-grey-light;
+
+    .nav-mobile-bar {
+      background-color: #fff;
+    }
+  }
+
+  .nav-mobile-bar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-grey-light;
+
+    @media #{$md} {
+      display: none;
+    }
+
+    .nav-mobile-bar-icon {
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    .nav-mobile-bar-logo {
+      padding: 20px 0;
+      height: 23px;
+      margin: 2px 0;
+
+      & > img {
+        height: 100%;
+      }
+    }
+  }
+
+  .nav-content {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 60px;
+    padding-top: 80px;
+    overflow-y: auto;
+    background-color: #fff;
+
+    @media #{$md} {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 0 0 30px;
+      background-color: transparent;
+      overflow-y: visible;
+    }
+
+    &.mobileOpen {
+      display: flex;
+    }
   }
 }
 
 .nav-left {
-  display: flex;
+  @media #{$md} {
+    display: flex;
+  }
 }
 
 .nav-right {
-  display: flex;
+  @media #{$md} {
+    display: flex;
+  }
 }
 
 .nav-logo {
-  width: 120px;
-  transition: transform 0.5s;
+  display: none;
 
-  &:hover {
-    transform: scale(1.1, 1.1);
+  @media #{$md} {
+    display: block;
+    width: 120px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
   }
 
   @media #{$xl} {
@@ -44,6 +110,32 @@
 }
 
 .nav-text {
-  display: flex;
-  margin-left: 20px;
+  @media #{$md} {
+    display: flex;
+    margin-left: 20px;
+  }
+}
+
+.nav-mobile-request-room {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @media #{$md} {
+    position: relative;
+  }
+}
+
+.nav-mobile-sun {
+  position: fixed;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  transform: translateX(-50%);
+
+  @media #{$md} {
+    display: none;
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <LocaleLink :to="to">
-    <div class="nav-item" :class="{marked}">
+    <div class="nav-item" :class="{marked, active}">
       <IntlText
         :id="intlId"
       />
@@ -30,6 +30,11 @@ export default {
     marked: {
       type: Boolean,
       required: false
+    }
+  },
+  computed: {
+    active () {
+      return (this.$route.fullPath.indexOf(this.to) !== -1);
     }
   }
 };

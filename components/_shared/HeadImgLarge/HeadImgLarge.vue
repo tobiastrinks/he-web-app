@@ -19,7 +19,7 @@
       </p>
       <div class="head-img-large-sun">
         <ThumborImage
-          static-url="_shared/sun-transparent.png"
+          static-url="/_shared/sun-transparent.png"
           :dimensions="{
             sm: [500, 0],
             md: [700, 0],

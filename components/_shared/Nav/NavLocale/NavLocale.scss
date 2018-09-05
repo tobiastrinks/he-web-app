@@ -1,15 +1,22 @@
 @import '~/assets/style/variables.scss';
 
 .nav-locale {
-  margin-right: 30px;
+  @media #{$md} {
+    margin-right: 30px;
+  }
 }
 
 .nav-locale-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 20px;
-  height: 100%;
+  margin: 20px auto;
+
+  @media #{$md} {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
 }
 
 .nav-locale-icon-img {

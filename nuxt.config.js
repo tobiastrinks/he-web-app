@@ -36,11 +36,15 @@ module.exports = {
   ],
   router: {
     middleware: [
-      'localeMiddleware'
+      'localeMiddleware',
+      'defaultStoreMiddleware'
     ]
   },
   serverMiddleware: [
     '~/middleware/loggingMiddleware'
   ],
-  plugins: ['~/plugins/i18n.js']
+  plugins: [
+    '~/plugins/i18n.js',
+    '~/plugins/fontawesome.js'
+  ]
 };
