@@ -1,23 +1,23 @@
 <template>
-    <div class="head-img-large">
-      <div class="head-img-large-images">
-        <ThumborImage v-for="(image, index) in images" :key="index"
-          :store="image"
-          :dimensions="{
-            sm: [600, 800],
-            md: [900, 0],
-            lg: [2000, 0]
+    <div class="head-img">
+      <div class="head-img-image">
+        <ThumborImage :key="index"
+            :store="image"
+            :dimensions="{
+            sm: [600, 200],
+            md: [900, 300],
+            lg: [2000, 400]
           }"
           :cover="true"
         />
       </div>
-      <h1 class="head-img-large-headline">
+      <h1 class="head-img-headline">
         {{headline}}
       </h1>
-      <p class="head-img-large-subheadline">
+      <p class="head-img-subheadline">
         {{subHeadline}}
       </p>
-      <div class="head-img-large-sun" v-if="hasSun">
+      <div class="head-img-sun" v-if="hasSun">
         <ThumborImage
           static-url="/_shared/sun-transparent.png"
           :dimensions="{
@@ -34,10 +34,10 @@
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 
 export default {
-  name: 'HeadImgLarge',
+  name: 'HeadImg',
   props: {
-    images: {
-      type: Array,
+    image: {
+      type: Object,
       required: true
     },
     headline: {
@@ -60,5 +60,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import 'HeadImgLarge';
+  @import 'HeadImg';
 </style>

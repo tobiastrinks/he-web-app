@@ -1,0 +1,11 @@
+@import '~/assets/style/variables.scss';
+
+.rooms-widgets-headline {
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.rooms-widgets-content {
+  display: flex;
+  flex-wrap: wrap;
+}

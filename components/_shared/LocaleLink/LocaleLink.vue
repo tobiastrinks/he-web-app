@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Link',
+  name: 'LocaleLink',
   props: {
     to: {
       type: String,

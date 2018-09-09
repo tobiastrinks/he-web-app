@@ -1,7 +1,13 @@
 <template>
   <div>
     <LocaleLink :to="to">
-      <button class="button">{{label}}</button>
+      <button class="button" :class="{hasArrow: arrow}">
+        <FontAwesomeIcon :icon="['fas', 'chevron-left']" class="button-arrow left" v-if="arrow === 'left'" />
+        <span class="button-text">
+          <slot></slot>
+        </span>
+        <FontAwesomeIcon :icon="['fas', 'chevron-right']" class="button-arrow right" v-if="arrow === 'right'" />
+      </button>
     </LocaleLink>
   </div>
 </template>
@@ -19,9 +25,9 @@ export default {
       type: String,
       required: true
     },
-    label: {
+    arrow: {
       type: String,
-      required: true
+      default: null
     }
   }
 };

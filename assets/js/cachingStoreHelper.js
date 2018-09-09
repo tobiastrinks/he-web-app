@@ -1,11 +1,15 @@
 export const setLocalStorage = (key, object) => {
-  window.setLocalStorage(key, JSON.stringify(object));
+  if (process.browser) {
+    window.localStorage.setItem(key, JSON.stringify(object));
+  }
 };
 
 export const getLocalStorage = (key) => {
-  const content = window.getLocalStorage(key);
+  if (process.browser) {
+    const content = window.localStorage.getItem(key);
 
-  if (content !== '') {
-    return JSON.encode(window.getLocalStorage(key));
+    if (content !== '') {
+      return JSON.parse(window.localStorage.getItem(key));
+    }
   }
 };

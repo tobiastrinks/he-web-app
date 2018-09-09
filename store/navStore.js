@@ -1,16 +1,7 @@
 export const state = () => ({
-  content: {
-    loaded: false,
-    logo: {
-      fields: {
-        title: 'Testlogo',
-        file: {
-          url: 'https://www.hotel-edison.de/temp/media/compressed/zimmer_doppel_comfort_plus2_360x240.jpg'
-        }
-      }
-    }
-  },
-  mobileOpen: false
+  content: null,
+  mobileOpen: false,
+  opacityEnabled: false
 });
 
 export const mutations = {
@@ -19,5 +10,11 @@ export const mutations = {
   },
   setMobileOpen: (state, content) => {
     state.mobileOpen = content;
+  },
+  enableOpacity: (state) => {
+    state.opacityEnabled = true;
+  },
+  resetOpacityEnabled: (state) => {
+    state.opacityEnabled = false;
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="nav" :class="{noOpacity: (noOpacity || this.store.mobileOpen)}">
+  <div class="nav" :class="{opacity: (opacity && !this.store.mobileOpen)}">
     <div class="nav-mobile-bar">
       <div class="nav-mobile-bar-icon" @click="switchMobileNav">
         <FontAwesomeIcon v-show="!this.store.mobileOpen" :icon="['fas', 'bars']" />
@@ -72,17 +72,18 @@ export default {
   },
   data: () => {
     return {
-      noOpacity: false,
+      couldHaveOpacity: true,
       mobileOpen: false
     };
   },
   computed: {
     store () { return this.$store.state.navStore; },
-    content () { return this.store.content; }
+    content () { return this.store.content[0]; },
+    opacity () { return (this.couldHaveOpacity && this.store.opacityEnabled); }
   },
   methods: {
     handleScroll () {
-      this.noOpacity = (window.scrollY > 0);
+      this.couldHaveOpacity = (window.scrollY === 0);
     },
     switchMobileNav () {
       this.$store.commit('navStore/setMobileOpen', !this.store.mobileOpen);

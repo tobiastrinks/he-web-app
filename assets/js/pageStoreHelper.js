@@ -30,9 +30,16 @@ export const fetchPage = (page, store) => {
   const pageModule = pageModules[page];
   const storeName = pageModule.storeName;
 
-  const missingModules = [...getMissingDefaultModules(store)];
+  const missingModules = [
+    ...getMissingDefaultModules(store),
+    ...pageModule.modules
+  ].filter((module, index, self) => {
+    // distinct
+    return self.indexOf(module) === index;
+  });
+
   return new Promise((resolve, reject) => {
-    if (isStateContentEmpty(store.state[storeName])) {
+    if (pageModule.contentType && isStateContentEmpty(store.state[storeName])) {
       missingModules.push(pageModule);
     }
     contentfulHelper.getByContentTypesAndLocale(missingModules.map(item => item.contentType), store.state.locale)
@@ -40,6 +47,9 @@ export const fetchPage = (page, store) => {
         for (let contentType in contentResponse) {
           const storeName = getStoreNameFromPageModuleByContentType(pageModule, contentType);
           store.commit(`${storeName}/setContent`, contentResponse[contentType]);
+        }
+        if (pageModule.storeDefaultsLoader) {
+          pageModule.storeDefaultsLoader(store);
         }
         resolve();
       });

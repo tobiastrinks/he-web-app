@@ -12,6 +12,20 @@ export default ({ app, store }) => {
     messages: {
       'de': require('~/locales/de.json'),
       'en': require('~/locales/en.json')
+    },
+    numberFormats: {
+      'de': {
+        currency: {
+          style: 'currency',
+          currency: 'EUR'
+        }
+      },
+      'en': {
+        currency: {
+          style: 'currency',
+          currency: 'EUR'
+        }
+      }
     }
   });
 };

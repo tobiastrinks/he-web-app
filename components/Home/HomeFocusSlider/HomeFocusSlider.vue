@@ -30,7 +30,7 @@ export default {
     Slide
   },
   computed: {
-    focusItems () { return this.$store.state.pageHomeStore.content.focusItems; }
+    focusItems () { return this.$store.state.pageHomeStore.content[0].focusItems; }
   }
 };
 </script>

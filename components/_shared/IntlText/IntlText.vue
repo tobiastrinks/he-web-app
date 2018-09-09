@@ -1,5 +1,5 @@
 <template>
-  <span v-html="$t(id, $store.state.locale)"></span>
+  <span v-html="$t(id, $store.state.locale, values)"></span>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     id: {
       type: String,
       required: true
+    },
+    values: {
+      type: Object,
+      default: () => { return {}; }
     }
   }
 };

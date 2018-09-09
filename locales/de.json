@@ -14,5 +14,37 @@
       "headline": "IM FOKUS",
       "subheadline": "...das könnte Ihnen ganz besonders gut gefallen!"
     }
+  },
+  "room": {
+    "backToRoomsTop": "ZURÜCK ZUR ZIMMERÜBERSICHT",
+    "info": {
+      "request": "ANFRAGEN",
+      "minPrice": "ab {price} pro Person"
+    },
+    "prices": {
+      "perPersonAndDay": "<b>PREISE</b> pro Person und Tag",
+      "HP": "Halbpension",
+      "UF": "Übernachtung / Frühstück",
+      "season": {
+        "label": "<b>Saison</b>",
+        "jan": "Jan., Feb., Nov., Dez.",
+        "mar": "Mär., Apr., Okt.",
+        "may": "Mai, Jun., Sep.",
+        "jul": "Jul., Aug."
+      },
+      "arrangement": {
+        "label": "Arr.-vorteil",
+        "value": "ab {minDays} Tag | ab {minDays} Tagen"
+      },
+      "price": "Preis",
+      "priceNormal": "Normalpreis",
+      "priceArrangement": "mit Arrangement-Vorteil"
+    },
+    "requestNow": "JETZT ANFRAGEN",
+    "backToRoomsBottom": "zurück zur Zimmerübersicht",
+    "suggestion": {
+      "headline": "DAS KÖNNTE SIE AUCH INTERESSIEREN",
+      "button": "MEHR"
+    }
   }
 }

@@ -31,7 +31,7 @@ export default class ContentfulHelper {
             item.sys.contentType.sys.id === contentType
           )).map(item => (
             item.fields
-          ))[0];
+          ));
         });
         resolve(result);
       }).catch(reject);

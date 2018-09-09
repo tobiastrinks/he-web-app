@@ -14,5 +14,37 @@
       "headline": "SPOTLIGHT",
       "subheadline": "...this is potentially quite interesting to you!"
     }
+  },
+  "room": {
+    "backToRooms": "BACK TO ROOMS OVERVIEW",
+    "info": {
+      "request": "REQUEST",
+      "minPrice": "from {price} per person"
+    },
+    "prices": {
+      "perPersonAndDay": "<b>PRICES</b> per person and day",
+      "HP": "half-board",
+      "UF": "bed and  breakfast",
+      "season": {
+        "label": "<b>season</b>",
+        "jan": "jan., feb., nov., dec.",
+        "mar": "mar., apr., oct.",
+        "may": "may, jun., sep.",
+        "jul": "jul., aug."
+      },
+      "arrangement": {
+        "label": "Arr.-vorteil",
+        "value": "ab {minDays} Tag | ab {minDays} Tagen"
+      },
+      "price": "Preis",
+      "priceNormal": "Normalpreis",
+      "priceArrangement": "mit Arrangement-Vorteil"
+    },
+    "requestNow": "REQUEST NOW",
+    "backToRoomsBottom": "back to rooms",
+    "suggestion": {
+      "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
+      "button": "SHOW MORE"
+    }
   }
 }

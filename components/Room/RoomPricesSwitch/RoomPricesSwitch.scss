@@ -1,0 +1,22 @@
+@import '~/assets/style/variables.scss';
+
+.room-prices-switch-item {
+  margin: 0 10px;
+
+  &.active {
+    color: $color-primary;
+    font-weight: 600;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media #{$md} {
+    margin: 0 20px;
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <div class="page-head">
       <HeadImgLarge
         v-if="content !== null"
@@ -35,7 +35,10 @@ export default {
     HeadImgLarge
   },
   computed: {
-    content () { return this.$store.state.pageHomeStore.content; }
+    content () { return this.$store.state.pageHomeStore.content[0]; }
+  },
+  mounted () {
+    this.$store.commit('navStore/enableOpacity');
   }
 };
 </script>

@@ -1,0 +1,57 @@
+@import '../../../assets/style/variables';
+
+.rooms-widgets-item {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 230px;
+
+  @media #{$sm} {
+
+    &.halfWidth {
+      width: 50%;
+    }
+
+    &.fullHeight {
+      height: 460px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .rooms-widgets-item-img-transform {
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  .rooms-widgets-item-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .rooms-widgets-item-img-transform {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+  }
+
+  .rooms-widgets-item-label {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+    background-color: rgba(#000, .2);
+    text-align: center;
+    padding: 10px 0;
+
+    &.hide {
+      @media #{$sm} {
+        display: none;
+      }
+    }
+  }
+}

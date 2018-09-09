@@ -19,10 +19,9 @@
           </article>
         </div>
         <div class="home-overview-item-text-button">
-          <ButtonSt
-            :to="buttonLink"
-            :label="buttonText"
-          />
+          <ButtonSt :to="buttonLink">
+            {{buttonText}}
+          </ButtonSt>
         </div>
       </div>
     </div>

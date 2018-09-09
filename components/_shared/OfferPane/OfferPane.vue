@@ -19,7 +19,7 @@
           </article>
         </div>
         <div class="offer-pane-button">
-          <ButtonSt :label="button" :to="buttonLink" />
+          <ButtonSt :to="buttonLink">{{button}}</ButtonSt>
         </div>
       </div>
     </div>

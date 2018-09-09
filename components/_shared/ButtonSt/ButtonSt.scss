@@ -3,7 +3,7 @@
 .button {
   border: 1px solid #000;
   min-width: 130px;
-  padding: 12px 30px;
+  padding: 12px 0;
   text-align: center;
   font-size: 80%;
   font-weight: 600;
@@ -18,5 +18,26 @@
   &:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);
+  }
+
+  &.hasArrow {
+    .button-text {
+      padding: 0 20px;
+    }
+  }
+
+  .button-text {
+    padding: 0 30px;
+  }
+
+  .button-arrow {
+
+    &.left {
+      margin-left: 10px;
+    }
+
+    &.right {
+      margin-right: 10px;
+    }
   }
 }

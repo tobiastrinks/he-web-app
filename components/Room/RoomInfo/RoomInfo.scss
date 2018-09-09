@@ -1,0 +1,53 @@
+@import '~/assets/style/variables.scss';
+
+.room-info {
+  padding: 30px 20px;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+
+  @media #{$sm} {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .room-info-row {
+    position: relative;
+
+    @media #{$sm} {
+      width: 45%;
+    }
+
+    .room-info-ground-plan {
+      margin: 0 auto 20px;
+      width: 200px;
+
+      @media #{$sm} {
+        margin: 0 0 0 20px;
+        width: 80%;
+        max-width: 300px;
+      }
+    }
+
+    .room-info-text {
+
+      @media #{$sm} {
+        position: absolute;
+        left: 0;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .room-info-text-request {
+        margin-top: 30px;
+        display: flex;
+
+        .room-info-text-request-text {
+          padding: 10px 0;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

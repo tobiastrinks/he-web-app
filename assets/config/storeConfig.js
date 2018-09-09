@@ -1,19 +1,19 @@
+import {
+  pageRoomStoreDefaultsLoader
+} from '../js/storeDefaultsLoader';
+
 export const modules = {
   nav: {
     storeName: 'navStore',
     contentType: 'navigation'
-  },
-  footer: {
-    storeName: 'footerStore',
-    contentType: 'footer'
   },
   focusOffers: {
     storeName: 'focusOfferStore',
     contentType: 'focusOffer'
   },
   rooms: {
-    storeName: 'roomStore',
-    contentType: 'rooms'
+    storeName: 'roomsStore',
+    contentType: 'room'
   },
   arrangements: {
     storeName: 'arrangementStore',
@@ -22,8 +22,7 @@ export const modules = {
 };
 
 export const defaultModules = [
-  modules.nav,
-  modules.footer
+  modules.nav
 ];
 
 export const pageModules = {
@@ -31,5 +30,15 @@ export const pageModules = {
     storeName: 'pageHomeStore',
     contentType: 'pageHome',
     modules: [modules.focusOffers]
+  },
+  rooms: {
+    storeName: 'pageRoomsStore',
+    contentType: 'pageRooms',
+    modules: []
+  },
+  room: {
+    storeName: 'pageRoomStore',
+    storeDefaultsLoader: pageRoomStoreDefaultsLoader,
+    modules: [modules.rooms]
   }
 };
