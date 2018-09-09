@@ -38,7 +38,7 @@
           :headline="suggestedRoom.name"
           :description="suggestedRoom.description"
           :button="$t('room.suggestion.button')"
-          :buttonLink="`/zimmer-und-preise/${suggestedRoom.id}`"
+          :buttonLink="`/zimmer-und-preise${suggestedRoom.route}`"
         />
       </div>
     </div>
