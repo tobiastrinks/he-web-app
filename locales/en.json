@@ -46,5 +46,28 @@
       "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
       "button": "SHOW MORE"
     }
+  },
+  "footer": {
+    "company": "Hotel Edison GmbH",
+    "street": "Dünenstrasse 15",
+    "city": "18225 Ostseebad Kühlungsborn",
+    "telephone": {
+      "label": "telephone:",
+      "value": "038293 / 42-0",
+      "link": "038293420"
+    },
+    "telefax": {
+      "label": "telefax:",
+      "value": "038293 / 42-111",
+      "link": "03829342111"
+    },
+    "email": {
+      "label": "e-mail:",
+      "value": "info@hotel-edison.de"
+    },
+    "contact": "contact",
+    "imprint": "imprint",
+    "data-protection": "data-protection",
+    "copyright": "Hotel Edison GmbH © 2018"
   }
 }

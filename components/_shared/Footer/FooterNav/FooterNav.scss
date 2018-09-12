@@ -1,0 +1,26 @@
+@import '~/assets/style/variables.scss';
+
+.footer-nav {
+
+  .footer-nav-content {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+
+    @media #{$sm} {
+      justify-content: left;
+    }
+
+    .footer-nav-item {
+      margin: 0 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
