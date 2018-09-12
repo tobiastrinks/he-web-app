@@ -38,12 +38,18 @@ export default {
   },
   data () {
     return {
-      activeDimensions: [0, 0],
-      imgUrl: '',
-      loadingImgUrl: ''
+      activeDimensions: null,
+      imgUrl: null,
+      loadingImgUrl: null
     };
   },
   methods: {
+    render () {
+      this.activeDimensions = [0, 0];
+      this.imgUrl = '';
+      this.loadingImgUrl = '';
+      this.handleResize();
+    },
     handleResize () {
       const activeBreakpoint = getActiveBreakpoint(window.innerWidth, Object.keys(this.dimensions));
       const newDimensions = this.dimensions[activeBreakpoint];
@@ -87,10 +93,15 @@ export default {
     window.addEventListener('resize', this.handleResize);
   },
   mounted () {
-    this.handleResize();
+    this.render();
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.handleResize);
+  },
+  watch: {
+    store: function () {
+      this.render();
+    }
   }
 };
 </script>
