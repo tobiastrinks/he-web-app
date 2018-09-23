@@ -62,7 +62,7 @@ export default {
     priceYearAvailable () {
       const rooms = this.rooms;
       if (rooms.length) {
-        const years = rooms[0].priceUf.map(priceItem => priceItem.fields.year);
+        const years = rooms[0].prices.map(priceItem => priceItem.fields.year);
         return years.filter((module, index, self) => {
           return self.indexOf(module) === index;
         }).sort();

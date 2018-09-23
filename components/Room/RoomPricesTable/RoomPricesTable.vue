@@ -128,10 +128,7 @@ export default {
   computed: {
     seasons () { return seasons; },
     pricesNormal () {
-      const prices =
-        (this.type === priceTypes.HP)
-          ? this.room.priceHp
-          : this.room.priceUf;
+      const prices = this.room.prices;
 
       const pricesFilteredByYear = prices.filter(price => { return (price.fields.year === this.year); });
       if (pricesFilteredByYear.length === 1) {
@@ -139,19 +136,23 @@ export default {
 
         // priceOrderedBySeasonArray
         return seasons.map(season => {
-          return price[season.priceFieldId];
+          if (this.type === priceTypes.HP) {
+            return price[season.priceUfKey] + price.hp;
+          } else {
+            return price[season.priceUfKey];
+          }
         });
       }
       return [];
     },
     pricesArr () {
-      const pricesFilteredByYear = this.room.priceArr.filter(price => { return (price.fields.year === this.year); });
+      const pricesFilteredByYear = this.room.prices.filter(price => { return (price.fields.year === this.year); });
       if (pricesFilteredByYear.length === 1) {
         const price = pricesFilteredByYear[0].fields;
 
         // priceOrderedBySeasonArray
         return seasons.map(season => {
-          return price[season.priceFieldId];
+          return price[season.priceArrKey];
         });
       }
       return [];

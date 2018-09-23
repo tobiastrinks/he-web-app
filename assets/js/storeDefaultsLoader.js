@@ -9,7 +9,7 @@ export const pageRoomStoreDefaultsLoader = (store) => {
   }
 
   if (!roomStore.priceYear) {
-    const years = rooms[0].priceUf.map(priceItem => priceItem.fields.year);
+    const years = rooms[0].prices.map(priceItem => priceItem.fields.year);
     const priceYearAvailable = years.filter((module, index, self) => {
       return self.indexOf(module) === index;
     }).sort();
