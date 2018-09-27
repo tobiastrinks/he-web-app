@@ -1,0 +1,10 @@
+@import "~/assets/style/variables.scss";
+
+.request-rooms-image {
+  width: 100%;
+  height: 300px;
+
+  @media #{$sm} {
+    height: 100%;
+  }
+}

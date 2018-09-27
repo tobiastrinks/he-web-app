@@ -47,6 +47,90 @@
       "button": "MEHR"
     }
   },
+  "request": {
+    "rooms": {
+      "headline": "Zimmertyp"
+    },
+    "bookingType": {
+      "headline": "Buchungstyp",
+      "uf": "Übernachtung / Frühstück",
+      "hp": "Halbpension",
+      "arr": "Arrangements und Feiertagsangebote"
+    },
+    "dates": {
+      "headline": "Reisezeitraum",
+      "fromLabel": "vom",
+      "toLabel": "bis zum"
+    },
+    "persons": {
+      "headline": "Reiseteilnehmer",
+      "adultLabel": "Erwachsene",
+      "childLabel": "Kinder",
+      "fromToLabel": "({from}-{to} Jahre)",
+      "fromLabel": "(ab {from} Jahren)"
+    },
+    "extras": {
+      "headline": "Zusatzleistungen",
+      "parkingSpace": "Stellplatz",
+      "pet": "Haustier"
+    },
+    "comments": {
+      "headline": "Anmerkungen",
+      "placeholder": "Was können wir außerdem für Sie tun? Haben Sie noch Fragen?"
+    },
+    "summary": {
+      "headline": "Zusammenfassung",
+      "data": {
+        "dates": "vom {from} bis zum {to}",
+        "bookingTypeArrangementPrefix": "ausgewählt: "
+      },
+      "form": {
+        "headline": "Ihre persönlichen Daten:",
+        "gender": {
+          "label": "Anrede*",
+          "male": "Herr",
+          "female": "Frau",
+          "invalid": "Bitte Anrede angeben"
+        },
+        "firstName": {
+          "label": "Vorname*",
+          "invalid": "Bitte Vornamen angeben"
+        },
+        "lastName": {
+          "label": "Nachname*",
+          "invalid": "Bitte Nachnamen angeben"
+        },
+        "street": {
+          "label": "Straße / Nr.*",
+          "invalid": "Bitte Straße angeben"
+        },
+        "houseNumber": {
+          "invalid": "Bitte Hausnummer angeben"
+        },
+        "plz": {
+          "label": "Plz. / Ort*",
+          "invalid": "Bitte Postleitzahl angeben"
+        },
+        "city": {
+          "invalid": "Bitte Stadt angeben"
+        },
+        "country": {
+          "label": "Land*",
+          "invalid": "Bitte Land angeben"
+        },
+        "email": {
+          "label": "E-Mail*",
+          "invalid": "Bitte eine gültige E-Mail angeben"
+        },
+        "phone": {
+          "label": "Telefon"
+        }
+      }
+    },
+    "submit": {
+      "button": "JETZT UNVERBINDLICH ANFRAGEN"
+    }
+  },
   "footer": {
     "company": "Hotel Edison GmbH",
     "street": "Dünenstrasse 15",

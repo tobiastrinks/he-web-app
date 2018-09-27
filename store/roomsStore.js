@@ -4,6 +4,6 @@ export const state = () => ({
 
 export const mutations = {
   setContent: (state, content) => {
-    state.content = content;
+    state.content = content.sort((roomA, roomB) => roomA.index > roomB.index);
   }
 };

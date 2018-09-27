@@ -1,0 +1,55 @@
+@import "~/assets/style/variables.scss";
+
+.request-date-arrangement {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  @media #{$sm} {
+    position: absolute;
+  }
+
+  .request-date-arrangement-tile {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    @media #{$sm} {
+      height: 100%;
+    }
+
+    .request-date-arrangement-tile-image {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .request-date-arrangement-tile-text {
+      position: absolute;
+      left: 2%;
+      bottom: 3%;
+      z-index: 2;
+      background-color: rgba(#fff, 0.8);
+      padding: 20px;
+
+      .request-date-arrangement-tile-text-name {
+        font-weight: 600;
+        font-size: 130%;
+      }
+
+      .request-date-arrangement-tile-text-subheadline {
+        font-style: italic;
+        font-size: 110%;
+      }
+
+      .request-date-arrangement-tile-text-description {
+        margin: 15px 0 0 20px;
+      }
+    }
+  }
+}

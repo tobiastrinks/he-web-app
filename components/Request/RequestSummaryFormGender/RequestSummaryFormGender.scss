@@ -1,0 +1,22 @@
+.request-summary-form-gender {
+  display: flex;
+  margin: 2px 0;
+
+  .request-summary-form-gender-label {
+    width: 100px;
+    padding: 5px 0;
+  }
+
+  .request-summary-form-gender-input {
+    width: calc(100% - 100px);
+    display: flex;
+
+    .radio-item:first-child {
+      margin-right: 30px;
+    }
+
+    .radio-item {
+      margin: 5px 0;
+    }
+  }
+}

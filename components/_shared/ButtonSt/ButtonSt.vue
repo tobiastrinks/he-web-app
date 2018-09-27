@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <LocaleLink :to="to">
-      <button class="button" :class="{hasArrow: arrow}">
-        <FontAwesomeIcon :icon="['fas', 'chevron-left']" class="button-arrow left" v-if="arrow === 'left'" />
-        <span class="button-text">
-          <slot></slot>
-        </span>
-        <FontAwesomeIcon :icon="['fas', 'chevron-right']" class="button-arrow right" v-if="arrow === 'right'" />
-      </button>
-    </LocaleLink>
-  </div>
+  <button @click="onClick" class="button" :class="{hasArrow: arrow, inverted, disabled}">
+    <FontAwesomeIcon :icon="['fas', 'chevron-left']" class="button-arrow left" v-if="arrow === 'left'" />
+    <span class="button-text">
+      <slot></slot>
+    </span>
+    <FontAwesomeIcon :icon="['fas', 'chevron-right']" class="button-arrow right" v-if="arrow === 'right'" />
+  </button>
 </template>
 
 <script>
@@ -21,13 +17,22 @@ export default {
     LocaleLink
   },
   props: {
-    to: {
-      type: String,
-      required: true
-    },
     arrow: {
       type: String,
       default: null
+    },
+    inverted: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    onClick () {
+      this.$emit('click');
     }
   }
 };

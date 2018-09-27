@@ -16,9 +16,11 @@
             {{description}}
           </article>
           <div class="room-info-text-request">
-            <ButtonSt to="/anfragen">
-              <IntlText id="room.info.request" />
-            </ButtonSt>
+            <LocaleLink to="/anfragen">
+              <ButtonSt>
+                <IntlText id="room.info.request" />
+              </ButtonSt>
+            </LocaleLink>
             <p class="room-info-text-request-text">
               <IntlText id="room.info.minPrice" :values="{price: $n(minPrice, 'currency')}" />
             </p>
@@ -32,10 +34,11 @@
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'RoomInfo',
-  components: {IntlText, ButtonSt, ThumborImage},
+  components: {LocaleLink, IntlText, ButtonSt, ThumborImage},
   props: {
     groundPlanImage: {
       type: Object,

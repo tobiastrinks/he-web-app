@@ -1,9 +1,11 @@
 <template>
     <div class="room">
       <div class="room-head">
-        <ButtonSt class="room-back-button" to="/zimmer-und-preise" arrow="left">
-          <IntlText id="room.backToRoomsTop" />
-        </ButtonSt>
+        <LocaleLink to="/zimmer-und-preise">
+          <ButtonSt class="room-back-button" arrow="left">
+            <IntlText id="room.backToRoomsTop" />
+          </ButtonSt>
+        </LocaleLink>
         <h1 class="room-headline">{{headline}}</h1>
         <LocaleLink class="room-back-button-mobile" to="/zimmer-und-preise">
           <FontAwesomeIcon class="room-back-button-mobile-icon" :icon="['fas', 'chevron-left']" />
@@ -22,9 +24,11 @@
         :room="room"
       />
       <div class="room-request">
-        <ButtonSt to="/anfragen" class="room-request-button">
-          <IntlText id="room.requestNow" />
-        </ButtonSt>
+        <LocaleLink to="/anfragen">
+          <ButtonSt class="room-request-button">
+            <IntlText id="room.requestNow" />
+          </ButtonSt>
+        </LocaleLink>
         <LocaleLink to="/zimmer-und-preise">
           <IntlText id="room.backToRoomsBottom" class="room-request-overview-button hover-scale" />
         </LocaleLink>

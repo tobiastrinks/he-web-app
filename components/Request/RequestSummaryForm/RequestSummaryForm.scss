@@ -1,0 +1,37 @@
+.request-summary-form {
+  margin-top: 30px;
+
+  .request-summary-form-headline {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .request-summary-form-slash {
+    padding: 7px 0 3px;
+  }
+
+  .request-summary-form-split {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .request-summary-form-street-item {
+
+    &:first-child {
+      width: 70%;
+    }
+    &:last-child {
+      width: 20%;
+    }
+  }
+
+  .request-summary-form-plz-item {
+
+    &:first-child {
+      width: 55%;
+    }
+    &:last-child {
+      width: 35%;
+    }
+  }
+}

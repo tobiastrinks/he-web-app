@@ -16,7 +16,7 @@ export const modules = {
     contentType: 'room'
   },
   arrangements: {
-    storeName: 'arrangementStore',
+    storeName: 'arrangementsStore',
     contentType: 'arrangement'
   }
 };
@@ -40,5 +40,10 @@ export const pageModules = {
     storeName: 'pageRoomStore',
     storeDefaultsLoader: pageRoomStoreDefaultsLoader,
     modules: [modules.rooms]
+  },
+  request: {
+    storeName: 'pageRequestStore',
+    contentType: 'pageRequest',
+    modules: [modules.arrangements, modules.rooms]
   }
 };

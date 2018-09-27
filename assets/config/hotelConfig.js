@@ -2,21 +2,25 @@ export const seasons = [
   {
     labelId: 'jan',
     arrangementMinDays: 2,
-    priceFieldId: 'priceJan'
+    priceArrKey: 'jan',
+    priceUfKey: 'janUf'
   },
   {
     labelId: 'mar',
     arrangementMinDays: 3,
-    priceFieldId: 'priceMar'
+    priceArrKey: 'mar',
+    priceUfKey: 'marUf'
   },
   {
     labelId: 'may',
     arrangementMinDays: 4,
-    priceFieldId: 'priceMay'
+    priceArrKey: 'may',
+    priceUfKey: 'mayUf'
   },
   {
     labelId: 'jul',
     arrangementMinDays: 7,
-    priceFieldId: 'priceJul'
+    priceArrKey: 'jul',
+    priceUfKey: 'julUf'
   }
 ];

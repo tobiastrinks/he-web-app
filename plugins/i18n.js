@@ -26,6 +26,18 @@ export default ({ app, store }) => {
           currency: 'EUR'
         }
       }
+    },
+    dateTimeFormats: {
+      'de': {
+        short: {
+          day: '2-digit', month: '2-digit', year: 'numeric'
+        }
+      },
+      'en': {
+        short: {
+          day: 'numeric', month: 'numeric', year: 'numeric'
+        }
+      }
     }
   });
 };

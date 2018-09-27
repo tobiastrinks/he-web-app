@@ -24,7 +24,7 @@
     "prices": {
       "perPersonAndDay": "<b>PRICES</b> per person and day",
       "HP": "half-board",
-      "UF": "bed and  breakfast",
+      "UF": "bed and breakfast",
       "season": {
         "label": "<b>season</b>",
         "jan": "jan., feb., nov., dec.",
@@ -45,6 +45,38 @@
     "suggestion": {
       "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
       "button": "SHOW MORE"
+    }
+  },
+  "request": {
+    "rooms": {
+      "headline": "room type"
+    },
+    "bookingType": {
+      "headline": "booking type",
+      "uf": "bed and breakfast",
+      "hp": "half-board",
+      "arr": "arrangements / brief trips"
+    },
+    "dates": {
+      "headline": "dates",
+      "fromLabel": "from",
+      "toLabel": "till"
+    },
+    "persons": {
+      "headline": "participants",
+      "adultLabel": "adults",
+      "childLabel": "children",
+      "fromToLabel": "({from}-{to} years)",
+      "fromLabel": "(from {from} years)"
+    },
+    "extras": {
+      "headline": "additional services",
+      "parkingSpace": "parking space",
+      "pet": "pet"
+    },
+    "comments": {
+      "headline": "comments",
+      "placeholder": "What else can we do for you? Do you have any questions?"
     }
   },
   "footer": {

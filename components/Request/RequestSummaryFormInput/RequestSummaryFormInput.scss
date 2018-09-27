@@ -1,0 +1,21 @@
+.request-summary-form-input {
+  display: flex;
+  margin: 2px 0;
+
+  .request-summary-form-input-label {
+    width: 100px;
+    padding: 5px 0;
+  }
+
+  .request-summary-form-input-field {
+    width: calc(100% - 100px);
+
+    &.fullWidth {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+}

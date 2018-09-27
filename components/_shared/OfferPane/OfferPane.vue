@@ -19,7 +19,9 @@
           </article>
         </div>
         <div class="offer-pane-button">
-          <ButtonSt :to="buttonLink">{{button}}</ButtonSt>
+          <LocaleLink :to="buttonLink">
+            <ButtonSt>{{button}}</ButtonSt>
+          </LocaleLink>
         </div>
       </div>
     </div>
@@ -28,9 +30,10 @@
 <script>
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 export default {
   name: 'OfferPane',
-  components: {ButtonSt, ThumborImage},
+  components: {LocaleLink, ButtonSt, ThumborImage},
   props: {
     cover: {
       type: Object,

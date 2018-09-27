@@ -1,0 +1,24 @@
+.request-summary-data {
+
+  .request-summary-data-table {
+    border-collapse: collapse;
+
+    .request-summary-data-tr {
+
+      .request-summary-data-td {
+        vertical-align: top;
+        margin: 0;
+        padding: 3px 10px;
+      }
+
+      .request-summary-data-td:first-child {
+        padding-left: 0;
+        font-weight: 600;
+      }
+
+      .request-summary-data-td:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}

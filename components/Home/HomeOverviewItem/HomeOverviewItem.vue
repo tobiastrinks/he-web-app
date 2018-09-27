@@ -19,9 +19,11 @@
           </article>
         </div>
         <div class="home-overview-item-text-button">
-          <ButtonSt :to="buttonLink">
-            {{buttonText}}
-          </ButtonSt>
+          <LocaleLink :to="buttonLink">
+            <ButtonSt>
+              {{buttonText}}
+            </ButtonSt>
+          </LocaleLink>
         </div>
       </div>
     </div>
@@ -31,10 +33,12 @@
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import VueMarkdown from 'vue-markdown';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'HomeOverviewItem',
   components: {
+    LocaleLink,
     ButtonSt,
     ThumborImage,
     VueMarkdown
