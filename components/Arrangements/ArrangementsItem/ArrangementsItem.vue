@@ -3,9 +3,11 @@
     v-if="activeYear"
     class="arrangements-item"
     :class="{mobileOpen}"
-    @click="switchOnMobile"
   >
-    <div class="arrangements-item-image">
+    <div
+      class="arrangements-item-image"
+      @click="switchOnMobile"
+    >
       <ThumborImage
         :store="arrangement.image"
         :dimensions="{

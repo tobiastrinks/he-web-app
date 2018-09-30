@@ -9,10 +9,10 @@
     margin: 50px 0;
   }
 
-  &.mobileOpen {
+  &:not(.mobileOpen) {
 
     .arrangements-item-text {
-      display: block;
+      display: none;
     }
   }
 
@@ -58,10 +58,9 @@
 
   .arrangements-item-text {
     width: 100%;
-    display: none;
 
     @media #{$sm} {
-      display: flex;
+      display: flex !important;
       width: 70%;
     }
 
