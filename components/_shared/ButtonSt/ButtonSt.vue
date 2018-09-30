@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick" class="button" :class="{hasArrow: arrow, inverted, disabled}">
+  <button @click="onClick" class="button" :class="{hasArrow: arrow, inverted, disabled, alignLeft}">
     <FontAwesomeIcon :icon="['fas', 'chevron-left']" class="button-arrow left" v-if="arrow === 'left'" />
     <span class="button-text">
       <slot></slot>
@@ -26,6 +26,10 @@ export default {
       default: false
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    alignLeft: {
       type: Boolean,
       default: false
     }

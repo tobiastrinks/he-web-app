@@ -1,0 +1,74 @@
+@import "~/assets/style/variables.scss";
+
+.arrangements-item-prices {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: $color-grey-light;
+
+  @media #{$sm} {
+    width: 45%;
+    padding: 30px 15px;
+  }
+
+  @media #{$md} {
+    width: 40%;
+    padding: 30px;
+  }
+
+  .arrangements-item-prices-years {
+
+    @media #{$sm} {
+      text-align: center;
+    }
+
+    .arrangements-item-prices-years-item {
+      margin: 0 10px;
+      color: $color-grey;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $color-primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .arrangements-item-prices-bookable {
+    font-style: italic;
+    font-size: 90%;
+    margin: 5px 0;
+
+    @media #{$sm} {
+      text-align: center;
+    }
+  }
+
+  .arrangements-item-prices-table {
+    margin-top: 20px;
+
+    table {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .arrangements-item-prices-table-td {
+      padding: 0;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

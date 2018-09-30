@@ -34,7 +34,7 @@
           <NavItem intlId="nav.items.hotel" to="/hotel" />
           <NavItem intlId="nav.items.rooms" to="/zimmer-und-preise" />
           <NavItem intlId="nav.items.restaurant" to="/restaurant" />
-          <NavItem intlId="nav.items.arrangements" to="/kurzulaub" />
+          <NavItem intlId="nav.items.arrangements" to="/kurzurlaub" />
           <NavItem intlId="nav.items.contact" to="/kontakt-und-anreise" />
         </div>
       </div>

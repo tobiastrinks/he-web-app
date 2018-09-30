@@ -1,0 +1,32 @@
+@import "~/assets/style/variables.scss";
+
+.arrangements-item-services {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+
+  @media #{$sm} {
+    width: 55%;
+    padding: 30px 15px;
+  }
+
+  @media #{$md} {
+    width: 60%;
+    padding: 30px;
+  }
+
+  .arrangements-item-services-headline {
+    font-size: 110%;
+    font-weight: 600;
+  }
+
+  .arrangements-item-services-subheadline {
+    font-size: 110%;
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  .arrangements-item-services-description {
+    margin: 30px 0 30px 20px;
+  }
+}

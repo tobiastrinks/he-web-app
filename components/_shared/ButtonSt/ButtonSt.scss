@@ -20,6 +20,10 @@
     transform: scale(1.1, 1.1);
   }
 
+  &.alignLeft {
+    text-align: left;
+  }
+
   &.inverted:not(.disabled) {
     background-color: #000;
     color: #fff;
@@ -36,7 +40,7 @@
   }
 
   .button-text {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   .button-arrow {

@@ -1,7 +1,7 @@
 <template>
     <div class="head-img">
       <div class="head-img-image">
-        <ThumborImage :key="index"
+        <ThumborImage
             :store="image"
             :dimensions="{
             sm: [600, 200],

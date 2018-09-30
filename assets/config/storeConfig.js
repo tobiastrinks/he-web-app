@@ -41,6 +41,11 @@ export const pageModules = {
     storeDefaultsLoader: pageRoomStoreDefaultsLoader,
     modules: [modules.rooms]
   },
+  arrangements: {
+    storeName: 'pageArrangementsStore',
+    contentType: 'pageArrangements',
+    modules: [modules.arrangements, modules.rooms]
+  },
   request: {
     storeName: 'pageRequestStore',
     contentType: 'pageRequest',

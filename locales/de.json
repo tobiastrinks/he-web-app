@@ -47,6 +47,13 @@
       "button": "MEHR"
     }
   },
+  "arrangements": {
+    "item": {
+      "bookable": "Buchbarkeit: ",
+      "bookableDelimiter": " bis zum ",
+      "requestButton": "Anfragen"
+    }
+  },
   "request": {
     "rooms": {
       "headline": "Zimmertyp"
