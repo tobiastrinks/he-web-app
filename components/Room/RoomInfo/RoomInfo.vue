@@ -16,7 +16,7 @@
             {{description}}
           </article>
           <div class="room-info-text-request">
-            <LocaleLink to="/anfragen">
+            <LocaleLink to="/buchungsanfrage">
               <ButtonSt>
                 <IntlText id="room.info.request" />
               </ButtonSt>

@@ -1,0 +1,47 @@
+@import '~/assets/style/variables.scss';
+
+.hotel-wellness-item {
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media #{$sm} {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &.reversed {
+
+    @media #{$sm} {
+      flex-direction: column-reverse;
+
+      .hotel-wellness-item-image {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .hotel-wellness-item-image {
+    width: 100%;
+    height: 180px;
+
+    @media #{$sm} {
+      height: 200px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .hotel-wellness-item-text {
+    text-align: justify;
+    padding: 20px 0;
+
+    @media #{$sm} {
+      padding: 0;
+    }
+
+    .hotel-wellness-item-text-headline {
+      font-weight: 600;
+    }
+  }
+}

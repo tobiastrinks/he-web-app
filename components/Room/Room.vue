@@ -24,11 +24,12 @@
         :room="room"
       />
       <div class="room-request">
-        <LocaleLink to="/anfragen">
+        <LocaleLink to="/buchungsanfrage">
           <ButtonSt class="room-request-button">
             <IntlText id="room.requestNow" />
           </ButtonSt>
         </LocaleLink>
+        <br />
         <LocaleLink to="/zimmer-und-preise">
           <IntlText id="room.backToRoomsBottom" class="room-request-overview-button hover-scale" />
         </LocaleLink>

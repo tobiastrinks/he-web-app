@@ -1,0 +1,22 @@
+@import '~/assets/style/variables.scss';
+
+.hotel-wellness-items {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+
+  @media #{$sm} {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  @media #{$lg} {
+    max-width: 700px;
+  }
+}
+
+.hotel-wellness-button {
+  margin: 20px 0;
+  text-align: center;
+}

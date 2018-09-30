@@ -31,6 +31,11 @@ export const pageModules = {
     contentType: 'pageHome',
     modules: [modules.focusOffers]
   },
+  hotel: {
+    storeName: 'pageHotelStore',
+    contentType: 'pageHotel',
+    modules: []
+  },
   rooms: {
     storeName: 'pageRoomsStore',
     contentType: 'pageRooms',
