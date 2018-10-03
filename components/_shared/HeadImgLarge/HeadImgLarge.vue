@@ -1,15 +1,31 @@
 <template>
     <div class="head-img-large">
       <div class="head-img-large-images">
-        <ThumborImage v-for="(image, index) in images" :key="index"
-          :store="image"
-          :dimensions="{
-            sm: [600, 800],
-            md: [900, 0],
-            lg: [2000, 0]
-          }"
-          :cover="true"
-        />
+        <no-ssr>
+          <Carousel
+            ref="carousel"
+            :perPage="1"
+            :minSwipeDistance="50"
+            :paginationEnabled="false"
+            :loop="true"
+            :autoplay="true"
+            :autoplayTimeout="5000"
+          >
+            <Slide v-for="(image, key) in images" :key="key">
+              <div class="head-img-large-images-item">
+                <ThumborImage
+                  :store="image"
+                  :dimensions="{
+                    sm: [600, 800],
+                    md: [900, 0],
+                    lg: [2000, 0]
+                  }"
+                  :cover="true"
+                />
+              </div>
+            </Slide>
+          </Carousel>
+        </no-ssr>
       </div>
       <h1 class="head-img-large-headline">
         {{headline}}
@@ -32,9 +48,15 @@
 
 <script>
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'HeadImgLarge',
+  components: {
+    ThumborImage,
+    Carousel,
+    Slide
+  },
   props: {
     images: {
       type: Array,
@@ -52,9 +74,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  components: {
-    ThumborImage
   }
 };
 </script>
