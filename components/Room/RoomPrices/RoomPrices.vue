@@ -28,6 +28,7 @@
         :type="priceType"
         :year="priceYear"
       />
+      <RoomPricesConditions />
     </div>
 </template>
 
@@ -37,10 +38,11 @@ import IntlText from '@/components/_shared/IntlText/IntlText';
 import { getLocalStorage } from '@/assets/js/cachingStoreHelper';
 import RoomPricesSwitch from '@/components/Room/RoomPricesSwitch/RoomPricesSwitch';
 import RoomPricesTable from '@/components/Room/RoomPricesTable/RoomPricesTable';
+import RoomPricesConditions from '@/components/Room/RoomPricesConditions/RoomPricesConditions';
 
 export default {
   name: 'RoomPrices',
-  components: {RoomPricesTable, RoomPricesSwitch, IntlText},
+  components: {RoomPricesConditions, RoomPricesTable, RoomPricesSwitch, IntlText},
   props: {
     room: {
       type: Object,

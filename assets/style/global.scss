@@ -51,9 +51,11 @@ a {
 
 .hover-scale {
   transition: all 0.5s;
+  -webkit-user-select: none;
 
   &:hover {
     transform: scale(1.1, 1.1);
+    cursor: pointer;
   }
 }
 

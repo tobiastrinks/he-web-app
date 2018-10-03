@@ -2,6 +2,7 @@
 
 .room-prices-switch-item {
   margin: 0 10px;
+  user-select: none;
 
   &.active {
     color: $color-primary;
@@ -14,6 +15,10 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   @media #{$md} {

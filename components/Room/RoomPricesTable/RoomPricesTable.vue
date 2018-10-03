@@ -2,61 +2,63 @@
     <div class="room-prices-table">
       <div class="room-prices-table-large">
         <table>
-          <tr class="room-prices-table-large-line">
-            <td class="room-prices-table-large-td">
-              <IntlText id="room.prices.season.label" />
-            </td>
-            <td
-              class="room-prices-table-large-td"
-              v-for="(seasonLabelId, key) in seasons.map(season => { return season.labelId; })"
-              :key="key"
-            >
-              <IntlText :id="`room.prices.season.${seasonLabelId}`" />
-            </td>
-          </tr>
-          <tr class="room-prices-table-large-line border-bottom">
-            <td class="room-prices-table-large-td">
-              <IntlText id="room.prices.arrangement.label" />
-            </td>
-            <td
-              class="room-prices-table-large-td"
-              v-for="(arrangementMinDays, key) in seasons.map(season => { return season.arrangementMinDays; })"
-              :key="key"
-            >
-              <span>
-                {{$tc('room.prices.arrangement.value', arrangementMinDays, {minDays: arrangementMinDays})}}
-              </span>
-            </td>
-          </tr>
+          <tbody>
+            <tr class="room-prices-table-large-line">
+              <td class="room-prices-table-large-td">
+                <IntlText id="room.prices.season.label" />
+              </td>
+              <td
+                class="room-prices-table-large-td"
+                v-for="(seasonLabelId, key) in seasons.map(season => { return season.labelId; })"
+                :key="key"
+              >
+                <IntlText :id="`room.prices.season.${seasonLabelId}`" />
+              </td>
+            </tr>
+            <tr class="room-prices-table-large-line border-bottom">
+              <td class="room-prices-table-large-td">
+                <IntlText id="room.prices.arrangement.label" />
+              </td>
+              <td
+                class="room-prices-table-large-td"
+                v-for="(arrangementMinDays, key) in seasons.map(season => { return season.arrangementMinDays; })"
+                :key="key"
+              >
+                <span>
+                  {{$tc('room.prices.arrangement.value', arrangementMinDays, {minDays: arrangementMinDays})}}
+                </span>
+              </td>
+            </tr>
 
-          <tr class="room-prices-table-large-line">
-            <td class="room-prices-table-large-td">
-              <IntlText id="room.prices.priceNormal" />
-            </td>
-            <td
-              class="room-prices-table-large-td"
-              v-for="(price, key) in pricesNormal"
-              :key="key"
-            >
-              <span>
-                {{$n(price, 'currency')}}
-              </span>
-            </td>
-          </tr>
-          <tr class="room-prices-table-large-line" v-show="type === priceTypes.HP">
-            <td class="room-prices-table-large-td">
-              <IntlText id="room.prices.priceArrangement" />
-            </td>
-            <td
-              class="room-prices-table-large-td"
-              v-for="(price, key) in pricesArr"
-              :key="key"
-            >
-              <span>
-                {{$n(price, 'currency')}}
-              </span>
-            </td>
-          </tr>
+            <tr class="room-prices-table-large-line">
+              <td class="room-prices-table-large-td">
+                <IntlText id="room.prices.priceNormal" />
+              </td>
+              <td
+                class="room-prices-table-large-td"
+                v-for="(price, key) in pricesNormal"
+                :key="key"
+              >
+                <span>
+                  {{$n(price, 'currency')}}
+                </span>
+              </td>
+            </tr>
+            <tr class="room-prices-table-large-line" v-show="type === priceTypes.HP">
+              <td class="room-prices-table-large-td">
+                <IntlText id="room.prices.priceArrangement" />
+              </td>
+              <td
+                class="room-prices-table-large-td"
+                v-for="(price, key) in pricesArr"
+                :key="key"
+              >
+                <span>
+                  {{$n(price, 'currency')}}
+                </span>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="room-prices-table-mobile">
@@ -69,30 +71,32 @@
             <IntlText :id="`room.prices.season.${season.labelId}`" />
           </p>
           <table class="room-prices-table-mobile-season-prices">
-            <tr class="room-prices-table-mobile-season-prices-line">
-              <td class="room-prices-table-mobile-season-prices-td">
-                <span>
-                  <IntlText id="room.prices.priceNormal" />
-                </span>
-              </td>
-              <td class="room-prices-table-mobile-season-prices-td">
-                <span>
-                  {{$n(pricesNormal[index], 'currency')}}
-                </span>
-              </td>
-            </tr>
-            <tr class="room-prices-table-mobile-season-prices-line" v-show="type === priceTypes.HP">
-              <td class="room-prices-table-mobile-season-prices-td">
-                <span>
-                  {{$tc('room.prices.arrangement.value', season.arrangementMinDays, {minDays: season.arrangementMinDays})}}
-                </span>
-              </td>
-              <td class="room-prices-table-mobile-season-prices-td">
-                <span>
-                  {{$n(pricesArr[index], 'currency')}}
-                </span>
-              </td>
-            </tr>
+            <tbody>
+              <tr class="room-prices-table-mobile-season-prices-line">
+                <td class="room-prices-table-mobile-season-prices-td">
+                  <span>
+                    <IntlText id="room.prices.priceNormal" />
+                  </span>
+                </td>
+                <td class="room-prices-table-mobile-season-prices-td">
+                  <span>
+                    {{$n(pricesNormal[index], 'currency')}}
+                  </span>
+                </td>
+              </tr>
+              <tr class="room-prices-table-mobile-season-prices-line" v-show="type === priceTypes.HP">
+                <td class="room-prices-table-mobile-season-prices-td">
+                  <span>
+                    {{$tc('room.prices.arrangement.value', season.arrangementMinDays, {minDays: season.arrangementMinDays})}}
+                  </span>
+                </td>
+                <td class="room-prices-table-mobile-season-prices-td">
+                  <span>
+                    {{$n(pricesArr[index], 'currency')}}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
           </table>
           <hr class="hr-short room-prices-table-mobile-season-hr" />
         </div>

@@ -1,0 +1,36 @@
+@import "~/assets/style/variables.scss";
+
+.room-prices-conditions-table {
+  margin: 30px 0;
+
+  .room-prices-conditions-table-headline {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  table {
+    border-collapse: collapse;
+
+    .room-prices-conditions-table-td {
+      padding: 5px 10px;
+    }
+
+    .room-prices-conditions-table-tr {
+
+      .room-prices-conditions-table-td {
+
+        &:first-child {
+          border-right: 1px solid $color-grey;
+          padding-left: 0;
+        }
+      }
+
+      &:first-child {
+
+        .room-prices-conditions-table-td {
+          border-bottom: 1px solid $color-grey;
+        }
+      }
+    }
+  }
+}

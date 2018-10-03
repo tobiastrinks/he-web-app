@@ -18,6 +18,10 @@ export const modules = {
   arrangements: {
     storeName: 'arrangementsStore',
     contentType: 'arrangement'
+  },
+  bookingConditions: {
+    storeName: 'bookingConditionsStore',
+    contentType: 'bookingConditions'
   }
 };
 
@@ -44,7 +48,7 @@ export const pageModules = {
   room: {
     storeName: 'pageRoomStore',
     storeDefaultsLoader: pageRoomStoreDefaultsLoader,
-    modules: [modules.rooms]
+    modules: [modules.rooms, modules.bookingConditions]
   },
   arrangements: {
     storeName: 'pageArrangementsStore',
