@@ -2,19 +2,19 @@
     <div class="footer-nav">
       <div class="footer-nav-content">
         <div class="footer-nav-item hover-scale">
-          <LocaleLink to="/kontakt-und-anreise">
+          <LocaleLink :to="routes.CONTACT">
             <IntlText id="footer.contact" />
           </LocaleLink>
         </div>
         <span>-</span>
         <div class="footer-nav-item hover-scale">
-          <LocaleLink to="/impressum">
+          <LocaleLink :to="routes.IMPRINT">
             <IntlText id="footer.imprint" />
           </LocaleLink>
         </div>
         <span>-</span>
         <div class="footer-nav-item hover-scale">
-          <LocaleLink to="/datenschutz">
+          <LocaleLink :to="routes.DATAPROTECTION">
             <IntlText id="footer.dataProtection" />
           </LocaleLink>
         </div>
@@ -26,12 +26,18 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'FooterNav',
-  components: {LocaleLink, IntlText}
+  components: {LocaleLink, IntlText},
+  data () {
+    return {
+      routes
+    };
+  }
 };
 </script>
 

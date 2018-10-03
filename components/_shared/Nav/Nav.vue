@@ -5,7 +5,7 @@
         <FontAwesomeIcon v-show="!this.store.mobileOpen" :icon="['fas', 'bars']" />
         <FontAwesomeIcon v-show="this.store.mobileOpen" :icon="['fas', 'times']" />
       </div>
-      <LocaleLink to="/">
+      <LocaleLink :to="routes.HOME">
         <div class="nav-mobile-bar-logo">
           <img :src="content.logoMobile.fields.file.url" />
         </div>
@@ -19,7 +19,7 @@
     <div class="nav-content" :class="{mobileOpen: this.store.mobileOpen}">
       <div class="nav-left">
         <div class="nav-logo">
-          <LocaleLink to="/">
+          <LocaleLink :to="routes.HOME">
             <ThumborImage
             :store="content.logo"
             :dimensions="{
@@ -31,16 +31,16 @@
           </LocaleLink>
         </div>
         <div class="nav-text">
-          <NavItem intlId="nav.items.hotel" to="/hotel" />
-          <NavItem intlId="nav.items.rooms" to="/zimmer-und-preise" />
-          <NavItem intlId="nav.items.arrangements" to="/kurzurlaub" />
-          <NavItem intlId="nav.items.contact" to="/kontakt-und-anreise" />
+          <NavItem intlId="nav.items.hotel" :to="routes.HOTEL" />
+          <NavItem intlId="nav.items.rooms" :to="routes.ROOMS" />
+          <NavItem intlId="nav.items.arrangements" :to="routes.ARRANGEMENTS" />
+          <NavItem intlId="nav.items.contact" :to="routes.CONTACT" />
         </div>
       </div>
       <div class="nav-right">
         <NavLocale />
         <div class="nav-mobile-request-room">
-          <NavItem intlId="nav.items.request" to="/buchungsanfrage" :marked="true" />
+          <NavItem intlId="nav.items.request" :to="routes.REQUEST" :marked="true" />
         </div>
       </div>
       <div class="nav-mobile-sun">
@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
 import ThumborImage from '~/components/_shared/ThumborImage/ThumborImage';
 import LocaleLink from '~/components/_shared/LocaleLink/LocaleLink';
 import NavItem from './NavItem/NavItem';
@@ -72,7 +73,8 @@ export default {
   data: () => {
     return {
       couldHaveOpacity: true,
-      mobileOpen: false
+      mobileOpen: false,
+      routes
     };
   },
   computed: {

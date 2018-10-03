@@ -6,18 +6,31 @@
         :image="content.headImg.fields.image"
       />
       <div class="arrangements-nav">
-
+        <div class="arrangements-nav-item">
+          <ButtonSt @click="setShowHolidays(false)" :inverted="!arrStore.showHolidays">
+            <IntlText id="arrangements.nav.season" />
+          </ButtonSt>
+        </div>
+        <div class="arrangements-nav-item">
+          <ButtonSt @click="setShowHolidays(true)" :inverted="arrStore.showHolidays">
+            <IntlText id="arrangements.nav.holiday" />
+          </ButtonSt>
+        </div>
       </div>
       <div class="arrangements-items">
-        <div class="arrangements-items-seasons">
+        <div v-show="!arrStore.showHolidays" class="arrangements-items-seasons">
           <ArrangementsItem
             v-for="(item, index) in sortedArrangements"
             :key="index"
             :arrangements="item"
           />
         </div>
-        <div class="arrangements-items-holidays">
-          <!-- TODO -->
+        <div v-show="arrStore.showHolidays" class="arrangements-items-holidays">
+          <ArrangementsItem
+            v-for="(item, index) in sortedHolidays"
+            :key="index"
+            :arrangements="item"
+          />
         </div>
       </div>
     </div>
@@ -27,10 +40,14 @@
 import { arrangementsOrder } from '@/components/Arrangements/arrangementsConfig';
 import HeadImg from '@/components/_shared/HeadImg/HeadImg';
 import ArrangementsItem from './ArrangementsItem/ArrangementsItem';
+import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import IntlText from '@/components/_shared/IntlText/IntlText';
 
 export default {
   name: 'Arrangements',
   components: {
+    IntlText,
+    ButtonSt,
     HeadImg,
     ArrangementsItem
   },
@@ -39,8 +56,14 @@ export default {
       arrangements: []
     };
   },
+  methods: {
+    setShowHolidays (value) {
+      this.$store.commit('pageArrangementsStore/setShowHolidays', value);
+    }
+  },
   computed: {
-    content () { return this.$store.state.pageArrangementsStore.content[0]; },
+    arrStore () { return this.$store.state.pageArrangementsStore; },
+    content () { return this.arrStore.content[0]; },
     sortedArrangements () {
       const arrangements = this.$store.state.arrangementsStore.content.filter(a => !a.holiday);
       const currentMonth = new Date().getMonth();
@@ -59,8 +82,25 @@ export default {
       });
     },
     sortedHolidays () {
-      const holiday = this.$store.state.arrangementsStore.content.filter(a => a.holiday);
-      return holiday;
+      const holidays = this.$store.state.arrangementsStore.content.filter(a => {
+        if (a.holiday) {
+          // filter expired
+          return (new Date().getTime() < new Date(a.bookableTo).getTime());
+        }
+      });
+
+      // group by priceKey
+      const priceKeys = holidays.map(holiday => holiday.priceKey).filter((module, index, self) => {
+        return self.indexOf(module) === index;
+      });
+      const groupedHolidays = priceKeys.map(priceKey => {
+        return holidays
+          .filter(h => h.priceKey === priceKey)
+          .sort((h1, h2) => h1.bookableFrom > h2.bookableFrom);
+      });
+
+      // sort by date
+      return groupedHolidays.sort((h1, h2) => h1[0].bookableFrom > h2[0].bookableFrom);
     }
   }
 };

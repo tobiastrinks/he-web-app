@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="hotel-rooms-text-button">
-        <LocaleLink to="/zimmer-und-preise">
+        <LocaleLink :to="routes.ROOMS">
           <ButtonSt>{{content.roomsButtonTitle}}</ButtonSt>
         </LocaleLink>
       </div>
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
@@ -36,6 +37,11 @@ import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 export default {
   name: 'HotelRooms',
   components: {LocaleLink, ThumborImage, ButtonSt},
+  data: () => {
+    return {
+      routes
+    };
+  },
   computed: {
     content () {
       return this.$store.state.pageHotelStore.content[0];

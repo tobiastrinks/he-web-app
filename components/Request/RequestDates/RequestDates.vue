@@ -61,7 +61,7 @@ export default {
     },
     setActiveArrangement (dates) {
       if (this.requestStore.bookingType === 'arr') {
-        const activeArrangement = this.arrangements.filter(arrangement => {
+        const activeArrangements = this.arrangements.filter(arrangement => {
           const {
             bookableFrom,
             bookableTo,
@@ -87,8 +87,10 @@ export default {
             });
             return activeMonth.length > 0;
           }
-        })[0];
-        this.$store.commit('pageRequestStore/setActiveArrangement', activeArrangement);
+        });
+        // prefer holidays
+        const activeArrangementsSorted = activeArrangements.sort(a1 => !a1.holiday);
+        this.$store.commit('pageRequestStore/setActiveArrangement', activeArrangementsSorted[0]);
       }
     }
   }

@@ -4,7 +4,7 @@
         <template slot="right">
           <div class="radio-wrapper">
             <div
-              v-for="(bookingType, index) in bookingTypes"
+              v-for="(bookingType, index) in bookingTypesForm"
               :key="index"
               class="radio-item"
             >
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import {bookingTypes} from '@/components/Request/constants';
 import RequestItemTemplate from '@/components/Request/RequestItemTemplate/RequestItemTemplate';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 
@@ -40,17 +41,17 @@ export default {
   },
   data () {
     return {
-      bookingTypes: [
+      bookingTypesForm: [
         {
-          value: 'uf',
+          value: bookingTypes.UF,
           intlId: 'request.bookingType.uf'
         },
         {
-          value: 'hp',
+          value: bookingTypes.HP,
           intlId: 'request.bookingType.hp'
         },
         {
-          value: 'arr',
+          value: bookingTypes.ARR,
           intlId: 'request.bookingType.arr'
         }
       ]

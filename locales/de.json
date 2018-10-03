@@ -73,6 +73,10 @@
     }
   },
   "arrangements": {
+    "nav": {
+      "season": "Saisonale Angebote",
+      "holiday": "Feiertagsangebote"
+    },
     "item": {
       "bookable": "Buchbarkeit: ",
       "bookableDelimiter": " bis zum ",

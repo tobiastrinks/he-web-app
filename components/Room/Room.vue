@@ -1,13 +1,13 @@
 <template>
     <div class="room">
       <div class="room-head">
-        <LocaleLink to="/zimmer-und-preise">
+        <LocaleLink :to="routes.ROOMS">
           <ButtonSt class="room-back-button" arrow="left">
             <IntlText id="room.backToRoomsTop" />
           </ButtonSt>
         </LocaleLink>
         <h1 class="room-headline">{{headline}}</h1>
-        <LocaleLink class="room-back-button-mobile" to="/zimmer-und-preise">
+        <LocaleLink class="room-back-button-mobile" :to="routes.ROOMS">
           <FontAwesomeIcon class="room-back-button-mobile-icon" :icon="['fas', 'chevron-left']" />
           <IntlText id="room.backToRoomsTop" />
         </LocaleLink>
@@ -19,18 +19,19 @@
         :ground-plan-image="room.groundPlan"
         :description="room.description"
         :minPrice="minPrice"
+        @clickRequest="prepareRequest"
       />
       <RoomPrices
         :room="room"
       />
       <div class="room-request">
-        <LocaleLink to="/buchungsanfrage">
+        <LocaleLink :to="routes.REQUEST" @click="prepareRequest">
           <ButtonSt class="room-request-button">
             <IntlText id="room.requestNow" />
           </ButtonSt>
         </LocaleLink>
         <br />
-        <LocaleLink to="/zimmer-und-preise">
+        <LocaleLink :to="routes.ROOMS">
           <IntlText id="room.backToRoomsBottom" class="room-request-overview-button hover-scale" />
         </LocaleLink>
       </div>
@@ -50,6 +51,8 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
+import {entryPoints} from '@/components/Request/constants';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import RoomSlider from '@/components/Room/RoomSlider/RoomSlider';
@@ -61,6 +64,11 @@ import OfferPane from '@/components/_shared/OfferPane/OfferPane';
 export default {
   name: 'Room',
   components: {OfferPane, RoomPrices, LocaleLink, RoomSlider, RoomInfo, IntlText, ButtonSt},
+  data: () => {
+    return {
+      routes
+    };
+  },
   computed: {
     room () {
       const content = this.$store.state.roomsStore.content;
@@ -87,6 +95,12 @@ export default {
           return result[0];
         }
       }
+    }
+  },
+  methods: {
+    prepareRequest () {
+      this.$store.commit('pageRequestStore/setEntryPoint', entryPoints.ROOM);
+      this.$store.commit('pageRequestStore/setRoom', this.room);
     }
   }
 };

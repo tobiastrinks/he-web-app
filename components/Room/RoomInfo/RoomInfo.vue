@@ -16,7 +16,7 @@
             {{description}}
           </article>
           <div class="room-info-text-request">
-            <LocaleLink to="/buchungsanfrage">
+            <LocaleLink :to="routes.REQUEST" @click="$emit('clickRequest')">
               <ButtonSt>
                 <IntlText id="room.info.request" />
               </ButtonSt>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
@@ -52,6 +53,11 @@ export default {
       type: Number,
       required: true
     }
+  },
+  data: () => {
+    return {
+      routes
+    };
   }
 };
 </script>

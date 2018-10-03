@@ -1,7 +1,9 @@
 <template>
+  <span @click.prevent="$emit('click')">
     <nuxt-link :to="getLocaleLink()">
       <slot></slot>
     </nuxt-link>
+  </span>
 </template>
 
 <script>

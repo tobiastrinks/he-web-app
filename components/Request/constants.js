@@ -3,3 +3,9 @@ export const entryPoints = {
   ROOM: 'ROOM',
   ARRANGEMENT: 'ARRANGEMENT'
 };
+
+export const bookingTypes = {
+  UF: 'uf',
+  HP: 'hp',
+  ARR: 'arr'
+};
