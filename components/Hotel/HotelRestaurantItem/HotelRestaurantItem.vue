@@ -19,8 +19,10 @@
             {{content.description}}
           </div>
         </div>
-        <div class="hotel-restaurant-item-text-button">
-          <ButtonSt>{{content.buttonTitle}}</ButtonSt>
+        <div v-if="content.buttonLink && content.buttonTitle" class="hotel-restaurant-item-text-button">
+          <LocaleLink :to="content.buttonLink">
+            <ButtonSt>{{content.buttonTitle}}</ButtonSt>
+          </LocaleLink>
         </div>
       </div>
     </div>
@@ -30,10 +32,12 @@
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import VueMarkdown from 'vue-markdown';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'HotelRestaurantItem',
   components: {
+    LocaleLink,
     ButtonSt,
     ThumborImage,
     VueMarkdown

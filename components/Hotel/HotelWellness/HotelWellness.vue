@@ -8,9 +8,9 @@
           :reversed="index % 2 > 0"
         />
       </div>
-      <div class="hotel-wellness-button">
-        <ButtonSt>{{content.wellnessButtonTitle}}</ButtonSt>
-      </div>
+      <!--<div class="hotel-wellness-button">-->
+        <!--<ButtonSt>{{content.wellnessButtonTitle}}</ButtonSt>-->
+      <!--</div>-->
     </div>
 </template>
 
