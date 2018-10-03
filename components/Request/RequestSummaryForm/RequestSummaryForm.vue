@@ -13,7 +13,7 @@
           <RequestSummaryFormInput class="request-summary-form-street-item" :hideLabel="true" propertyName="houseNumber" mutationName="setHouseNumber" />
         </div>
         <div class="request-summary-form-split">
-          <RequestSummaryFormInput class="request-summary-form-plz-item" propertyName="plz" mutationName="setPlz" />
+          <RequestSummaryFormInput class="request-summary-form-zip-item" propertyName="plz" mutationName="setPlz" />
           <span class="request-summary-form-slash"> / </span>
           <RequestSummaryFormInput class="request-summary-form-city-item" :hideLabel="true" propertyName="city" mutationName="setCity" />
         </div>

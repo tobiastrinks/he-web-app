@@ -56,8 +56,8 @@ export default {
         return t('street');
       } else if (!s.houseNumber) {
         return t('houseNumber');
-      } else if (!s.plz) {
-        return t('plz');
+      } else if (!s.zip) {
+        return t('zip');
       } else if (!s.city) {
         return t('city');
       } else if (!s.country) {

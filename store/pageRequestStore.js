@@ -20,7 +20,7 @@ export const state = () => ({
   lastName: null,
   street: null,
   houseNumber: null,
-  plz: null,
+  zip: null,
   city: null,
   country: 'Deutschland',
   email: null,
@@ -91,8 +91,8 @@ export const mutations = {
   setHouseNumber: (state, content) => {
     state.houseNumber = content;
   },
-  setPlz: (state, content) => {
-    state.plz = content;
+  setZip: (state, content) => {
+    state.zip = content;
   },
   setCity: (state, content) => {
     state.city = content;
