@@ -1,4 +1,23 @@
 {
+  "global": {
+    "company": "Hotel Edison GmbH",
+    "street": "Dünenstrasse 15",
+    "city": "18225 Ostseebad Kühlungsborn",
+    "telephone": {
+      "label": "Telefon:",
+      "value": "038293 / 42-0",
+      "link": "038293420"
+    },
+    "telefax": {
+      "label": "Telefax:",
+      "value": "038293 / 42-111",
+      "link": "03829342111"
+    },
+    "email": {
+      "label": "E-Mail:",
+      "value": "info@hotel-edison.de"
+    }
+  },
   "nav": {
     "items": {
       "hotel": "HOTEL",
@@ -8,6 +27,12 @@
       "contact": "KONTAKT & ANREISE",
       "request": "ZIMMER ANFRAGEN"
     }
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "dataProtection": "Datenschutz",
+    "copyright": "Hotel Edison GmbH © 2018"
   },
   "home": {
     "focus": {
@@ -138,27 +163,9 @@
       "button": "JETZT UNVERBINDLICH ANFRAGEN"
     }
   },
-  "footer": {
-    "company": "Hotel Edison GmbH",
-    "street": "Dünenstrasse 15",
-    "city": "18225 Ostseebad Kühlungsborn",
-    "telephone": {
-      "label": "Telefon:",
-      "value": "038293 / 42-0",
-      "link": "038293420"
-    },
-    "telefax": {
-      "label": "Telefax:",
-      "value": "038293 / 42-111",
-      "link": "03829342111"
-    },
-    "email": {
-      "label": "E-Mail:",
-      "value": "info@hotel-edison.de"
-    },
-    "contact": "Kontakt",
-    "imprint": "Impressum",
-    "dataProtection": "Datenschutz",
-    "copyright": "Hotel Edison GmbH © 2018"
+  "contact": {
+    "map": {
+      "headline": "KONTAKTIEREN SIE UNS"
+    }
   }
 }

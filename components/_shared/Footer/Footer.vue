@@ -3,32 +3,32 @@
     <div class="footer">
       <div class="footer-row">
         <p class="footer-row-line">
-          <IntlText id="footer.company" />
+          <IntlText id="global.company" />
         </p>
         <p class="footer-row-line">
-          <IntlText id="footer.street" />
+          <IntlText id="global.street" />
         </p>
         <p class="footer-row-line">
-          <IntlText id="footer.city" />
+          <IntlText id="global.city" />
         </p>
       </div>
       <div class="footer-row">
         <p class="footer-row-line">
-          <IntlText id="footer.telephone.label" />
-          <a :href="`tel:${$t('footer.telephone.link')}`">
-            <IntlText id="footer.telephone.value" class="hover-scale" />
+          <IntlText id="global.telephone.label" />
+          <a :href="`tel:${$t('global.telephone.link')}`">
+            <IntlText id="global.telephone.value" class="hover-scale" />
           </a>
         </p>
         <p class="footer-row-line">
-          <IntlText id="footer.telefax.label" />
-          <a :href="`tel:${$t('footer.telefax.link')}`">
-            <IntlText id="footer.telefax.value" class="hover-scale" />
+          <IntlText id="global.telefax.label" />
+          <a :href="`tel:${$t('global.telefax.link')}`">
+            <IntlText id="global.telefax.value" class="hover-scale" />
           </a>
         </p>
         <p class="footer-row-line">
-          <IntlText id="footer.email.label" />
-          <a :href="`mailto:${$t('footer.email.value')}`">
-            <IntlText id="footer.email.value" class="hover-scale" />
+          <IntlText id="global.email.label" />
+          <a :href="`mailto:${$t('global.email.value')}`">
+            <IntlText id="global.email.value" class="hover-scale" />
           </a>
         </p>
       </div>

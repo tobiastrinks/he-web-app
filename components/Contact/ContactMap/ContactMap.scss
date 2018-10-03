@@ -1,0 +1,50 @@
+@import "~/assets/style/variables.scss";
+
+.contact-map {
+
+  @media #{$md} {
+    display: flex;
+    height: 400px;
+  }
+
+  .contact-map-google {
+
+    @media #{$md} {
+      width: 70%;
+    }
+  }
+
+  .contact-map-info {
+    position: relative;
+
+    @media #{$md} {
+      width: 30%;
+    }
+
+    .contact-map-info-inner {
+      padding: 30px;
+
+      @media #{$md} {
+        padding: 0;
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .contact-map-info-headline {
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .contact-map-info-item {
+        margin: 8px 0;
+
+        a {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

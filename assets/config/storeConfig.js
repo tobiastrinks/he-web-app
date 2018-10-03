@@ -55,5 +55,10 @@ export const pageModules = {
     storeName: 'pageRequestStore',
     contentType: 'pageRequest',
     modules: [modules.arrangements, modules.rooms]
+  },
+  contact: {
+    storeName: 'pageContactStore',
+    contentType: 'pageContact',
+    modules: []
   }
 };

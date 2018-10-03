@@ -1,5 +1,5 @@
 <template>
-    <div class="request-item-template" :class="{opened}">
+    <div class="request-item-template box-shadow" :class="{opened}">
       <div class="request-item-template-rows left">
         <div class="request-item-template-slot">
           <slot name="left"></slot>
