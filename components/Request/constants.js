@@ -9,3 +9,18 @@ export const bookingTypes = {
   HP: 'hp',
   ARR: 'arr'
 };
+
+export const bookingTypesForm = [
+  {
+    value: bookingTypes.UF,
+    intlId: 'request.bookingType.uf'
+  },
+  {
+    value: bookingTypes.HP,
+    intlId: 'request.bookingType.hp'
+  },
+  {
+    value: bookingTypes.ARR,
+    intlId: 'request.bookingType.arr'
+  }
+];

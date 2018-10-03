@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import {bookingTypes} from '@/components/Request/constants';
+import {bookingTypesForm} from '@/components/Request/constants';
 import RequestItemTemplate from '@/components/Request/RequestItemTemplate/RequestItemTemplate';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 
@@ -41,20 +41,7 @@ export default {
   },
   data () {
     return {
-      bookingTypesForm: [
-        {
-          value: bookingTypes.UF,
-          intlId: 'request.bookingType.uf'
-        },
-        {
-          value: bookingTypes.HP,
-          intlId: 'request.bookingType.hp'
-        },
-        {
-          value: bookingTypes.ARR,
-          intlId: 'request.bookingType.arr'
-        }
-      ]
+      bookingTypesForm
     };
   },
   computed: {

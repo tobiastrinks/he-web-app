@@ -1,26 +1,28 @@
 <template>
     <div class="request-dates-holidays">
       <table class="request-dates-holidays-table">
-        <tr
-          v-for="(holiday, index) in holidays"
-          :key="index"
-          @click="selectHoliday(holiday)"
-          class="request-dates-holidays-table-tr"
-          :class="{
-            selected: (
-              activeDates.to && activeDates.from &&
-              new Date(holiday.bookableFrom + 'T00:00:00').getTime() === activeDates.from.getTime() &&
-              new Date(holiday.bookableTo + 'T00:00:00').getTime() === activeDates.to.getTime()
-            )
-          }"
-        >
-          <td class="request-dates-holidays-table-td">
-            {{holiday.officialName}}:
-          </td>
-          <td class="request-dates-holidays-table-td">
-            {{$d(new Date(holiday.bookableFrom + 'T00:00:00'), 'short')}} - {{$d(new Date(holiday.bookableTo + 'T00:00:00'), 'short')}}
-          </td>
-        </tr>
+        <tbody>
+          <tr
+            v-for="(holiday, index) in holidays"
+            :key="index"
+            @click="selectHoliday(holiday)"
+            class="request-dates-holidays-table-tr"
+            :class="{
+              selected: (
+                activeDates.to && activeDates.from &&
+                new Date(holiday.bookableFrom + 'T00:00:00').getTime() === activeDates.from.getTime() &&
+                new Date(holiday.bookableTo + 'T00:00:00').getTime() === activeDates.to.getTime()
+              )
+            }"
+          >
+            <td class="request-dates-holidays-table-td">
+              {{holiday.officialName}}:
+            </td>
+            <td class="request-dates-holidays-table-td">
+              {{$d(new Date(holiday.bookableFrom + 'T00:00:00'), 'short')}} - {{$d(new Date(holiday.bookableTo + 'T00:00:00'), 'short')}}
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
 </template>

@@ -16,18 +16,20 @@
       </div>
       <div class="arrangements-item-prices-table">
         <table>
-          <tr
-            v-for="(room, index) in rooms"
-            :key="index"
-            class="arrangements-item-prices-table-tr"
-          >
-            <td class="arrangements-item-prices-table-td">
-              {{room.nameShort}}
-            </td>
-            <td class="arrangements-item-prices-table-td">
-              {{getRoomPrice(room.prices, activeYear)}}
-            </td>
-          </tr>
+          <tbody>
+            <tr
+              v-for="(room, index) in rooms"
+              :key="index"
+              class="arrangements-item-prices-table-tr"
+            >
+              <td class="arrangements-item-prices-table-td">
+                {{room.nameShort}}
+              </td>
+              <td class="arrangements-item-prices-table-td">
+                {{getRoomPrice(room.prices, activeYear)}}
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

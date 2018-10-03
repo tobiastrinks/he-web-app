@@ -4,9 +4,9 @@
         <IntlText id="request.submit.button" />
       </ButtonSt>
       <div class="request-submit-contact">
-        <p class="request-submit-contact-text">
+        <div class="request-submit-contact-text">
           <vue-markdown>{{content.submitContact}}</vue-markdown>
-        </p>
+        </div>
         <div class="request-submit-contact-phone hover-scale" v-if="content.submitContactPhone">
           <a :href="`tel:${content.submitContactPhone.replace(/[^0-9]/, '')}}`">
             {{content.submitContactPhone}}
@@ -17,7 +17,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { validateEmail } from '@/components/Request/utils';
+import { bookingTypes, bookingTypesForm } from '@/components/Request/constants';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import VueMarkdown from 'vue-markdown';
@@ -25,17 +27,6 @@ import VueMarkdown from 'vue-markdown';
 export default {
   name: 'RequestSubmit',
   components: {IntlText, ButtonSt, VueMarkdown},
-  methods: {
-    submitRequest () {
-      const validation = this.validateForm;
-
-      if (validation === true) {
-        console.log('submit');
-      } else {
-        alert(validation);
-      }
-    }
-  },
   computed: {
     requestStore () {
       return this.$store.state.pageRequestStore;
@@ -70,6 +61,69 @@ export default {
     },
     content () {
       return this.$store.state.pageRequestStore.content[0];
+    }
+  },
+  methods: {
+    constructRequest () {
+      const s = this.requestStore;
+      const request = {
+        bookingType: this.$t(
+          bookingTypesForm.filter(item => item.value === s.bookingType)[0].intlId,
+          'de'
+        ),
+        dates: {
+          from: s.dates.from.toISOString(),
+          to: s.dates.to.toISOString()
+        },
+        activeArrangement: (s.bookingType === bookingTypes.ARR && s.activeArrangement)
+          ? s.activeArrangement.officialName || s.activeArrangement.name
+          : undefined,
+        // TODO: selectedOffer
+        room: s.room.id,
+        persons: s.persons.filter(person => person.count > 0).map(person => {
+          const age = this.$t('request.persons.fromLabel', 'de', {from: person.minAge});
+          return `${person.count} ${age}`;
+        }).join(', '),
+        extras: (s.extras.parkingSpace || s.extras.pet)
+          ? ['parkingSpace', 'pet'].filter(key => s.extras[key]).map(key => {
+            return this.$t(`request.extras.${key}`, 'de');
+          }).join(', ')
+          : undefined,
+        comments: (s.comments && s.comments.length) ? s.comments : undefined,
+        gender: this.$t(`request.summary.form.gender.${s.gender}`, 'de'),
+        firstName: s.firstName,
+        lastName: s.lastName,
+        street: s.street,
+        houseNumber: s.houseNumber,
+        zip: s.zip,
+        city: s.city,
+        country: s.country,
+        email: s.email,
+        phone: s.phone || undefined
+      };
+      for (let key in request) {
+        if (request[key] === undefined) {
+          delete request[key];
+        }
+      }
+      return request;
+    },
+    submitRequest () {
+      const validation = this.validateForm;
+
+      if (validation === true) {
+        axios.post(process.env.bookingRequestUrl, this.constructRequest())
+          .then(response => {
+            alert('sent successfully');
+            console.log(response);
+          })
+          .catch(error => {
+            alert('error happened');
+            console.log(error);
+          });
+      } else {
+        alert(validation);
+      }
     }
   }
 };

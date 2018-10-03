@@ -2,7 +2,8 @@ module.exports = {
   env: {
     contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN || 'bc2803f81a91e210314097a8286e07ff02bed1bd6467df0e631de6b0be9ff6e7',
     thumborUrl: process.env.THUMBOR_URL || 'https://images.hotel-edison.ttrks.de',
-    thumborAssetsUrl: process.env.THUMBOR_ASSETS_URL
+    thumborAssetsUrl: process.env.THUMBOR_ASSETS_URL,
+    bookingRequestUrl: process.env.BOOKING_REQUEST_URL
   },
   head: {
     title: 'hotel-edison',

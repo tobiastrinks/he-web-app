@@ -1,19 +1,21 @@
 <template>
     <div class="request-summary-data" v-if="isFormValid">
       <table class="request-summary-data-table">
-        <tr
-          v-for="(item, index) in summaryData"
-          v-if="item.values.length"
-          :key="index"
-          class="request-summary-data-tr"
-        >
-          <td class="request-summary-data-td">
-            <IntlText :id="item.headlineId" />
-          </td>
-          <td class="request-summary-data-td">
-            <p v-for="(value, index) in item.values" :key="index">{{value}}</p>
-          </td>
-        </tr>
+        <tbody>
+          <tr
+            v-for="(item, index) in summaryData"
+            v-if="item.values.length"
+            :key="index"
+            class="request-summary-data-tr"
+          >
+            <td class="request-summary-data-td">
+              <IntlText :id="item.headlineId" />
+            </td>
+            <td class="request-summary-data-td">
+              <p v-for="(value, index) in item.values" :key="index">{{value}}</p>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
 </template>
