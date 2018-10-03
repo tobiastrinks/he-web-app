@@ -60,5 +60,15 @@ export const pageModules = {
     storeName: 'pageContactStore',
     contentType: 'pageContact',
     modules: []
+  },
+  imprint: {
+    storeName: 'pageImprintStore',
+    contentType: 'pageImprint',
+    modules: []
+  },
+  dataProtection: {
+    storeName: 'pageDataProtectionStore',
+    contentType: 'pageDataProtection',
+    modules: []
   }
 };

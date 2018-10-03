@@ -14,7 +14,7 @@
       <h1 class="head-img-headline">
         {{headline}}
       </h1>
-      <p class="head-img-subheadline">
+      <p v-if="subHeadline" class="head-img-subheadline">
         {{subHeadline}}
       </p>
       <div class="head-img-sun" v-if="hasSun">
@@ -45,8 +45,7 @@ export default {
       required: true
     },
     subHeadline: {
-      type: String,
-      required: true
+      type: String
     },
     hasSun: {
       type: Boolean,

@@ -2,7 +2,7 @@
     <div class="footer-nav">
       <div class="footer-nav-content">
         <div class="footer-nav-item hover-scale">
-          <LocaleLink to="/kontakt">
+          <LocaleLink to="/kontakt-und-anreise">
             <IntlText id="footer.contact" />
           </LocaleLink>
         </div>
