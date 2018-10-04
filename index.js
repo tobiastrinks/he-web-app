@@ -24,6 +24,15 @@ config.dev = (process.env.NODE_ENV !== 'production');
 const nuxt = new Nuxt(config);
 app.use(nuxt.render);
 
+// Build only in dev mode
+if (process.env.NODE_ENV !== 'production') {
+  new Builder(nuxt).build()
+    .catch((error) => {
+      console.error(error); // eslint-disable-line no-console
+      process.exit(1);
+    });
+}
+
 app.use(function (err, req, res, next) {
   logReq(500, req.method, req.path, JSON.stringify(err));
   res.status(500);
