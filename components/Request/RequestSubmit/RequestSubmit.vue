@@ -112,14 +112,14 @@ export default {
       const validation = this.validateForm;
 
       if (validation === true) {
-        axios.post(process.env.bookingRequestUrl, this.constructRequest())
-          .then(response => {
-            alert('sent successfully');
-            console.log(response);
+        axios.post(`${process.env.apiUrl}/contact/booking-request`, this.constructRequest())
+          .then(() => {
+            this.$store.commit('pageRequestStore/submit');
+            window.scrollTo(0, 0);
           })
           .catch(error => {
-            alert('error happened');
-            console.log(error);
+            alert(this.$t('request.submit.error'));
+            console.error(error);
           });
       } else {
         alert(validation);

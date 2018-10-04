@@ -77,6 +77,7 @@ export default {
         this.datesOnSelect.to = date;
         this.$emit('setDates', this.datesOnSelect);
       }
+      this.hideDatepicker();
     }
   }
 };

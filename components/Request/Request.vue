@@ -1,26 +1,36 @@
 <template>
     <div class="request">
-      <HeadImg
-        :headline="content.headImg.fields.headline"
-        :sub-headline="content.headImg.fields.subHeadline"
-        :image="content.headImg.fields.image"
-      />
-      <RequestRooms
-        v-if="entryPoint === entryPoints.ROOM" :rooms="rooms"
-        :opened="roomsOpened"
-      />
-      <RequestBookingType :opened="bookingTypeOpened" />
-      <RequestDates :opened="datesOpened" />
-      <RequestRooms
-        v-if="entryPoint === entryPoints.DEFAULT || entryPoint === entryPoints.ARRANGEMENT"
-        :rooms="rooms"
-        :opened="roomsOpened"
-      />
-      <RequestPersons :opened="personsOpened" />
-      <RequestExtras :opened="extrasOpened" />
-      <RequestComments :opened="commentsOpened" />
-      <RequestSummary :opened="summaryOpened" />
-      <RequestSubmit v-show="summaryOpened" />
+      <div class="request-form" v-show="!requestStore.submitted">
+        <HeadImg
+          :headline="content.headImg.fields.headline"
+          :sub-headline="content.headImg.fields.subHeadline"
+          :image="content.headImg.fields.image"
+        />
+        <RequestRooms
+          v-if="entryPoint === entryPoints.ROOM" :rooms="rooms"
+          :opened="roomsOpened"
+        />
+        <RequestBookingType :opened="bookingTypeOpened" />
+        <RequestDates :opened="datesOpened" />
+        <RequestRooms
+          v-if="entryPoint === entryPoints.DEFAULT || entryPoint === entryPoints.ARRANGEMENT"
+          :rooms="rooms"
+          :opened="roomsOpened"
+        />
+        <RequestPersons :opened="personsOpened" />
+        <RequestExtras :opened="extrasOpened" />
+        <RequestComments :opened="commentsOpened" />
+        <RequestSummary :opened="summaryOpened" />
+        <RequestSubmit v-show="summaryOpened" />
+      </div>
+      <div class="request-confirmation" v-show="requestStore.submitted">
+        <HeadImg
+          :headline="content.confirmationHeadImg.fields.headline"
+          :sub-headline="content.confirmationHeadImg.fields.subHeadline"
+          :image="content.confirmationHeadImg.fields.image"
+        />
+        <RequestConfirmation />
+      </div>
     </div>
 </template>
 
@@ -35,10 +45,12 @@ import RequestDates from '@/components/Request/RequestDates/RequestDates';
 import RequestPersons from '@/components/Request/RequestPersons/RequestPersons';
 import RequestSummary from '@/components/Request/RequestSummary/RequestSummary';
 import RequestSubmit from '@/components/Request/RequestSubmit/RequestSubmit';
+import RequestConfirmation from '@/components/Request/RequestConfirmation/RequestConfirmation';
 
 export default {
   name: 'Request',
   components: {
+    RequestConfirmation,
     RequestSummary,
     RequestPersons,
     RequestDates,

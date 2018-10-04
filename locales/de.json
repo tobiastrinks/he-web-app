@@ -164,7 +164,11 @@
       }
     },
     "submit": {
-      "button": "JETZT UNVERBINDLICH ANFRAGEN"
+      "button": "JETZT UNVERBINDLICH ANFRAGEN",
+      "error": "Entschuldigen Sie bitte. Es ist ein Fehler aufgetreten. Nehmen Sie bitte direkt Kontakt per Telefon oder E-Mail auf."
+    },
+    "confirmation": {
+      "backHome": "ZURÜCK ZUR STARTSEITE"
     }
   },
   "contact": {

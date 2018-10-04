@@ -24,7 +24,8 @@ export const state = () => ({
   city: null,
   country: 'Deutschland',
   email: null,
-  phone: null
+  phone: null,
+  submitted: false
 });
 
 export const mutations = {
@@ -105,5 +106,8 @@ export const mutations = {
   },
   setPhone: (state, content) => {
     state.phone = content;
+  },
+  submit: (state) => {
+    state.submitted = true;
   }
 };
