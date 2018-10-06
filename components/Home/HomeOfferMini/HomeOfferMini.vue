@@ -1,11 +1,12 @@
 <template>
   <div class="home-offer-mini">
     <div class="home-offer-mini-inner">
-      <FontAwesomeIcon
-        class="home-offer-mini-close"
-        :icon="['fas', 'times']"
-        @click="$emit('close')"
-      />
+      <div class="home-offer-mini-close">
+        <FontAwesomeIcon
+          :icon="['fas', 'times']"
+          @click="$emit('close')"
+        />
+      </div>
       <p class="home-offer-mini-headline">
         {{headline}}
       </p>

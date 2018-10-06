@@ -1,0 +1,19 @@
+@import "~/assets/style/variables.scss";
+
+.request-dates-offers {
+  margin-top: 30px;
+
+  .request-dates-offers-headline {
+    font-weight: 600;
+  }
+
+  .request-dates-offers-info {
+    font-size: 90%;
+    font-style: italic;
+
+    .request-dates-offers-info-link {
+      margin-left: 5px;
+      color: $color-primary;
+    }
+  }
+}

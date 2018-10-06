@@ -10,6 +10,7 @@
           @setDates="submitSelectedDates"
           v-show="$store.state.pageRequestStore.bookingType === 'arr'"
         />
+        <RequestDatesOffers />
       </template>
     </RequestItemTemplate>
   </div>
@@ -20,10 +21,12 @@ import RequestItemTemplate from '@/components/Request/RequestItemTemplate/Reques
 import RequestDatesInput from '../RequestDatesInput/RequestDatesInput';
 import RequestDatesHolidays from '../RequestDatesHolidays/RequestDatesHolidays';
 import RequestDatesArrangement from '@/components/Request/RequestDatesArrangement/RequestDatesArrangement';
+import RequestDatesOffers from '@/components/Request/RequestDatesOffers/RequestDatesOffers';
 
 export default {
   name: 'RequestDates',
   components: {
+    RequestDatesOffers,
     RequestDatesArrangement,
     RequestItemTemplate,
     RequestDatesInput,

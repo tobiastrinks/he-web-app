@@ -78,7 +78,9 @@ export default {
         activeArrangement: (s.bookingType === bookingTypes.ARR && s.activeArrangement)
           ? s.activeArrangement.officialName || s.activeArrangement.name
           : undefined,
-        // TODO: selectedOffer
+        selectedOffers: (s.selectedOffers && s.selectedOffers.length)
+          ? s.selectedOffers.join(', ')
+          : undefined,
         room: s.room.id,
         persons: s.persons.filter(person => person.count > 0).map(person => {
           const age = this.$t('request.persons.fromLabel', 'de', {from: person.minAge});

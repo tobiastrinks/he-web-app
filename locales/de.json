@@ -104,7 +104,12 @@
     "dates": {
       "headline": "Reisezeitraum",
       "fromLabel": "vom",
-      "toLabel": "bis zum"
+      "toLabel": "bis zum",
+      "offers": {
+        "headline": "Sonderangebote",
+        "infoPrefix": "für mehr Informationen besuchen Sie unsere",
+        "infoLink": "Angebote Seite"
+      }
     },
     "persons": {
       "headline": "Reiseteilnehmer",

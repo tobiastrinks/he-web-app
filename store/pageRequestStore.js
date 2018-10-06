@@ -7,6 +7,7 @@ export const state = () => ({
     from: null,
     to: null
   },
+  selectedOffers: null,
   activeArrangement: null,
   persons: null,
   extras: {
@@ -46,6 +47,10 @@ export const mutations = {
   },
   setActiveArrangement: (state, content) => {
     state.activeArrangement = content;
+  },
+  setSelectedOffers: (state, content) => {
+    console.log(content);
+    state.selectedOffers = content;
   },
   setPersons: (state, content) => {
     state.persons = content;
