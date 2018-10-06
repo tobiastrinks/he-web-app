@@ -23,7 +23,7 @@
       "hotel": "HOTEL",
       "rooms": "ZIMMER & PREISE",
       "restaurant": "RESTAURANT",
-      "arrangements": "KURZURLAUB",
+      "offers": "ANGEBOTE",
       "contact": "KONTAKT & ANREISE",
       "request": "ZIMMER ANFRAGEN"
     }
@@ -63,7 +63,11 @@
       },
       "price": "Preis",
       "priceNormal": "Normalpreis",
-      "priceArrangement": "mit Arrangement-Vorteil"
+      "priceArrangement": "mit Arrangement-Vorteil",
+      "earlyBird": {
+        "label": "mit Frübucherrabatt",
+        "deadline": "(Buchung bis {deadline})"
+      }
     },
     "requestNow": "JETZT ANFRAGEN",
     "backToRoomsBottom": "zurück zur Zimmerübersicht",
@@ -72,8 +76,12 @@
       "button": "MEHR"
     }
   },
+  "offers": {
+    "roomButton": "JETZT ZIMMER ENTDECKEN"
+  },
   "arrangements": {
     "nav": {
+      "backToOverview": "ZURÜCK ZUR ÜBERSICHT",
       "season": "Saisonale Angebote",
       "holiday": "Feiertagsangebote"
     },

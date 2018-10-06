@@ -7,21 +7,21 @@ export const modules = {
     storeName: 'navStore',
     contentType: 'navigation'
   },
-  focusOffers: {
-    storeName: 'focusOfferStore',
-    contentType: 'focusOffer'
-  },
   rooms: {
     storeName: 'roomsStore',
     contentType: 'room'
   },
-  arrangements: {
-    storeName: 'arrangementsStore',
-    contentType: 'arrangement'
+  roomPriceEarlyBird: {
+    storeName: 'roomPriceEarlyBirdStore',
+    contentType: 'roomPriceEarlyBird'
   },
   bookingConditions: {
     storeName: 'bookingConditionsStore',
     contentType: 'bookingConditions'
+  },
+  arrangements: {
+    storeName: 'arrangementsStore',
+    contentType: 'arrangement'
   }
 };
 
@@ -33,7 +33,7 @@ export const pageModules = {
   home: {
     storeName: 'pageHomeStore',
     contentType: 'pageHome',
-    modules: [modules.focusOffers]
+    modules: []
   },
   hotel: {
     storeName: 'pageHotelStore',
@@ -48,7 +48,16 @@ export const pageModules = {
   room: {
     storeName: 'pageRoomStore',
     storeDefaultsLoader: pageRoomStoreDefaultsLoader,
-    modules: [modules.rooms, modules.bookingConditions]
+    modules: [
+      modules.rooms,
+      modules.roomPriceEarlyBird,
+      modules.bookingConditions
+    ]
+  },
+  offers: {
+    storeName: 'pageOffersStore',
+    contentType: 'pageOffers',
+    modules: []
   },
   arrangements: {
     storeName: 'pageArrangementsStore',

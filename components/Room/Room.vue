@@ -39,8 +39,8 @@
         <p class="room-suggestions-headline">
           <IntlText id="room.suggestion.headline" />
         </p>
-        <OfferPane
-          :cover="suggestedRoom.images[0]"
+        <Offer
+          :image="suggestedRoom.images[0]"
           :headline="suggestedRoom.name"
           :description="suggestedRoom.description"
           :button="$t('room.suggestion.button')"
@@ -59,11 +59,11 @@ import RoomSlider from '@/components/Room/RoomSlider/RoomSlider';
 import RoomInfo from '@/components/Room/RoomInfo/RoomInfo';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import RoomPrices from '@/components/Room/RoomPrices/RoomPrices';
-import OfferPane from '@/components/_shared/OfferPane/OfferPane';
+import Offer from '@/components/_shared/Offer/Offer';
 
 export default {
   name: 'Room',
-  components: {OfferPane, RoomPrices, LocaleLink, RoomSlider, RoomInfo, IntlText, ButtonSt},
+  components: {Offer, RoomPrices, LocaleLink, RoomSlider, RoomInfo, IntlText, ButtonSt},
   data: () => {
     return {
       routes

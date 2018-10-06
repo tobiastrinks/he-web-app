@@ -1,24 +1,31 @@
 <template>
-    <div class="offer-pane">
-      <div class="offer-pane-row img">
+    <div class="offer" :class="{imageAlignLeft}">
+      <div class="offer-row img">
         <ThumborImage
-          :store="cover"
+          :store="image"
           :dimensions="{
             sm: [600, 0]
           }"
           :cover="true"
         />
       </div>
-      <div class="offer-pane-row text">
-        <div class="offer-pane-row-center">
-          <p class="offer-pane-headline">
-            {{headline}}
-          </p>
-          <article class="offer-pane-description">
-            {{description}}
+      <div class="offer-row text">
+        <div class="offer-row-center">
+          <div class="offer-head">
+            <p class="offer-headline">
+              {{headline}}
+            </p>
+            <p v-if="subHeadline" class="offer-subheadline">
+              {{subHeadline}}
+            </p>
+          </div>
+          <article class="offer-description">
+            <vue-markdown>
+              {{description}}
+            </vue-markdown>
           </article>
         </div>
-        <div class="offer-pane-button">
+        <div class="offer-button">
           <LocaleLink :to="buttonLink">
             <ButtonSt>{{button}}</ButtonSt>
           </LocaleLink>
@@ -31,17 +38,31 @@
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
+import VueMarkdown from 'vue-markdown';
+
 export default {
-  name: 'OfferPane',
-  components: {LocaleLink, ButtonSt, ThumborImage},
+  name: 'Offer',
+  components: {
+    LocaleLink,
+    ButtonSt,
+    ThumborImage,
+    VueMarkdown
+  },
   props: {
-    cover: {
+    image: {
       type: Object,
       required: true
+    },
+    imageAlignLeft: {
+      type: Boolean,
+      default: true
     },
     headline: {
       type: String,
       required: true
+    },
+    subHeadline: {
+      type: String
     },
     description: {
       type: String,
@@ -60,5 +81,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import 'OfferPane';
+  @import 'Offer';
 </style>

@@ -1,54 +1,5 @@
 @import '~/assets/style/variables.scss';
 
-.room-prices-table-large {
-  display: none;
-  padding: 30px;
-
-  @media #{$sm} {
-    display: block;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .room-prices-table-large-line {
-
-    &.border-bottom {
-
-      .room-prices-table-large-td {
-        border-bottom: 1px solid $color-grey;
-        padding-bottom: 20px;
-      }
-
-      & + .room-prices-table-large-line {
-
-        .room-prices-table-large-td {
-          padding-top: 20px;
-        }
-      }
-    }
-
-    .room-prices-table-large-td {
-      padding: 5px 0 5px 10px;
-
-      @media #{$md} {
-        padding: 5px 15px;
-      }
-
-      &:first-child {
-        padding-left: 0;
-        border-right: 1px solid $color-grey;
-      }
-
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-  }
-}
-
 .room-prices-table-mobile {
   padding: 30px 20px;
 
@@ -83,6 +34,7 @@
 
       .room-prices-table-mobile-season-prices-td {
         padding: 5px 10px;
+        vertical-align: top;
 
         &:first-child {
           padding-left: 0;
@@ -91,6 +43,11 @@
         &:last-child {
           padding-right: 0;
           text-align: right;
+        }
+
+        .room-prices-table-mobile-earlybird-label,
+        .room-prices-table-large-earlybird-price {
+          font-weight: bold;
         }
       }
     }

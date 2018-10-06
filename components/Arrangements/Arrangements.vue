@@ -17,6 +17,12 @@
           </ButtonSt>
         </div>
       </div>
+      <div class="arrangements-back">
+        <LocaleLink :to="routes.OFFERS">
+          <FontAwesomeIcon :icon="['fas', 'chevron-left']" />
+          <IntlText id="arrangements.nav.backToOverview" />
+        </LocaleLink>
+      </div>
       <div class="arrangements-items">
         <div v-show="!arrStore.showHolidays" class="arrangements-items-seasons">
           <ArrangementsItem
@@ -37,15 +43,18 @@
 </template>
 
 <script>
+import { routes } from '@/assets/config/routesConfig';
 import { arrangementsOrder } from '@/components/Arrangements/arrangementsConfig';
 import HeadImg from '@/components/_shared/HeadImg/HeadImg';
 import ArrangementsItem from './ArrangementsItem/ArrangementsItem';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
 export default {
   name: 'Arrangements',
   components: {
+    LocaleLink,
     IntlText,
     ButtonSt,
     HeadImg,
@@ -53,7 +62,8 @@ export default {
   },
   data () {
     return {
-      arrangements: []
+      arrangements: [],
+      routes
     };
   },
   methods: {

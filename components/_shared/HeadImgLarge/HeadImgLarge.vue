@@ -10,6 +10,7 @@
             :loop="true"
             :autoplay="true"
             :autoplayTimeout="5000"
+            :autoplayHoverPause="false"
           >
             <Slide v-for="(image, key) in images" :key="key">
               <div class="head-img-large-images-item">

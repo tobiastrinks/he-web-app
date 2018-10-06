@@ -1,106 +1,17 @@
 <template>
     <div class="room-prices-table">
-      <div class="room-prices-table-large">
-        <table>
-          <tbody>
-            <tr class="room-prices-table-large-line">
-              <td class="room-prices-table-large-td">
-                <IntlText id="room.prices.season.label" />
-              </td>
-              <td
-                class="room-prices-table-large-td"
-                v-for="(seasonLabelId, key) in seasons.map(season => { return season.labelId; })"
-                :key="key"
-              >
-                <IntlText :id="`room.prices.season.${seasonLabelId}`" />
-              </td>
-            </tr>
-            <tr class="room-prices-table-large-line border-bottom">
-              <td class="room-prices-table-large-td">
-                <IntlText id="room.prices.arrangement.label" />
-              </td>
-              <td
-                class="room-prices-table-large-td"
-                v-for="(arrangementMinDays, key) in seasons.map(season => { return season.arrangementMinDays; })"
-                :key="key"
-              >
-                <span>
-                  {{$tc('room.prices.arrangement.value', arrangementMinDays, {minDays: arrangementMinDays})}}
-                </span>
-              </td>
-            </tr>
-
-            <tr class="room-prices-table-large-line">
-              <td class="room-prices-table-large-td">
-                <IntlText id="room.prices.priceNormal" />
-              </td>
-              <td
-                class="room-prices-table-large-td"
-                v-for="(price, key) in pricesNormal"
-                :key="key"
-              >
-                <span>
-                  {{$n(price, 'currency')}}
-                </span>
-              </td>
-            </tr>
-            <tr class="room-prices-table-large-line" v-show="type === priceTypes.HP">
-              <td class="room-prices-table-large-td">
-                <IntlText id="room.prices.priceArrangement" />
-              </td>
-              <td
-                class="room-prices-table-large-td"
-                v-for="(price, key) in pricesArr"
-                :key="key"
-              >
-                <span>
-                  {{$n(price, 'currency')}}
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="room-prices-table-mobile">
-        <div
-          class="room-prices-table-mobile-season"
-          v-for="(season, index)  in seasons"
-          :key="index"
-        >
-          <p class="room-prices-table-mobile-season-label">
-            <IntlText :id="`room.prices.season.${season.labelId}`" />
-          </p>
-          <table class="room-prices-table-mobile-season-prices">
-            <tbody>
-              <tr class="room-prices-table-mobile-season-prices-line">
-                <td class="room-prices-table-mobile-season-prices-td">
-                  <span>
-                    <IntlText id="room.prices.priceNormal" />
-                  </span>
-                </td>
-                <td class="room-prices-table-mobile-season-prices-td">
-                  <span>
-                    {{$n(pricesNormal[index], 'currency')}}
-                  </span>
-                </td>
-              </tr>
-              <tr class="room-prices-table-mobile-season-prices-line" v-show="type === priceTypes.HP">
-                <td class="room-prices-table-mobile-season-prices-td">
-                  <span>
-                    {{$tc('room.prices.arrangement.value', season.arrangementMinDays, {minDays: season.arrangementMinDays})}}
-                  </span>
-                </td>
-                <td class="room-prices-table-mobile-season-prices-td">
-                  <span>
-                    {{$n(pricesArr[index], 'currency')}}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <hr class="hr-short room-prices-table-mobile-season-hr" />
-        </div>
-      </div>
+      <RoomPricesTableLarge
+        :pricesArr="pricesArr"
+        :pricesNormal="pricesNormal"
+        :earlyBirds="earlyBirds"
+        :type="type"
+      />
+      <RoomPricesTableMobile
+        :pricesArr="pricesArr"
+        :pricesNormal="pricesNormal"
+        :earlyBirds="earlyBirds"
+        :type="type"
+      />
     </div>
 </template>
 
@@ -108,10 +19,12 @@
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import {seasons} from '@/assets/config/hotelConfig';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
+import RoomPricesTableLarge from '@/components/Room/RoomPricesTableLarge/RoomPricesTableLarge';
+import RoomPricesTableMobile from '@/components/Room/RoomPricesTableMobile/RoomPricesTableMobile';
 
 export default {
   name: 'RoomPricesTable',
-  components: {IntlText},
+  components: {RoomPricesTableMobile, RoomPricesTableLarge, IntlText},
   props: {
     room: {
       type: Object,
@@ -127,36 +40,59 @@ export default {
     }
   },
   data () {
-    return { priceTypes };
+    return { priceTypes, seasons };
   },
   computed: {
-    seasons () { return seasons; },
+    pricesOfYear () {
+      const prices = this.room.prices.filter(price => { return (price.fields.year === this.year); });
+      if (prices.length) {
+        return prices[0].fields;
+      }
+    },
     pricesNormal () {
-      const prices = this.room.prices;
-
-      const pricesFilteredByYear = prices.filter(price => { return (price.fields.year === this.year); });
-      if (pricesFilteredByYear.length === 1) {
-        const price = pricesFilteredByYear[0].fields;
-
+      if (this.pricesOfYear) {
         // priceOrderedBySeasonArray
         return seasons.map(season => {
           if (this.type === priceTypes.HP) {
-            return price[season.priceUfKey] + price.hp;
+            return this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp;
           } else {
-            return price[season.priceUfKey];
+            return this.pricesOfYear[season.priceUfKey];
           }
         });
       }
       return [];
     },
     pricesArr () {
-      const pricesFilteredByYear = this.room.prices.filter(price => { return (price.fields.year === this.year); });
-      if (pricesFilteredByYear.length === 1) {
-        const price = pricesFilteredByYear[0].fields;
-
+      if (this.pricesOfYear) {
         // priceOrderedBySeasonArray
         return seasons.map(season => {
-          return price[season.priceArrKey];
+          return this.pricesOfYear[season.priceArrKey];
+        });
+      }
+      return [];
+    },
+    earlyBirdConfig () {
+      return this.$store.state.roomPriceEarlyBirdStore.content;
+    },
+    earlyBirds () {
+      if (this.pricesOfYear) {
+        const validAndSortedEarlyBird = this.earlyBirdConfig
+          .filter(item => new Date(item.deadline).getTime() > new Date().getTime())
+          .sort((a, b) => a.deadline > b.deadline);
+
+        const earlyBirds = validAndSortedEarlyBird.map(earlyBird => {
+          return {
+            deadline: earlyBird.deadline,
+            priceType: earlyBird.priceType,
+            prices: this.seasons.map(season => {
+              return this.pricesOfYear[`${season.priceEBKeyPrefix}${earlyBird.roomPriceKeySuffix}`];
+            })
+          };
+        });
+
+        // filter empty earlyBirds to avoid rendering them
+        return earlyBirds.filter(earlyBird => {
+          return earlyBird.prices.filter(price => price).length > 0;
         });
       }
       return [];
@@ -164,7 +100,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-  @import 'RoomPricesTable';
-</style>

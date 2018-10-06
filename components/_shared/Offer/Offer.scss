@@ -1,6 +1,6 @@
 @import '~/assets/style/variables.scss';
 
-.offer-pane {
+.offer {
   background-color: #fff;
   -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
   -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
@@ -19,7 +19,14 @@
     height: 460px;
   }
 
-  .offer-pane-row {
+  &:not(.imageAlignLeft) {
+
+    @media #{$md} {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .offer-row {
     position: relative;
 
     @media #{$md} {
@@ -42,7 +49,7 @@
       }
     }
 
-    .offer-pane-row-center {
+    .offer-row-center {
 
       @media #{$md} {
         position: absolute;
@@ -55,21 +62,28 @@
     }
   }
 
-  .offer-pane-headline {
+  .offer-head {
     margin-bottom: 10px;
-    font-weight: 600;
     text-align: left;
 
     @media #{$md} {
       margin-bottom: 25px;
     }
+
+    .offer-headline {
+      font-weight: 600;
+    }
+
+    .offer-subheadline {
+      font-style: italic;
+    }
   }
 
-  .offer-pane-description {
+  .offer-description {
     text-align: justify;
   }
 
-  .offer-pane-button {
+  .offer-button {
     margin-top: 20px;
     text-align: right;
 

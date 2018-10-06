@@ -2,14 +2,14 @@
   <div class="home-focus-slider">
     <no-ssr>
       <Carousel :perPage="1" :minSwipeDistance="50">
-        <Slide v-for="(focusItem, key) in focusItems" :key="key">
-          <div class="offer-pane-wrapper">
-            <OfferPane
-              :cover="focusItem.fields.cover"
-              :headline="focusItem.fields.headline"
-              :description="focusItem.fields.description"
-              :button="focusItem.fields.button"
-              :buttonLink="focusItem.fields.buttonLink"
+        <Slide v-for="(focusOffer, key) in focusOffers" :key="key">
+          <div class="offer-wrapper">
+            <Offer
+              :image="focusOffer.fields.image"
+              :headline="focusOffer.fields.headline"
+              :description="focusOffer.fields.description"
+              :button="focusOffer.fields.button"
+              :buttonLink="focusOffer.fields.buttonLink"
             />
           </div>
         </Slide>
@@ -20,17 +20,17 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
-import OfferPane from '@/components/_shared/OfferPane/OfferPane';
+import Offer from '@/components/_shared/Offer/Offer';
 
 export default {
   name: 'HomeFocusSlider',
   components: {
-    OfferPane,
+    Offer,
     Carousel,
     Slide
   },
   computed: {
-    focusItems () { return this.$store.state.pageHomeStore.content[0].focusItems; }
+    focusOffers () { return this.$store.state.pageHomeStore.content[0].focusOffers; }
   }
 };
 </script>

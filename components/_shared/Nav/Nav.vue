@@ -33,7 +33,7 @@
         <div class="nav-text">
           <NavItem intlId="nav.items.hotel" :to="routes.HOTEL" />
           <NavItem intlId="nav.items.rooms" :to="routes.ROOMS" />
-          <NavItem intlId="nav.items.arrangements" :to="routes.ARRANGEMENTS" />
+          <NavItem intlId="nav.items.offers" :to="routes.OFFERS" />
           <NavItem intlId="nav.items.contact" :to="routes.CONTACT" />
         </div>
       </div>
