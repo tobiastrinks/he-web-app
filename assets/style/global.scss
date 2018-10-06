@@ -18,9 +18,19 @@ a {
   text-decoration: none;
 }
 
+*::selection {
+  background: $color-primary;
+  color: #fff;
+}
+
 .page-head {
   position: relative;
   z-index: 1;
+  margin-top: 60px;
+
+  @media #{$xl} {
+    margin-top: 70px;
+  }
 }
 
 .page-content {

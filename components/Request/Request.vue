@@ -1,11 +1,13 @@
 <template>
     <div class="request">
       <div class="request-form" v-show="!requestStore.submitted">
-        <HeadImg
-          :headline="content.headImg.fields.headline"
-          :sub-headline="content.headImg.fields.subHeadline"
-          :image="content.headImg.fields.image"
-        />
+        <div class="page-head">
+          <HeadImg
+            :headline="content.headImg.fields.headline"
+            :sub-headline="content.headImg.fields.subHeadline"
+            :image="content.headImg.fields.image"
+          />
+        </div>
         <RequestRooms
           v-if="entryPoint === entryPoints.ROOM" :rooms="rooms"
           :opened="roomsOpened"

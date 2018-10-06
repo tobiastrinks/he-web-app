@@ -39,15 +39,15 @@
     line-height: 55%;
 
     @media #{$md} {
-      font-size: 60px;
+      font-size: 50px;
     }
 
     @media #{$lg} {
-      font-size: 80px;
+      font-size: 70px;
     }
 
     @media #{$xl} {
-      font-size: 100px;
+      font-size: 80px;
     }
   }
 
@@ -65,15 +65,15 @@
     color: $color-primary;
 
     @media #{$md} {
-      font-size: 40px;
+      font-size: 30px;
     }
 
     @media #{$lg} {
-      font-size: 45px;
+      font-size: 40px;
     }
 
     @media #{$xl} {
-      font-size: 50px;
+      font-size: 45px;
     }
   }
 

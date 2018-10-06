@@ -1,13 +1,5 @@
 @import '~/assets/style/variables.scss';
 
-.page-head {
-  margin-top: 60px;
-
-  @media #{$xl} {
-    margin-top: 70px;
-  }
-}
-
 .rooms-overview-line {
   display: flex;
   flex-wrap: wrap;

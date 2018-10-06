@@ -17,7 +17,7 @@
                 <ThumborImage
                   :store="image"
                   :dimensions="{
-                    sm: [600, 800],
+                    sm: [600, 0],
                     md: [900, 0],
                     lg: [2000, 0]
                   }"

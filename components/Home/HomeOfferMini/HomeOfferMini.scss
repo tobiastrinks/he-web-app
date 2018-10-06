@@ -1,0 +1,51 @@
+@import "~/assets/style/variables.scss";
+
+.home-offer-mini {
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 350px;
+  margin: 40px auto;
+
+  @media #{$md} {
+    width: auto;
+    max-width: 380px;
+    margin: 0;
+    position: fixed;
+    z-index: 3;
+    right: 30px;
+    bottom: 30px;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
+  }
+
+  .home-offer-mini-inner {
+    position: relative;
+    padding: 30px;
+    border-top: 10px solid $color-primary;
+    text-align: center;
+
+    .home-offer-mini-close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 20px;
+    }
+
+    .home-offer-mini-headline {
+      font-weight: 600;
+    }
+
+    .hr-short {
+      margin: 15px auto;
+    }
+
+    .home-offer-mini-description {
+      font-style: italic;
+    }
+
+    .home-offer-mini-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

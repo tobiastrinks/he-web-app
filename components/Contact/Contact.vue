@@ -1,10 +1,12 @@
 <template>
   <div class="contact">
-    <HeadImg
-      :headline="content.headImg.fields.headline"
-      :sub-headline="content.headImg.fields.subHeadline"
-      :image="content.headImg.fields.image"
-    />
+    <div class="page-head">
+      <HeadImg
+        :headline="content.headImg.fields.headline"
+        :sub-headline="content.headImg.fields.subHeadline"
+        :image="content.headImg.fields.image"
+      />
+    </div>
     <div class="contact-body">
       <ContactMap />
       <ContactText />

@@ -1,15 +1,22 @@
 @import '~/assets/style/variables.scss';
 
-.home-intro {
-  margin-bottom: 100px;
+.home {
 
-  .home-stars {
-    margin: 0 auto;
-    width: 100px;
-    max-width: 50%;
+  .page-head {
+    margin-top: 0;
+  }
 
-    img {
-      width: 100%;
+  .home-intro {
+    margin-bottom: 100px;
+
+    .home-stars {
+      margin: 0 auto;
+      width: 100px;
+      max-width: 50%;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

@@ -1,10 +1,12 @@
 <template>
   <div class="imprint">
-    <HeadImg
-      :headline="content.headImg.fields.headline"
-      :sub-headline="content.headImg.fields.subHeadline"
-      :image="content.headImg.fields.image"
-    />
+    <div class="page-head">
+      <HeadImg
+        :headline="content.headImg.fields.headline"
+        :sub-headline="content.headImg.fields.subHeadline"
+        :image="content.headImg.fields.image"
+      />
+    </div>
     <div class="imprint-body">
       <TextSection
         v-for="(textSection, index) in textSections"
