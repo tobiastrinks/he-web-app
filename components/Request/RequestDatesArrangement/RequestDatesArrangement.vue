@@ -5,7 +5,8 @@
           class="request-date-arrangement-tile-image"
           :store="activeArrangement.image"
           :dimensions="{
-            sm: [400, 0]
+            mo: [0, 300],
+            sm: [0, 500]
           }"
           :cover="true"
         />

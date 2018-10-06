@@ -14,6 +14,7 @@
         :key="index"
       >
         <Offer
+          :anchor="offer.anchor"
           :image="offer.image"
           :imageAlignLeft="offer.imageAlignLeft"
           :headline="offer.headline"

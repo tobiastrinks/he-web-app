@@ -20,7 +20,7 @@
       <ThumborImage
         :store="content.roomsImage"
         :dimensions="{
-          sm: [400, 0]
+          mo: [500, 0]
         }"
         :cover="true"
       />

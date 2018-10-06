@@ -11,7 +11,8 @@
       <ThumborImage
         :store="arrangement.image"
         :dimensions="{
-        sm: [500, 300]
+        mo: [600, 0],
+        md: [700, 0]
       }"
         :cover="true"
       />

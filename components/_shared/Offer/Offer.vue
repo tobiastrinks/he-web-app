@@ -1,37 +1,39 @@
 <template>
-    <div class="offer" :class="{imageAlignLeft}">
-      <div class="offer-row img">
-        <ThumborImage
-          :store="image"
-          :dimensions="{
-            sm: [600, 0]
-          }"
-          :cover="true"
-        />
+  <div class="offer" :class="{imageAlignLeft}">
+    <div class="offer-row img">
+      <ThumborImage
+        :store="image"
+        :dimensions="{
+          mo: [500,0],
+          sm: [900,0],
+          xl: [1000,0]
+        }"
+        :cover="true"
+      />
+    </div>
+    <div class="offer-row text">
+      <div class="offer-row-center">
+        <div class="offer-head">
+          <p class="offer-headline">
+            {{headline}}
+          </p>
+          <p v-if="subHeadline" class="offer-subheadline">
+            {{subHeadline}}
+          </p>
+        </div>
+        <article class="offer-description">
+          <vue-markdown>
+            {{description}}
+          </vue-markdown>
+        </article>
       </div>
-      <div class="offer-row text">
-        <div class="offer-row-center">
-          <div class="offer-head">
-            <p class="offer-headline">
-              {{headline}}
-            </p>
-            <p v-if="subHeadline" class="offer-subheadline">
-              {{subHeadline}}
-            </p>
-          </div>
-          <article class="offer-description">
-            <vue-markdown>
-              {{description}}
-            </vue-markdown>
-          </article>
-        </div>
-        <div class="offer-button">
-          <LocaleLink :to="buttonLink">
-            <ButtonSt>{{button}}</ButtonSt>
-          </LocaleLink>
-        </div>
+      <div class="offer-button">
+        <LocaleLink :to="buttonLink">
+          <ButtonSt>{{button}}</ButtonSt>
+        </LocaleLink>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -49,6 +51,9 @@ export default {
     VueMarkdown
   },
   props: {
+    anchor: {
+      type: String
+    },
     image: {
       type: Object,
       required: true

@@ -7,7 +7,13 @@
       </div>
       <LocaleLink :to="routes.HOME">
         <div class="nav-mobile-bar-logo">
-          <img :src="content.logoMobile.fields.file.url" />
+          <ThumborImage
+            :store="content.logoMobile"
+            :dimensions="{
+              mo: [100,0]
+            }"
+            :adjustToHeight="true"
+          />
         </div>
       </LocaleLink>
       <a href="tel:+4915224679363">
@@ -26,8 +32,8 @@
               sm: [300,0],
               md: [400,0],
               lg: [500,0]
-            }"
-          />
+              }"
+            />
           </LocaleLink>
         </div>
         <div class="nav-text">

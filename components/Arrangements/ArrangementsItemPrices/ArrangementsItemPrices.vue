@@ -26,7 +26,7 @@
                 {{room.nameShort}}
               </td>
               <td class="arrangements-item-prices-table-td">
-                {{getRoomPrice(room.prices, activeYear)}}
+                <Price>{{getRoomPrice(room.prices, activeYear)}}</Price>
               </td>
             </tr>
           </tbody>
@@ -39,10 +39,11 @@
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import ArrangementsItemBookability from '@/components/Arrangements/ArrangementsItemBookability/ArrangementsItemBookability';
+import Price from '@/components/_shared/Price/Price';
 
 export default {
   name: 'ArrangementsItemServices',
-  components: {ArrangementsItemBookability, ButtonSt, IntlText},
+  components: {Price, ArrangementsItemBookability, ButtonSt, IntlText},
   props: {
     arrangement: {
       type: Object,
@@ -65,8 +66,7 @@ export default {
   methods: {
     getRoomPrice (prices) {
       const price = prices.filter(price => price.fields.year.toString() === this.activeYear)[0];
-      const value = price.fields[this.arrangement.priceKey];
-      return this.$n(value, 'currency');
+      return price.fields[this.arrangement.priceKey];
     }
   }
 };

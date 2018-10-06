@@ -1,85 +1,5 @@
 {
-  "nav": {
-    "items": {
-      "hotel": "HOTEL",
-      "rooms": "ROOMS & PRICES",
-      "restaurant": "RESTAURANT",
-      "arrangements": "SHORT TRIPS",
-      "contact": "CONTACT",
-      "request": "REQUEST ROOM"
-    }
-  },
-  "home": {
-    "focus": {
-      "headline": "SPOTLIGHT",
-      "subheadline": "...this is potentially quite interesting to you!"
-    }
-  },
-  "room": {
-    "backToRooms": "BACK TO ROOMS OVERVIEW",
-    "info": {
-      "request": "REQUEST",
-      "minPrice": "from {price} per person"
-    },
-    "prices": {
-      "perPersonAndDay": "<b>PRICES</b> per person and day",
-      "HP": "half-board",
-      "UF": "bed and breakfast",
-      "season": {
-        "label": "<b>season</b>",
-        "jan": "jan., feb., nov., dec.",
-        "mar": "mar., apr., oct.",
-        "may": "may, jun., sep.",
-        "jul": "jul., aug."
-      },
-      "arrangement": {
-        "label": "Arr.-vorteil",
-        "value": "ab {minDays} Tag | ab {minDays} Tagen"
-      },
-      "price": "Preis",
-      "priceNormal": "Normalpreis",
-      "priceArrangement": "mit Arrangement-Vorteil"
-    },
-    "requestNow": "REQUEST NOW",
-    "backToRoomsBottom": "back to rooms",
-    "suggestion": {
-      "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
-      "button": "SHOW MORE"
-    }
-  },
-  "request": {
-    "rooms": {
-      "headline": "room type"
-    },
-    "bookingType": {
-      "headline": "booking type",
-      "uf": "bed and breakfast",
-      "hp": "half-board",
-      "arr": "arrangements / brief trips"
-    },
-    "dates": {
-      "headline": "dates",
-      "fromLabel": "from",
-      "toLabel": "till"
-    },
-    "persons": {
-      "headline": "participants",
-      "adultLabel": "adults",
-      "childLabel": "children",
-      "fromToLabel": "({from}-{to} years)",
-      "fromLabel": "(from {from} years)"
-    },
-    "extras": {
-      "headline": "additional services",
-      "parkingSpace": "parking space",
-      "pet": "pet"
-    },
-    "comments": {
-      "headline": "comments",
-      "placeholder": "What else can we do for you? Do you have any questions?"
-    }
-  },
-  "footer": {
+  "global": {
     "company": "Hotel Edison GmbH",
     "street": "Dünenstrasse 15",
     "city": "18225 Ostseebad Kühlungsborn",
@@ -96,10 +16,206 @@
     "email": {
       "label": "e-mail:",
       "value": "info@hotel-edison.de"
-    },
+    }
+  },
+  "nav": {
+    "items": {
+      "hotel": "HOTEL",
+      "rooms": "ROOMS & PRICES",
+      "restaurant": "RESTAURANT",
+      "offers": "OFFERS",
+      "contact": "CONTACT",
+      "request": "REQUEST ROOM"
+    }
+  },
+  "footer": {
     "contact": "contact",
     "imprint": "imprint",
-    "data-protection": "data-protection",
+    "dataProtection": "data-protection",
     "copyright": "Hotel Edison GmbH © 2018"
+  },
+  "home": {
+    "focus": {
+      "headline": "SPOTLIGHT",
+      "subheadline": "...this is potentially quite interesting to you!"
+    }
+  },
+  "room": {
+    "backToRoomsTop": "BACK TO ROOMS OVERVIEW",
+    "info": {
+      "request": "REQUEST",
+      "minPrice": "from {price} per person"
+    },
+    "prices": {
+      "perPersonAndDay": "<b>PRICES</b> per person and day",
+      "HP": "half-board",
+      "UF": "bed and breakfast",
+      "season": {
+        "label": "<b>season</b>",
+        "jan": "jan., feb., nov., dec.",
+        "mar": "mar., apr., oct.",
+        "may": "may, jun., sep.",
+        "jul": "jul., aug."
+      },
+      "arrangement": {
+        "label": "arr.-discount",
+        "value": "at least {minDays} day | at least {minDays} days"
+      },
+      "price": "price",
+      "priceNormal": "base price",
+      "priceArrangement": "with arrangement-discount",
+      "earlyBird": {
+        "label": "with early-bird discount",
+        "deadline": "(booking until {deadline})"
+      }
+    },
+    "requestNow": "REQUEST NOW",
+    "backToRoomsBottom": "back to rooms",
+    "suggestion": {
+      "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
+      "button": "SHOW MORE"
+    }
+  },
+  "offers": {
+    "roomButton": "EXPLORE ROOMS"
+  },
+  "arrangements": {
+    "nav": {
+      "backToOverview": "BACK TO OVERVIEW",
+      "season": "seasonal offers",
+      "holiday": "holiday offers"
+    },
+    "item": {
+      "bookable": "bookability: ",
+      "bookableDelimiter": " until ",
+      "requestButton": "Request"
+    }
+  },
+  "request": {
+    "rooms": {
+      "headline": "room type"
+    },
+    "bookingType": {
+      "headline": "booking type",
+      "uf": "bed and breakfast",
+      "hp": "half-board",
+      "arr": "arrangements / holidays"
+    },
+    "dates": {
+      "headline": "dates",
+      "fromLabel": "from",
+      "toLabel": "to",
+      "offers": {
+        "headline": "Special offers",
+        "infoPrefix": "you can find more information on our",
+        "infoLink": "offers page"
+      },
+      "calendar": {
+        "night": "night",
+        "nights": "nights",
+        "dayNames": {
+          "mon": "mon",
+          "tue": "tue",
+          "wed": "wed",
+          "thu": "thu",
+          "fri": "fri",
+          "sat": "sat",
+          "sun": "sun"
+        },
+        "checkIn": "check-in",
+        "checkOut": "check-out",
+        "monthNames": {
+          "jan": "January",
+          "feb": "February",
+          "mar": "March",
+          "apr": "April",
+          "may": "May",
+          "jun": "June",
+          "jul": "July",
+          "aug": "August",
+          "sep": "September",
+          "okt": "October",
+          "nov": "November",
+          "dec": "December"
+        }
+      }
+    },
+    "persons": {
+      "headline": "participants",
+      "adultLabel": "adults",
+      "childLabel": "children",
+      "fromToLabel": "({from}-{to} years)",
+      "fromLabel": "(from {from} years)"
+    },
+    "extras": {
+      "headline": "additional services",
+      "parkingSpace": "parking space",
+      "pet": "pet"
+    },
+    "comments": {
+      "headline": "comments",
+      "placeholder": "What else can we do for you? Do you have any questions?"
+    },
+    "summary": {
+      "headline": "summary",
+      "data": {
+        "dates": "from {from} to {to}",
+        "bookingTypeArrangementPrefix": "selected: "
+      },
+      "form": {
+        "headline": "your personal data:",
+        "gender": {
+          "label": "form of address*",
+          "male": "Mr",
+          "female": "Ms",
+          "invalid": "Please select your form of address"
+        },
+        "firstName": {
+          "label": "first name*",
+          "invalid": "Please insert your first name"
+        },
+        "lastName": {
+          "label": "last name*",
+          "invalid": "Please insert your last name"
+        },
+        "street": {
+          "label": "street / nb.*",
+          "invalid": "Please insert your street"
+        },
+        "houseNumber": {
+          "invalid": "Please insert your street number"
+        },
+        "zip": {
+          "label": "zip / city*",
+          "invalid": "Please insert your zip code"
+        },
+        "city": {
+          "invalid": "Please insert your city"
+        },
+        "country": {
+          "label": "country*",
+          "invalid": "Please insert your country"
+        },
+        "email": {
+          "label": "e-mail*",
+          "invalid": "Please insert a valid e-mail address"
+        },
+        "phone": {
+          "label": "telephone"
+        }
+      }
+    },
+    "submit": {
+      "button": "SEND REQUEST",
+      "error": "We have to apologize. Something went wrong. Please contact us via e-mail or phone."
+    },
+    "confirmation": {
+      "backHome": "BACK TO HOME"
+    }
+  },
+  "contact": {
+    "map": {
+      "headline": "CONTACT US"
+    }
   }
 }

@@ -5,7 +5,7 @@
           <ThumborImage
             :store="groundPlanImage"
             :dimensions="{
-            sm: [400, 0]
+            mo: [300, 0]
           }"
           />
         </div>

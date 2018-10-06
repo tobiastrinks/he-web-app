@@ -5,8 +5,8 @@
       </p>
       <div class="rooms-widgets-content" :class="{single, double, quartet}">
         <RoomsWidgetsItem
-          v-for="(room, key) in rooms"
-          :key="key"
+          v-for="(room, index) in rooms"
+          :key="index"
           :room="room"
           :halfWidth="halfWidth"
           :fullHeight="single"

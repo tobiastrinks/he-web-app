@@ -47,13 +47,35 @@ export default {
       return this.datesOnSelect.from === null && this.dates.from === null;
     },
     localeConfig () {
+      const pre = 'request.dates.calendar';
       return {
-        night: 'Nacht',
-        nights: 'Nächte',
-        'day-names': ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-        'check-in': 'Anreise',
-        'check-out': 'Abreise',
-        'month-names': ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
+        night: this.$t(`${pre}.night`),
+        nights: this.$t(`${pre}.nights`),
+        'day-names': [
+          this.$t(`${pre}.dayNames.sun`),
+          this.$t(`${pre}.dayNames.mon`),
+          this.$t(`${pre}.dayNames.tue`),
+          this.$t(`${pre}.dayNames.wed`),
+          this.$t(`${pre}.dayNames.thu`),
+          this.$t(`${pre}.dayNames.fri`),
+          this.$t(`${pre}.dayNames.sat`)
+        ],
+        'check-in': this.$t(`${pre}.checkIn`),
+        'check-out': this.$t(`${pre}.checkOut`),
+        'month-names': [
+          this.$t(`${pre}.monthNames.jan`),
+          this.$t(`${pre}.monthNames.feb`),
+          this.$t(`${pre}.monthNames.mar`),
+          this.$t(`${pre}.monthNames.apr`),
+          this.$t(`${pre}.monthNames.may`),
+          this.$t(`${pre}.monthNames.jun`),
+          this.$t(`${pre}.monthNames.jul`),
+          this.$t(`${pre}.monthNames.aug`),
+          this.$t(`${pre}.monthNames.sep`),
+          this.$t(`${pre}.monthNames.okt`),
+          this.$t(`${pre}.monthNames.nov`),
+          this.$t(`${pre}.monthNames.dec`)
+        ]
       };
     }
   },

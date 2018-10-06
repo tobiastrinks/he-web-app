@@ -49,7 +49,6 @@ export const mutations = {
     state.activeArrangement = content;
   },
   setSelectedOffers: (state, content) => {
-    console.log(content);
     state.selectedOffers = content;
   },
   setPersons: (state, content) => {

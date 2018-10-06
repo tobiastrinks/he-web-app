@@ -6,7 +6,8 @@
             <ThumborImage
               :store="room.images[0]"
               :dimensions="{
-                sm: [500, 0]
+                mo: [0, 300],
+                sm: [0, 1000]
               }"
               :cover="true"
             />

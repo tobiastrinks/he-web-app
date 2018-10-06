@@ -7,19 +7,23 @@
             :perPage="1"
             :minSwipeDistance="50"
             :paginationEnabled="false"
+            :mouseDrag="true"
             :loop="true"
             :autoplay="true"
             :autoplayTimeout="5000"
             :autoplayHoverPause="false"
+            :speed="1500"
           >
             <Slide v-for="(image, key) in images" :key="key">
               <div class="head-img-large-images-item">
                 <ThumborImage
                   :store="image"
                   :dimensions="{
-                    sm: [600, 0],
-                    md: [900, 0],
-                    lg: [2000, 0]
+                    mo: [600, 0],
+                    sm: [900, 0],
+                    md: [1300, 0],
+                    lg: [1500, 0],
+                    xl: [1900, 0]
                   }"
                   :cover="true"
                 />

@@ -1,15 +1,21 @@
 <template>
     <div class="home-overview-item" :class="{isImageAlignLeft}">
-      <div class="home-overview-item-row img">
+      <div
+        class="home-overview-item-row img"
+      >
         <ThumborImage
           :store="imgStore"
           :dimensions="{
-          sm: [500,0]
-        }"
+            mo: [600,0],
+            sm: [900,0],
+            xl: [1000,0]
+          }"
           :cover="true"
         />
       </div>
-      <div class="home-overview-item-row text">
+      <div
+        class="home-overview-item-row text"
+      >
         <div class="home-overview-item-text-center">
           <p class="home-overview-item-headline">{{headline}}</p>
           <hr class="hr-short" />

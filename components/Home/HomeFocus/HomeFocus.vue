@@ -1,6 +1,8 @@
 <template>
     <div class="home-focus">
-      <div class="home-focus-head">
+      <div
+        class="home-focus-head"
+      >
         <h2 class="home-focus-headline">
           <IntlText id="home.focus.headline" />
         </h2>

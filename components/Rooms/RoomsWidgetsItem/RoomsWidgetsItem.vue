@@ -7,9 +7,8 @@
               v-if="image.fields.file"
               :store="image"
               :dimensions="{
-              sm: [400, 200],
-              lg: [500, 500]
-            }"
+                mo: [600, 400]
+              }"
               :cover="true"
             />
           </div>
@@ -22,6 +21,7 @@
 </template>
 
 <script>
+import {routes} from '@/assets/config/routesConfig';
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 
@@ -50,7 +50,7 @@ export default {
     roomContent () { return this.room.fields; },
     image () { return this.roomContent.images[0]; },
     label () { return this.roomContent.nameOverview; },
-    to () { return this.$route.fullPath + this.roomContent.route; }
+    to () { return `${routes.ROOMS}${this.roomContent.route}`; }
   }
 };
 </script>

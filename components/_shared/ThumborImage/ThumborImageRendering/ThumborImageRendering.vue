@@ -1,5 +1,5 @@
 <template>
-  <div class="thumbor-image-rendering" :class="{cover}">
+  <div class="thumbor-image-rendering" :class="{cover, adjustToWidth, adjustToHeight}">
     <visual
       :image="imgUrl"
       :background="cover ? 'cover' : ''"
@@ -31,6 +31,14 @@ export default {
     cover: {
       type: Boolean,
       default: false
+    },
+    adjustToWidth: {
+      type: Boolean,
+      default: false
+    },
+    adjustToHeight: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -56,7 +64,8 @@ export default {
 
       if (
         newDimensions &&
-        (newDimensions[0] > this.activeDimensions[0])
+        (newDimensions[0] > this.activeDimensions[0] ||
+          newDimensions[1] > this.activeDimensions[1])
       ) {
         this.loadImage(newDimensions);
       }

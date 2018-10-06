@@ -109,6 +109,35 @@
         "headline": "Sonderangebote",
         "infoPrefix": "für mehr Informationen besuchen Sie unsere",
         "infoLink": "Angebote Seite"
+      },
+      "calendar": {
+        "night": "Nacht",
+        "nights": "Nächte",
+        "dayNames": {
+          "mon": "Mo",
+          "tue": "Di",
+          "wed": "Mi",
+          "thu": "Do",
+          "fri": "Fr",
+          "sat": "Sa",
+          "sun": "So"
+        },
+        "checkIn": "Anreise",
+        "checkOut": "Abreise",
+        "monthNames": {
+          "jan": "Januar",
+          "feb": "Februar",
+          "mar": "März",
+          "apr": "April",
+          "may": "Mai",
+          "jun": "Juni",
+          "jul": "Juli",
+          "aug": "August",
+          "sep": "September",
+          "okt": "Oktober",
+          "nov": "November",
+          "dec": "Dezember"
+        }
       }
     },
     "persons": {

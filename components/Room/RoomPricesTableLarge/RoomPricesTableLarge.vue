@@ -40,7 +40,7 @@
             :key="key"
           >
             <span>
-              {{$n(price, 'currency')}}
+              <Price>{{price}}</Price>
             </span>
           </td>
         </tr>
@@ -55,7 +55,7 @@
             :key="key"
           >
             <span>
-              {{$n(price, 'currency')}}
+              <Price>{{price}}</Price>
             </span>
           </td>
         </tr>
@@ -84,7 +84,7 @@
             :key="key"
           >
             <span v-if="price" class="room-prices-table-large-earlybird-price">
-              {{$n(price, 'currency')}}
+              <Price>{{price}}</Price>
             </span>
           </td>
         </tr>
@@ -97,10 +97,11 @@
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import {seasons} from '@/assets/config/hotelConfig';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
+import Price from '@/components/_shared/Price/Price';
 
 export default {
   name: 'RoomPricesTableLarge',
-  components: {IntlText},
+  components: {Price, IntlText},
   props: {
     type: {
       type: String,

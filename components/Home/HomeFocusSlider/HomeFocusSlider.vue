@@ -2,14 +2,15 @@
   <div class="home-focus-slider">
     <no-ssr>
       <Carousel :perPage="1" :minSwipeDistance="50">
-        <Slide v-for="(focusOffer, key) in focusOffers" :key="key">
+        <Slide v-for="(focusOffer, key) in focusOffers.map(item => item.fields)" :key="key">
           <div class="offer-wrapper">
             <Offer
-              :image="focusOffer.fields.image"
-              :headline="focusOffer.fields.headline"
-              :description="focusOffer.fields.description"
-              :button="focusOffer.fields.button"
-              :buttonLink="focusOffer.fields.buttonLink"
+              :image="focusOffer.image"
+              :headline="focusOffer.headline"
+              :subHeadline="focusOffer.subHeadline"
+              :description="focusOffer.description"
+              :button="focusOffer.button"
+              :buttonLink="focusOffer.buttonLink"
             />
           </div>
         </Slide>

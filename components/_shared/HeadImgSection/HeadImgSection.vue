@@ -4,9 +4,11 @@
         <ThumborImage
           :store="image"
           :dimensions="{
-            sm: [600, 200],
-            md: [900, 300],
-            lg: [2000, 400]
+            mo: [600, 200],
+            sm: [900, 300],
+            md: [1300, 400],
+            lg: [1500, 400],
+            xl: [1900, 400]
           }"
           :cover="true"
         />
