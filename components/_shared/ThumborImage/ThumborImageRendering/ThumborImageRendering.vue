@@ -90,6 +90,14 @@ export default {
         config.originalUrl = this.store.fields.file.url.replace('//', '');
       } else if (this.staticUrl) {
         config.originalUrl = path.join(
+          /**
+           * use THUMBOR_ASSETS_URL in development environment to make Thumbor able
+           * to serve your assets. Otherwise it will use http://localhost:3000 which
+           * is not accessible of course.
+           *
+           * IN PRODUCTION YOUR SHOULD USE window.location.hostname SINCE THESE ASSETS
+           * ARE PUBLIC AVAILABLE BY THE INDIVIDUAL HOSTNAME (e.g. https://hotel-edison.de)
+           */
           process.env.thumborAssetsUrl || window.location.hostname,
           this.staticUrl
         );
