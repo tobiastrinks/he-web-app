@@ -27,11 +27,11 @@
         <div class="nav-logo">
           <LocaleLink :to="routes.HOME">
             <ThumborImage
-            :store="content.logo"
-            :dimensions="{
-              sm: [300,0],
-              md: [400,0],
-              lg: [500,0]
+              :store="content.logo"
+              :dimensions="{
+                sm: [300,0],
+                md: [400,0],
+                lg: [500,0]
               }"
             />
           </LocaleLink>
