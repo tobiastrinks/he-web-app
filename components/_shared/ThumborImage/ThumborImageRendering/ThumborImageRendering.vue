@@ -95,8 +95,8 @@ export default {
            * to serve your assets. Otherwise it will use http://localhost:3000 which
            * is not accessible of course.
            *
-           * IN PRODUCTION YOUR SHOULD USE window.location.hostname SINCE THESE ASSETS
-           * ARE PUBLIC AVAILABLE BY THE INDIVIDUAL HOSTNAME (e.g. https://hotel-edison.de)
+           * IN PRODUCTION YOU SHOULD USE window.location.hostname SINCE THESE ASSETS
+           * ARE PUBLIC AVAILABLE THROUGH THE INDIVIDUAL HOSTNAME (e.g. https://hotel-edison.de)
            */
           process.env.thumborAssetsUrl || window.location.hostname,
           this.staticUrl
