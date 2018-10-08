@@ -21,6 +21,17 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Website for Hotel Edison GmbH' }
     ]
   },
+  sitemap: {
+    routes: [
+      '/zimmer-und-preise/doppelzimmer-classic',
+      '/zimmer-und-preise/doppelzimmer-classic-plus',
+      '/zimmer-und-preise/doppelzimmer-comfort',
+      '/zimmer-und-preise/doppelzimmer-comfort-plus',
+      '/zimmer-und-preise/junior-appartement',
+      '/zimmer-und-preise/senior-appartement',
+      '/zimmer-und-preise/panorama-suite'
+    ]
+  },
   loading: { color: '#F2C34A' },
   build: {
     extend (config, { isDev, isClient }) {
@@ -55,6 +66,7 @@ module.exports = {
   ],
   modules: [
     'nuxt-rfg-icon',
-    '@nuxtjs/manifest'
+    '@nuxtjs/manifest',
+    '@nuxtjs/sitemap'
   ]
 };
