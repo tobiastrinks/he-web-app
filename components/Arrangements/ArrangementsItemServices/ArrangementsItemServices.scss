@@ -12,7 +12,7 @@
 
   @media #{$md} {
     width: 60%;
-    padding: 30px;
+    padding: 30px 40px;
   }
 
   .arrangements-item-services-headline {
@@ -27,6 +27,14 @@
   }
 
   .arrangements-item-services-description {
-    margin: 30px 0 30px 20px;
+    margin: 30px 0;
+
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: $color-primary !important;
+    }
   }
 }

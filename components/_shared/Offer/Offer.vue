@@ -1,5 +1,5 @@
 <template>
-  <div class="offer" :class="{imageAlignLeft}">
+  <div :id="anchor" class="offer" :class="{imageAlignLeft}">
     <div class="offer-row img">
       <ThumborImage
         :store="image"

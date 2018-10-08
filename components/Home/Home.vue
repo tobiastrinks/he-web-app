@@ -6,6 +6,7 @@
         :images="content.headImg.fields.images"
         :headline="content.headImg.fields.headline"
         :sub-headline="content.headImg.fields.subHeadline"
+        :has-sun="content.headImg.fields.hasSun"
       />
     </div>
     <div class="page-content">

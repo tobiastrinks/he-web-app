@@ -79,6 +79,23 @@ export default {
   computed: {
     offersStore () { return this.$store.state.pageOffersStore; },
     content () { return this.offersStore.content[0]; }
+  },
+  methods: {
+    scrollToAnchor () {
+      const selectedAnchor = this.$route.query.s;
+      if (selectedAnchor) {
+        const selectedOffer = document.getElementById(selectedAnchor);
+        if (selectedOffer) {
+          window.scrollTo(
+            0,
+            selectedOffer.offsetTop + (selectedOffer.offsetHeight / 2) - (window.innerHeight / 2)
+          );
+        }
+      }
+    }
+  },
+  mounted () {
+    this.scrollToAnchor();
   }
 };
 </script>
