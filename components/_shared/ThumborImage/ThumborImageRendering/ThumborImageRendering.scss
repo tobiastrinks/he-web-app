@@ -27,8 +27,8 @@
   }
 
   &.adjustToHeight {
+    height: inherit;
 
-    &,
     .vv-visual,
     .vv-transition,
     img {

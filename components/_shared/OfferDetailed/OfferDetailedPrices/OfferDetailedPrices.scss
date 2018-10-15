@@ -1,0 +1,40 @@
+@import "~/assets/style/variables.scss";
+
+.offer-detailed-prices {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: $color-grey-light;
+
+  @media #{$sm} {
+    width: 45%;
+    padding: 30px 15px;
+  }
+
+  @media #{$md} {
+    width: 40%;
+    padding: 30px;
+  }
+
+  .offer-detailed-prices-table {
+
+    table {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .offer-detailed-prices-table-td {
+      padding: 0;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  .offer-detailed-prices-format {
+    font-size: 90%;
+    font-style: italic;
+    text-align: right;
+  }
+}

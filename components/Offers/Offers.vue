@@ -8,42 +8,21 @@
       />
     </div>
     <div class="offers-main-items">
-      <div
-        class="offers-item"
-        v-for="(offer, index) in content.mainOffers.map(item => item.fields)"
+      <OffersItem
+        v-for="(offer, index) in content.mainOffers"
         :key="index"
-      >
-        <Offer
-          :anchor="offer.anchor"
-          :image="offer.image"
-          :imageAlignLeft="offer.imageAlignLeft"
-          :headline="offer.headline"
-          :subHeadline="offer.subHeadline"
-          :description="offer.description"
-          :button="offer.button"
-          :buttonLink="offer.buttonLink"
-        />
-      </div>
+        :offer="offer"
+      />
     </div>
     <p class="offers-other-items-headline">
       {{content.otherOffersHeadline}}
     </p>
     <div class="offers-other-items">
-      <div
-        class="offers-item"
-        v-for="(offer, index) in content.otherOffers.map(item => item.fields)"
+      <OffersItem
+        v-for="(offer, index) in content.otherOffers"
         :key="index"
-      >
-        <Offer
-          :image="offer.image"
-          :imageAlignLeft="offer.imageAlignLeft"
-          :headline="offer.headline"
-          :subHeadline="offer.subHeadline"
-          :description="offer.description"
-          :button="offer.button"
-          :buttonLink="offer.buttonLink"
-        />
-      </div>
+        :offer="offer"
+      />
     </div>
     <div class="offers-footer">
       <p class="offers-footer-note">
@@ -67,10 +46,11 @@ import Offer from '@/components/_shared/Offer/Offer';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
+import OffersItem from '@/components/Offers/OffersItem/OffersItem';
 
 export default {
   name: 'Offers',
-  components: {IntlText, ButtonSt, LocaleLink, Offer, HeadImg},
+  components: {OffersItem, IntlText, ButtonSt, LocaleLink, Offer, HeadImg},
   data () {
     return {
       routes

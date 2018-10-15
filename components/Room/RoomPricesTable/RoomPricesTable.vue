@@ -1,12 +1,14 @@
 <template>
     <div class="room-prices-table">
       <RoomPricesTableLarge
+        :seasons="activeSeasons"
         :pricesArr="pricesArr"
         :pricesNormal="pricesNormal"
         :earlyBirds="earlyBirds"
         :type="type"
       />
       <RoomPricesTableMobile
+        :seasons="activeSeasons"
         :pricesArr="pricesArr"
         :pricesNormal="pricesNormal"
         :earlyBirds="earlyBirds"
@@ -43,6 +45,24 @@ export default {
     return { priceTypes, seasons };
   },
   computed: {
+    activeSeasons () {
+      const selectedYear = this.year;
+      const d = new Date();
+      const currentYear = d.getFullYear();
+      const currentMonth = d.getMonth() + 1;
+
+      if (selectedYear > currentYear) {
+        return seasons;
+      } else {
+        return seasons.filter(season => {
+          // compare months
+          const upcomingSeasonMonths = season.months.filter(
+            month => (month >= currentMonth)
+          );
+          return upcomingSeasonMonths.length > 0;
+        });
+      }
+    },
     pricesOfYear () {
       const prices = this.room.prices.filter(price => { return (price.fields.year === this.year); });
       if (prices.length) {
@@ -52,7 +72,7 @@ export default {
     pricesNormal () {
       if (this.pricesOfYear) {
         // priceOrderedBySeasonArray
-        return seasons.map(season => {
+        return this.activeSeasons.map(season => {
           if (this.type === priceTypes.HP) {
             return this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp;
           } else {
@@ -65,7 +85,7 @@ export default {
     pricesArr () {
       if (this.pricesOfYear) {
         // priceOrderedBySeasonArray
-        return seasons.map(season => {
+        return this.activeSeasons.map(season => {
           return this.pricesOfYear[season.priceArrKey];
         });
       }

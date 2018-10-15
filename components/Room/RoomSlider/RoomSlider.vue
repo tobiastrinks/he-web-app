@@ -4,14 +4,16 @@
         <Carousel :perPage="1" :minSwipeDistance="50">
           <Slide v-for="(image, key) in images" :key="key">
             <div class="room-slider-item">
-              <ThumborImage
-                :store="image"
-                :dimensions="{
-                  mo: [600, 0],
-                  sm: [900, 0]
-                }"
-                :cover="true"
-              />
+              <div class="room-slider-item-inner">
+                <ThumborImage
+                  :store="image"
+                  :dimensions="{
+                    mo: [600, 0],
+                    sm: [900, 0]
+                  }"
+                  :cover="true"
+                />
+              </div>
             </div>
           </Slide>
         </Carousel>

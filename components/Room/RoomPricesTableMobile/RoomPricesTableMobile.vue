@@ -67,7 +67,6 @@
 
 <script>
 import IntlText from '@/components/_shared/IntlText/IntlText';
-import {seasons} from '@/assets/config/hotelConfig';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
 
 export default {
@@ -76,6 +75,10 @@ export default {
   props: {
     type: {
       type: String,
+      required: true
+    },
+    seasons: {
+      type: Object,
       required: true
     },
     pricesArr: {
@@ -93,7 +96,6 @@ export default {
   },
   data () {
     return {
-      seasons,
       priceTypes
     };
   }

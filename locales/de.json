@@ -63,7 +63,7 @@
       },
       "price": "Preis",
       "priceNormal": "Normalpreis",
-      "priceArrangement": "mit Arrangement-Vorteil",
+      "priceArrangement": "Preis mit Arrangement-Vorteil",
       "earlyBird": {
         "label": "mit Frübucherrabatt",
         "deadline": "(Buchung bis {deadline})"
@@ -77,18 +77,23 @@
     }
   },
   "offers": {
+    "offerDetailed": {
+      "requestButton": "ANFRAGEN",
+      "priceFormat": "Preise pro Person und Tag"
+    },
     "roomButton": "JETZT ZIMMER ENTDECKEN"
   },
   "arrangements": {
     "nav": {
       "backToOverview": "ZURÜCK ZUR ÜBERSICHT",
-      "season": "Saisonale Angebote",
+      "season": "Arrangements",
       "holiday": "Feiertagsangebote"
     },
     "item": {
       "bookable": "Buchbarkeit: ",
       "bookableDelimiter": " bis zum ",
-      "requestButton": "Anfragen"
+      "requestButton": "Anfragen",
+      "priceFormat": "Preise pro Person und Tag"
     }
   },
   "request": {

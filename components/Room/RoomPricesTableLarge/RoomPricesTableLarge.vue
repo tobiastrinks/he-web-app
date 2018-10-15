@@ -2,19 +2,25 @@
   <div class="room-prices-table-large">
     <table>
       <tbody>
-        <tr class="room-prices-table-large-line">
+        <tr
+          class="room-prices-table-large-line"
+          :class="{'border-bottom': type !== priceTypes.HP}"
+        >
           <td class="room-prices-table-large-td">
             <IntlText id="room.prices.season.label" />
           </td>
           <td
             class="room-prices-table-large-td"
-            v-for="(seasonLabelId, key) in seasons.map(season => { return season.labelId; })"
+            v-for="(season, key) in seasons"
             :key="key"
           >
-            <IntlText :id="`room.prices.season.${seasonLabelId}`" />
+            <IntlText :id="`room.prices.season.${season.labelId}`" />
           </td>
         </tr>
-        <tr class="room-prices-table-large-line border-bottom">
+        <tr
+          v-if="type === priceTypes.HP"
+          class="room-prices-table-large-line border-bottom"
+        >
           <td class="room-prices-table-large-td">
             <IntlText id="room.prices.arrangement.label" />
           </td>
@@ -95,7 +101,6 @@
 
 <script>
 import IntlText from '@/components/_shared/IntlText/IntlText';
-import {seasons} from '@/assets/config/hotelConfig';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
 import Price from '@/components/_shared/Price/Price';
 
@@ -105,6 +110,10 @@ export default {
   props: {
     type: {
       type: String,
+      required: true
+    },
+    seasons: {
+      type: Array,
       required: true
     },
     pricesArr: {
@@ -122,7 +131,6 @@ export default {
   },
   data () {
     return {
-      seasons,
       priceTypes
     };
   }

@@ -14,6 +14,9 @@
       <div class="arrangements-item-prices-bookable">
         <ArrangementsItemBookability :arrangement="arrangement" />
       </div>
+      <p class="arrangements-item-prices-format">
+        <IntlText id="arrangements.item.priceFormat" />
+      </p>
       <div class="arrangements-item-prices-table">
         <table>
           <tbody>

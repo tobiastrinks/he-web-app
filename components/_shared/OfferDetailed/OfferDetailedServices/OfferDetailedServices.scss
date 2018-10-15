@@ -1,0 +1,40 @@
+@import "~/assets/style/variables.scss";
+
+.offer-detailed-services {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+
+  @media #{$sm} {
+    width: 55%;
+    padding: 50px 15px;
+  }
+
+  @media #{$md} {
+    width: 60%;
+    padding: 50px 40px;
+  }
+
+  .offer-detailed-services-headline {
+    font-size: 110%;
+    font-weight: 600;
+  }
+
+  .offer-detailed-services-subheadline {
+    font-size: 110%;
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  .offer-detailed-services-description {
+    margin: 30px 0;
+
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: $color-primary !important;
+    }
+  }
+}

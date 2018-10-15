@@ -1,0 +1,45 @@
+@import '~/assets/style/variables.scss';
+
+.head-img-large-slider {
+
+  .head-img-large-slider-image {
+    /* equivalent to HeadImgLarge.scss */
+    height: 35vh;
+
+    @media #{$sm} {
+      height: 40vh;
+    }
+
+    @media #{$md} {
+      margin-top: 0;
+      height: 90vh;
+    }
+  }
+
+  .agile__arrow {
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    margin: 0 10px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+
+    @media #{$sm} {
+      margin: 0 20px;
+    }
+
+    &.agile__arrow--prev {
+      left: 0;
+    }
+
+    &.agile__arrow--next {
+      right: 0;
+    }
+
+    svg {
+      height: 100%;
+      fill: #fff !important;
+    }
+  }
+}

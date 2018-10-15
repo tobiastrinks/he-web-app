@@ -62,7 +62,8 @@ module.exports = {
   ],
   plugins: [
     '~/plugins/i18n.js',
-    '~/plugins/fontawesome.js'
+    '~/plugins/fontawesome.js',
+    { src: '~/plugins/vueAgile.js', ssr: false }
   ],
   modules: [
     'nuxt-rfg-icon',

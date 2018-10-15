@@ -22,7 +22,7 @@
               </ButtonSt>
             </LocaleLink>
             <p class="room-info-text-request-text">
-              <IntlText id="room.info.minPrice" :values="{price: $n(minPrice, 'currency')}" />
+              <IntlText id="room.info.minPrice" :values="{price: `${minPrice} €`}" />
             </p>
           </div>
         </div>

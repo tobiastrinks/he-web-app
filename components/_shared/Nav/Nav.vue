@@ -44,15 +44,15 @@
         </div>
       </div>
       <div class="nav-right">
-        <NavLocale />
         <div class="nav-mobile-request-room">
           <NavItem intlId="nav.items.request" :to="routes.REQUEST" :marked="true" />
         </div>
       </div>
       <div class="nav-mobile-sun">
         <ThumborImage
-          static-url="/_shared/sun-transparent.png"
+          static-url="/_shared/sun.jpg"
           :dimensions="{
+            mo: [300, 0],
             sm: [500, 0]
           }"
         />

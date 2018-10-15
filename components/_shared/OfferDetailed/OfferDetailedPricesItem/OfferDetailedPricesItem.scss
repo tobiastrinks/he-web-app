@@ -1,0 +1,17 @@
+.offer-detailed-prices-item {
+  margin: 20px 0;
+
+  .offer-detailed-prices-item-bookable {
+    font-style: italic;
+    font-size: 90%;
+    margin: 5px 0;
+  }
+
+  .offer-detailed-prices-item-values {
+    width: 100%;
+
+    .offer-detailed-prices-item-values-price {
+      text-align: right;
+    }
+  }
+}

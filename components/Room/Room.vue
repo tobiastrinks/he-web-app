@@ -81,10 +81,10 @@ export default {
       return this.room.name.toUpperCase();
     },
     minPrice () {
-      const prices = this.room.prices;
-      const priceUfJan = prices.map(item => { return item.fields.janUf; });
+      const prices = this.room.prices.slice();
+      const maxYearPrice = prices.sort((a, b) => a.fields.year < b.fields.year)[0];
 
-      return priceUfJan.sort()[0];
+      return maxYearPrice.fields.janUf;
     },
     suggestedRoom () {
       const rooms = this.$store.state.roomsStore.content;
