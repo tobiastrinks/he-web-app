@@ -17,9 +17,7 @@
             </span>
           </td>
           <td class="room-prices-table-mobile-season-prices-td">
-            <span>
-              {{$n(pricesNormal[index], 'currency')}}
-            </span>
+            <Price :note="pricesNormal[index].note">{{pricesNormal[index].value}}</Price>
           </td>
         </tr>
         <tr class="room-prices-table-mobile-season-prices-line" v-show="type === priceTypes.HP">
@@ -29,15 +27,13 @@
             </span>
           </td>
           <td class="room-prices-table-mobile-season-prices-td">
-            <span>
-              {{$n(pricesArr[index], 'currency')}}
-            </span>
+            <Price :note="pricesArr[index].note">{{pricesArr[index].value}}</Price>
           </td>
         </tr>
         <tr
           v-for="(earlyBird, earlyBirdIndex) in earlyBirds"
           :key="earlyBirdIndex"
-          v-if="earlyBirdIndex === 0 && earlyBird.priceType === type && earlyBird.prices[index]"
+          v-if="earlyBirdIndex === 0 && earlyBird.priceType === type && earlyBird.prices[index].value"
           class="room-prices-table-mobile-season-prices-line"
         >
           <td class="room-prices-table-mobile-season-prices-td">
@@ -54,7 +50,7 @@
           </td>
           <td class="room-prices-table-mobile-season-prices-td">
             <span class="room-prices-table-large-earlybird-price">
-              {{$n(earlyBird.prices[index], 'currency')}}
+              <Price :note="earlyBird.prices[index].note">{{earlyBird.prices[index].value}}</Price>
             </span>
           </td>
         </tr>
@@ -68,17 +64,18 @@
 <script>
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
+import Price from '@/components/_shared/Price/Price';
 
 export default {
   name: 'RoomPricesTableMobile',
-  components: {IntlText},
+  components: {Price, IntlText},
   props: {
     type: {
       type: String,
       required: true
     },
     seasons: {
-      type: Object,
+      type: Array,
       required: true
     },
     pricesArr: {

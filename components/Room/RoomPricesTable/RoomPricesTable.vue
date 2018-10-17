@@ -74,9 +74,15 @@ export default {
         // priceOrderedBySeasonArray
         return this.activeSeasons.map(season => {
           if (this.type === priceTypes.HP) {
-            return this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp;
+            return {
+              value: this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp,
+              note: this.getNote(this.pricesOfYear, season.priceUfKey.replace('Uf', 'Hp'))
+            };
           } else {
-            return this.pricesOfYear[season.priceUfKey];
+            return {
+              value: this.pricesOfYear[season.priceUfKey],
+              note: this.getNote(this.pricesOfYear, season.priceUfKey)
+            };
           }
         });
       }
@@ -86,7 +92,10 @@ export default {
       if (this.pricesOfYear) {
         // priceOrderedBySeasonArray
         return this.activeSeasons.map(season => {
-          return this.pricesOfYear[season.priceArrKey];
+          return {
+            value: this.pricesOfYear[season.priceArrKey],
+            note: this.getNote(this.pricesOfYear, season.priceArrKey)
+          };
         });
       }
       return [];
@@ -105,7 +114,11 @@ export default {
             deadline: earlyBird.deadline,
             priceType: earlyBird.priceType,
             prices: this.seasons.map(season => {
-              return this.pricesOfYear[`${season.priceEBKeyPrefix}${earlyBird.roomPriceKeySuffix}`];
+              const priceKey = `${season.priceEBKeyPrefix}${earlyBird.roomPriceKeySuffix}`;
+              return {
+                value: this.pricesOfYear[priceKey],
+                note: this.getNote(this.pricesOfYear, priceKey)
+              };
             })
           };
         });
@@ -116,6 +129,21 @@ export default {
         });
       }
       return [];
+    }
+  },
+  methods: {
+    getNote (priceObj, priceKey) {
+      if (priceObj.note1keys) {
+        if (priceObj.note1keys.filter(key => key === priceKey).length) {
+          return '*';
+        }
+      }
+      if (priceObj.note2keys) {
+        if (priceObj.note2keys.filter(key => key === priceKey).length) {
+          return '**';
+        }
+      }
+      return '';
     }
   }
 };

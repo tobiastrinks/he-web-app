@@ -46,7 +46,7 @@
             :key="key"
           >
             <span>
-              <Price>{{price}}</Price>
+              <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
         </tr>
@@ -61,7 +61,7 @@
             :key="key"
           >
             <span>
-              <Price>{{price}}</Price>
+              <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
         </tr>
@@ -89,8 +89,8 @@
             v-for="(price, key) in earlyBird.prices"
             :key="key"
           >
-            <span v-if="price" class="room-prices-table-large-earlybird-price">
-              <Price>{{price}}</Price>
+            <span v-if="price.value" class="room-prices-table-large-earlybird-price">
+              <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
         </tr>

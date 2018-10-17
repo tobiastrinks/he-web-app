@@ -28,6 +28,7 @@
         :type="priceType"
         :year="priceYear"
       />
+      <RoomPricesNotes v-if="room.notes && room.notes.length" :notes="room.notes" />
       <RoomPricesConditions />
     </div>
 </template>
@@ -39,10 +40,11 @@ import { getLocalStorage } from '@/assets/js/cachingStoreHelper';
 import RoomPricesSwitch from '@/components/Room/RoomPricesSwitch/RoomPricesSwitch';
 import RoomPricesTable from '@/components/Room/RoomPricesTable/RoomPricesTable';
 import RoomPricesConditions from '@/components/Room/RoomPricesConditions/RoomPricesConditions';
+import RoomPricesNotes from '@/components/Room/RoomPricesNotes/RoomPricesNotes';
 
 export default {
   name: 'RoomPrices',
-  components: {RoomPricesConditions, RoomPricesTable, RoomPricesSwitch, IntlText},
+  components: {RoomPricesNotes, RoomPricesConditions, RoomPricesTable, RoomPricesSwitch, IntlText},
   props: {
     room: {
       type: Object,

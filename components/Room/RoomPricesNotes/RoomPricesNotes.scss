@@ -1,0 +1,11 @@
+@import "~/assets/style/variables.scss";
+
+.room-prices-notes {
+  margin: 0 0 30px 20px;
+  font-size: 90%;
+  font-style: italic;
+
+  @media #{$sm} {
+    margin: 0 0 30px 30px;
+  }
+}
