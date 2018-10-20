@@ -92,7 +92,7 @@ export default {
           }
         });
         // prefer holidays
-        const activeArrangementsSorted = activeArrangements.sort(a1 => !a1.holiday);
+        const activeArrangementsSorted = activeArrangements.sort(a1 => !a1.holiday ? 1 : -1);
         this.$store.commit('pageRequestStore/setActiveArrangement', activeArrangementsSorted[0]);
       }
     }

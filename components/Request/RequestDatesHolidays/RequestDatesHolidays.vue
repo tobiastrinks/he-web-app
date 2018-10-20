@@ -40,7 +40,7 @@ export default {
         );
       // get the upcoming next 3
       return allHolidays.sort((a, b) => {
-        return a.bookableFrom > b.bookableTo;
+        return a.bookableFrom > b.bookableTo ? 1 : -1;
       }).slice(0, 3);
     },
     requestStore () {

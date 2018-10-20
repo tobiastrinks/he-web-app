@@ -16,21 +16,42 @@
       :key="index"
       :table="table"
     />
+    <div
+      v-if="bookingConditionContent.note"
+      v-show="showConditions"
+      class="room-prices-conditions-notes"
+    >
+      <vue-markdown>
+        {{bookingConditionContent.note}}
+      </vue-markdown>
+    </div>
   </div>
 </template>
 
 <script>
 import RoomPricesConditionsList from '@/components/Room/RoomPricesConditionsList/RoomPricesConditionsList';
 import RoomPricesConditionsTable from '@/components/Room/RoomPricesConditionsTable/RoomPricesConditionsTable';
+import VueMarkdown from 'vue-markdown';
+
 export default {
   name: 'RoomPricesConditions',
-  components: {RoomPricesConditionsTable, RoomPricesConditionsList},
+  components: {
+    RoomPricesConditionsTable,
+    RoomPricesConditionsList,
+    VueMarkdown
+  },
   computed: {
     bookingConditionContent () {
       return this.$store.state.bookingConditionsStore.content[0];
     },
     bookingConditionTables () {
-      return this.bookingConditionContent.tables.map(table => table.fields);
+      const tables = this.bookingConditionContent.tables;
+
+      if (tables) {
+        return tables.map(table => table.fields);
+      } else {
+        return [];
+      }
     }
   },
   data () {

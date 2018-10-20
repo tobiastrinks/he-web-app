@@ -4,5 +4,5 @@ export const priceTypes = {
 };
 
 export const priceYearConfig = {
-  nextYearAsDefaultFromMonth: 11
+  nextYearAsDefaultFromMonth: 10
 };

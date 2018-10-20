@@ -106,11 +106,11 @@ export default {
       const groupedHolidays = priceKeys.map(priceKey => {
         return holidays
           .filter(h => h.priceKey === priceKey)
-          .sort((h1, h2) => h1.bookableFrom > h2.bookableFrom);
+          .sort((h1, h2) => h1.bookableFrom > h2.bookableFrom ? 1 : -1);
       });
 
       // sort by date
-      return groupedHolidays.sort((h1, h2) => h1[0].bookableFrom > h2[0].bookableFrom);
+      return groupedHolidays.sort((h1, h2) => h1[0].bookableFrom > h2[0].bookableFrom ? 1 : -1);
     }
   }
 };

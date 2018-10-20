@@ -107,7 +107,7 @@ export default {
       if (this.pricesOfYear) {
         const validAndSortedEarlyBird = this.earlyBirdConfig
           .filter(item => new Date(item.deadline).getTime() > new Date().getTime())
-          .sort((a, b) => a.deadline > b.deadline);
+          .sort((a, b) => a.deadline > b.deadline ? 1 : -1);
 
         const earlyBirds = validAndSortedEarlyBird.map(earlyBird => {
           return {
@@ -125,7 +125,7 @@ export default {
 
         // filter empty earlyBirds to avoid rendering them
         return earlyBirds.filter(earlyBird => {
-          return earlyBird.prices.filter(price => price).length > 0;
+          return earlyBird.prices.filter(price => price.value).length > 0;
         });
       }
       return [];

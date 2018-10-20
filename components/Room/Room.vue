@@ -82,7 +82,7 @@ export default {
     },
     minPrice () {
       const prices = this.room.prices.slice();
-      const maxYearPrice = prices.sort((a, b) => a.fields.year < b.fields.year)[0];
+      const maxYearPrice = prices.sort((a, b) => a.fields.year < b.fields.year ? 1 : -1)[0];
 
       return maxYearPrice.fields.janUf;
     },
