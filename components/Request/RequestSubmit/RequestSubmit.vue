@@ -55,6 +55,8 @@ export default {
         return t('country');
       } else if (!s.email || !validateEmail(s.email)) {
         return t('email');
+      } else if (!s.gdpr) {
+        return t('gdpr');
       } else {
         return true;
       }
@@ -101,7 +103,8 @@ export default {
         city: s.city,
         country: s.country,
         email: s.email,
-        phone: s.phone || undefined
+        phone: s.phone || undefined,
+        gdpr: s.gdpr ? this.$t(`request.summary.form.gdpr.yes`) : this.$t(`request.summary.form.gdpr.no`)
       };
       for (let key in request) {
         if (request[key] === undefined) {

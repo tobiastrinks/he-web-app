@@ -20,6 +20,7 @@
         <RequestSummaryFormInput class="request-summary-form-country-item" propertyName="country" mutationName="setCountry" />
         <RequestSummaryFormInput class="request-summary-form-email-item" inputType="email" propertyName="email" mutationName="setEmail" />
         <RequestSummaryFormInput class="request-summary-form-telephone-item" inputType="tel" propertyName="phone" mutationName="setPhone" />
+        <RequestSummaryFormGdpr />
       </form>
     </div>
 </template>
@@ -28,10 +29,16 @@
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import RequestSummaryFormInput from '@/components/Request/RequestSummaryFormInput/RequestSummaryFormInput';
 import RequestSummaryFormGender from '@/components/Request/RequestSummaryFormGender/RequestSummaryFormGender';
+import RequestSummaryFormGdpr from '@/components/Request/RequestSummaryFormGdpr/RequestSummaryFormGdpr';
 
 export default {
   name: 'RequestSummaryForm',
-  components: {RequestSummaryFormGender, RequestSummaryFormInput, IntlText}
+  components: {
+    RequestSummaryFormGdpr,
+    RequestSummaryFormGender,
+    RequestSummaryFormInput,
+    IntlText
+  }
 };
 </script>
 

@@ -30,12 +30,20 @@
             :key="index"
             :arrangements="item"
           />
+          <ArrangementsFooter
+            v-if="content.arrangementsFooter && content.arrangementsFooter.length"
+            :markdown="content.arrangementsFooter"
+          />
         </div>
         <div v-show="arrStore.showHolidays" class="arrangements-items-holidays">
           <ArrangementsItem
             v-for="(item, index) in sortedHolidays"
             :key="index"
             :arrangements="item"
+          />
+          <ArrangementsFooter
+            v-if="content.holidaysFooter && content.holidaysFooter.length"
+            :markdown="content.holidaysFooter"
           />
         </div>
       </div>
@@ -50,10 +58,12 @@ import ArrangementsItem from './ArrangementsItem/ArrangementsItem';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
+import ArrangementsFooter from '@/components/Arrangements/ArrangementsFooter/ArrangementsFooter';
 
 export default {
   name: 'Arrangements',
   components: {
+    ArrangementsFooter,
     LocaleLink,
     IntlText,
     ButtonSt,

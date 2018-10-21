@@ -67,7 +67,8 @@
       "earlyBird": {
         "label": "mit Frübucherrabatt",
         "deadline": "(Buchung bis {deadline})"
-      }
+      },
+      "onlyOnRequest": "Preise nur auf Anfrage."
     },
     "requestNow": "JETZT ANFRAGEN",
     "backToRoomsBottom": "zurück zur Zimmerübersicht",
@@ -207,6 +208,12 @@
         },
         "phone": {
           "label": "Telefon"
+        },
+        "gdpr": {
+          "label": "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu.",
+          "invalid": "Bitte stimmen Sie unseren Datenschutzbestimmungen zu.",
+          "yes": "zugestimmt",
+          "no": "nicht zugestimmt"
         }
       }
     },

@@ -26,6 +26,7 @@ export const state = () => ({
   country: 'Deutschland',
   email: null,
   phone: null,
+  gdpr: false,
   submitted: false
 });
 
@@ -110,6 +111,9 @@ export const mutations = {
   },
   setPhone: (state, content) => {
     state.phone = content;
+  },
+  setGdpr: (state, content) => {
+    state.gdpr = content;
   },
   submit: (state) => {
     state.submitted = true;

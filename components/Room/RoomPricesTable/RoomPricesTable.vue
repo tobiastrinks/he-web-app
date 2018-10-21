@@ -2,6 +2,7 @@
     <div class="room-prices-table">
       <RoomPricesTableLarge
         :seasons="activeSeasons"
+        :onlyOnRequest="pricesOfYear.onlyOnRequest"
         :pricesArr="pricesArr"
         :pricesNormal="pricesNormal"
         :earlyBirds="earlyBirds"
@@ -9,6 +10,7 @@
       />
       <RoomPricesTableMobile
         :seasons="activeSeasons"
+        :onlyOnRequest="pricesOfYear.onlyOnRequest"
         :pricesArr="pricesArr"
         :pricesNormal="pricesNormal"
         :earlyBirds="earlyBirds"
@@ -75,12 +77,12 @@ export default {
         return this.activeSeasons.map(season => {
           if (this.type === priceTypes.HP) {
             return {
-              value: this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp,
+              value: Math.ceil(this.pricesOfYear[season.priceUfKey] + this.pricesOfYear.hp),
               note: this.getNote(this.pricesOfYear, season.priceUfKey.replace('Uf', 'Hp'))
             };
           } else {
             return {
-              value: this.pricesOfYear[season.priceUfKey],
+              value: Math.ceil(this.pricesOfYear[season.priceUfKey]),
               note: this.getNote(this.pricesOfYear, season.priceUfKey)
             };
           }
@@ -93,7 +95,7 @@ export default {
         // priceOrderedBySeasonArray
         return this.activeSeasons.map(season => {
           return {
-            value: this.pricesOfYear[season.priceArrKey],
+            value: Math.ceil(this.pricesOfYear[season.priceArrKey]),
             note: this.getNote(this.pricesOfYear, season.priceArrKey)
           };
         });
@@ -116,7 +118,7 @@ export default {
             prices: this.seasons.map(season => {
               const priceKey = `${season.priceEBKeyPrefix}${earlyBird.roomPriceKeySuffix}`;
               return {
-                value: this.pricesOfYear[priceKey],
+                value: Math.ceil(this.pricesOfYear[priceKey]),
                 note: this.getNote(this.pricesOfYear, priceKey)
               };
             })

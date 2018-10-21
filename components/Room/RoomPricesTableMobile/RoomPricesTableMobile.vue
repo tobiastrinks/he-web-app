@@ -1,6 +1,7 @@
 <template>
   <div class="room-prices-table-mobile">
     <div
+      v-if="!onlyOnRequest"
       class="room-prices-table-mobile-season"
       v-for="(season, index)  in seasons"
       :key="index"
@@ -58,6 +59,9 @@
       </table>
       <hr class="hr-short room-prices-table-mobile-season-hr" />
     </div>
+    <p v-if="onlyOnRequest" class="room-prices-table-mobile-only-on-request">
+      <IntlText id="room.prices.onlyOnRequest" />
+    </p>
   </div>
 </template>
 
@@ -72,6 +76,10 @@ export default {
   props: {
     type: {
       type: String,
+      required: true
+    },
+    onlyOnRequest: {
+      type: Boolean,
       required: true
     },
     seasons: {

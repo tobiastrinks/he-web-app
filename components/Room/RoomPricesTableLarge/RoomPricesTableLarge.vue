@@ -41,11 +41,17 @@
             <IntlText id="room.prices.priceNormal" />
           </td>
           <td
+            v-if="onlyOnRequest"
+            class="room-prices-table-large-td-only-on-request"
+          >
+            <IntlText id="room.prices.onlyOnRequest" />
+          </td>
+          <td
             class="room-prices-table-large-td"
             v-for="(price, key) in pricesNormal"
             :key="key"
           >
-            <span>
+            <span v-if="!onlyOnRequest">
               <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
@@ -60,7 +66,7 @@
             v-for="(price, key) in pricesArr"
             :key="key"
           >
-            <span>
+            <span v-if="!onlyOnRequest">
               <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
@@ -89,7 +95,7 @@
             v-for="(price, key) in earlyBird.prices"
             :key="key"
           >
-            <span v-if="price.value" class="room-prices-table-large-earlybird-price">
+            <span v-if="!onlyOnRequest && price.value" class="room-prices-table-large-earlybird-price">
               <Price :note="price.note">{{price.value}}</Price>
             </span>
           </td>
@@ -110,6 +116,10 @@ export default {
   props: {
     type: {
       type: String,
+      required: true
+    },
+    onlyOnRequest: {
+      type: Boolean,
       required: true
     },
     seasons: {

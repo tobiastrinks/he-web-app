@@ -1,0 +1,16 @@
+@import "~/assets/style/variables.scss";
+
+.arrangements-footer {
+  margin-top: 50px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+
+  @media #{$sm} {
+    margin-top: 80px;
+  }
+
+  @media #{$md} {
+    margin-top: 100px;
+  }
+}

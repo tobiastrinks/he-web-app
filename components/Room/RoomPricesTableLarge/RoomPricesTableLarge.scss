@@ -9,6 +9,7 @@
   }
 
   table {
+    position: relative;
     width: 100%;
     border-collapse: collapse;
   }
@@ -33,7 +34,7 @@
     .room-prices-table-large-td {
       padding: 5px 0 5px 10px;
       vertical-align: top;
-      width: 21.5%;
+      width: 22%;
       text-align: center;
 
       @media #{$md} {
@@ -55,6 +56,15 @@
       .room-prices-table-large-earlybird-price {
         font-weight: 600;
       }
+    }
+
+    .room-prices-table-large-td-only-on-request {
+      position: absolute;
+      left: 12%;
+      top: 65%;
+      right: 0;
+      transform: translateY(-50%);
+      text-align: center;
     }
   }
 }
