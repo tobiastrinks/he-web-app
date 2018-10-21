@@ -68,7 +68,7 @@
         "label": "mit Frübucherrabatt",
         "deadline": "(Buchung bis {deadline})"
       },
-      "onlyOnRequest": "Preise nur auf Anfrage."
+      "onlyOnRequest": "Preise auf Anfrage"
     },
     "requestNow": "JETZT ANFRAGEN",
     "backToRoomsBottom": "zurück zur Zimmerübersicht",
