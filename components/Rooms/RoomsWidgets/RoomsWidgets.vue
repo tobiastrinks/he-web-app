@@ -11,6 +11,12 @@
           :halfWidth="halfWidth"
           :fullHeight="single"
           :hideLabel="single"
+          :id="room.fields.name"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          :data-aos-delay="index * 300"
+          :data-aos-anchor="index > 0 ? '#' + rooms[index-1].fields.name : ''"
+          data-aos-once="true"
         />
       </div>
     </div>

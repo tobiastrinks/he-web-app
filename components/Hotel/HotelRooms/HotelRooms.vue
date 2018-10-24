@@ -1,6 +1,12 @@
 <template>
   <div class="hotel-rooms">
-    <div class="hotel-rooms-row hotel-rooms-text">
+    <div
+      class="hotel-rooms-row hotel-rooms-text"
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      data-aos-delay="1000"
+      data-aos-once="true"
+    >
       <div class="hotel-rooms-text-content">
         <p class="hotel-rooms-text-content-headline">
           {{content.roomsHeadline}}
@@ -16,7 +22,13 @@
         </LocaleLink>
       </div>
     </div>
-    <div class="hotel-rooms-row hotel-rooms-image">
+    <div
+      class="hotel-rooms-row hotel-rooms-image"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
       <ThumborImage
         :store="content.roomsImage"
         :dimensions="{

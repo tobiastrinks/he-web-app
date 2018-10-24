@@ -18,6 +18,10 @@
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
   }
 
+  &.closed {
+    opacity: 0;
+  }
+
   .home-offer-mini-inner {
     position: relative;
     padding: 30px;
@@ -37,6 +41,7 @@
 
     .home-offer-mini-headline {
       font-weight: 600;
+      margin: 0 25px;
     }
 
     .hr-short {

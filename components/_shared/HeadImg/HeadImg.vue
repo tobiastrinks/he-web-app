@@ -2,8 +2,8 @@
     <div class="head-img">
       <div class="head-img-image">
         <ThumborImage
-            :store="image"
-            :dimensions="{
+          :store="image"
+          :dimensions="{
             mo: [600, 300],
             sm: [900, 300],
             md: [1300, 350],
@@ -13,10 +13,23 @@
           :cover="true"
         />
       </div>
-      <h1 class="head-img-headline">
+      <h1
+        class="head-img-headline"
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        data-aos-once="true"
+      >
         {{headline}}
       </h1>
-      <p v-if="subHeadline" class="head-img-subheadline">
+      <p
+        v-if="subHeadline"
+        class="head-img-subheadline"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-once="true"
+      >
         {{subHeadline}}
       </p>
       <div class="head-img-sun" v-if="hasSun">

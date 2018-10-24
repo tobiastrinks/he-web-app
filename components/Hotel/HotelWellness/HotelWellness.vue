@@ -6,6 +6,10 @@
           :key="index"
           :content="item.fields"
           :reversed="index % 2 > 0"
+          :data-aos="(index % 2 > 0) ? 'fade-up' : 'fade-down'"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          data-aos-once="true"
         />
       </div>
       <!--<div class="hotel-wellness-button">-->

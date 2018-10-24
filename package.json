@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/vue-fontawesome": "0.0.22",
     "@nuxtjs/sitemap": "^0.1.1",
-    "aos": "^2.3.4",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.18.0",
     "contentful": "latest",
     "eslint-config-standard": "^11.0.0",

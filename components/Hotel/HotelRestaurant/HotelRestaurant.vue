@@ -5,6 +5,10 @@
         :key="index"
         :content="item.fields"
         :alignLeft="index % 2 > 0"
+        :data-aos="(index % 2 > 0) ? 'fade-left' : 'fade-right'"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        data-aos-once="true"
       />
     </div>
 </template>

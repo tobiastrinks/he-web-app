@@ -107,3 +107,30 @@ input:focus {
   -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
   box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
+
+.vv-fade-enter {
+  opacity: 0
+}
+.vv-fade-enter-active {
+  transition: opacity .3s
+}
+.vv-fade-leave-active {
+  transition-delay: .3s
+}
+
+.zoom-in-up-enter {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.zoom-in-up-enter-active {
+
+  @media #{$md} {
+    transition: all .5s
+  }
+}
+.zoom-in-up-leave-active {
+
+  @media #{$md} {
+    transition-delay: .3s
+  }
+}

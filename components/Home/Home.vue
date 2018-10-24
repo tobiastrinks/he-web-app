@@ -11,7 +11,6 @@
     </div>
     <div class="page-content">
       <HomeOfferMini
-        v-show="homeStore.offerMiniOpen"
         @close="$store.commit('pageHomeStore/hideOfferMini')"
         :headline="miniOffer.headline"
         :description="miniOffer.description"

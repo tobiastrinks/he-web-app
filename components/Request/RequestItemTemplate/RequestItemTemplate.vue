@@ -1,14 +1,19 @@
 <template>
-    <div class="request-item-template box-shadow" :class="{opened}">
+  <transition name="zoom-in-up">
+    <div
+      v-if="opened"
+      class="request-item-template box-shadow"
+      :class="{opened}"
+    >
       <div class="request-item-template-rows left">
         <div class="request-item-template-slot">
           <slot name="left"></slot>
         </div>
         <ThumborImage class="request-item-template-sun"
-          static-url="/_shared/sun-transparent.png"
-          :dimensions="{
-            sm: [500, 0]
-          }"
+                      static-url="/_shared/sun-transparent.png"
+                      :dimensions="{
+              sm: [500, 0]
+            }"
         />
       </div>
       <div class="request-item-template-rows right">
@@ -18,6 +23,7 @@
         </div>
       </div>
     </div>
+  </transition>
 </template>
 
 <script>

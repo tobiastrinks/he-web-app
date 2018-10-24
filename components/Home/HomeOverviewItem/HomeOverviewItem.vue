@@ -2,6 +2,10 @@
     <div class="home-overview-item" :class="{isImageAlignLeft}">
       <div
         class="home-overview-item-row img"
+        :data-aos="(isImageAlignLeft) ? 'fade-right' : 'fade-left'"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        data-aos-once="true"
       >
         <ThumborImage
           :store="imgStore"
@@ -15,6 +19,10 @@
       </div>
       <div
         class="home-overview-item-row text"
+        :data-aos="(isImageAlignLeft) ? 'fade-left' : 'fade-right'"
+        data-aos-duration="1000"
+        data-aos-delay="800"
+        data-aos-once="true"
       >
         <div class="home-overview-item-text-center">
           <p class="home-overview-item-headline">{{headline}}</p>

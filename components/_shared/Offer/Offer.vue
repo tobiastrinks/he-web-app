@@ -1,5 +1,12 @@
 <template>
-  <div :id="anchor" class="offer" :class="{imageAlignLeft}">
+  <div
+    class="offer"
+    :class="{imageAlignLeft}"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-delay="300"
+    data-aos-once="true"
+  >
     <div class="offer-row img">
       <ThumborImage
         :store="image"
@@ -51,9 +58,6 @@ export default {
     VueMarkdown
   },
   props: {
-    anchor: {
-      type: String
-    },
     image: {
       type: Object,
       required: true

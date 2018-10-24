@@ -1,5 +1,11 @@
 <template>
-    <div class="contact-map box-shadow">
+    <div
+      class="contact-map box-shadow"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
       <div class="contact-map-google">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115299.48620678257!2d11.645420758014568!3d54.1565691683199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ada914abe4b14b%3A0xad4fec607f898900!2sHotel+Edison+GmbH!5e0!3m2!1sde!2sde!4v1538546640994"

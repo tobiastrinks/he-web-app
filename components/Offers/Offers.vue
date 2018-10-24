@@ -12,6 +12,7 @@
         v-for="(offer, index) in content.mainOffers"
         :key="index"
         :offer="offer"
+        :id="offer.fields.anchor"
       />
     </div>
     <p class="offers-other-items-headline">
@@ -22,6 +23,7 @@
         v-for="(offer, index) in content.otherOffers"
         :key="index"
         :offer="offer"
+        :id="offer.fields.anchor"
       />
     </div>
     <div class="offers-footer">
@@ -65,12 +67,14 @@ export default {
       const selectedAnchor = this.$route.query.s;
       if (selectedAnchor) {
         const selectedOffer = document.getElementById(selectedAnchor);
-        if (selectedOffer) {
-          window.scrollTo(
-            0,
-            selectedOffer.offsetTop + (selectedOffer.offsetHeight / 2) - (window.innerHeight / 2)
-          );
-        }
+        window.setTimeout(() => {
+          if (selectedOffer) {
+            window.scrollTo(
+              0,
+              selectedOffer.offsetTop + (selectedOffer.offsetHeight / 2) - (window.innerHeight / 2)
+            );
+          }
+        }, 500);
       }
     }
   },

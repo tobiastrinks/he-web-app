@@ -1,5 +1,11 @@
 <template>
-  <div class="offer-detailed">
+  <div
+    class="offer-detailed"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-delay="500"
+    data-aos-once="true"
+  >
     <div class="offer-detailed-image">
       <ThumborImage
         :store="offer.image"

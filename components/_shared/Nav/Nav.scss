@@ -82,6 +82,9 @@
 }
 
 .nav-left {
+  position: relative;
+  z-index: 2;
+
   @media #{$md} {
     display: flex;
   }

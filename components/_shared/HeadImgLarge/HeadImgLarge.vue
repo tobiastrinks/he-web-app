@@ -5,10 +5,24 @@
           <HeadImgLargeSlider :images="images" />
         </no-ssr>
       </div>
-      <h1 class="head-img-large-headline">
+      <h1
+        id="head-img-large-h1"
+        class="head-img-large-headline"
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        data-aos-once="true"
+      >
         {{headline}}
       </h1>
-      <p class="head-img-large-subheadline">
+      <p
+        class="head-img-large-subheadline"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-once="true"
+        data-aos-anchor="head-img-large-h1"
+      >
         {{subHeadline}}
       </p>
       <div class="head-img-large-sun" v-if="hasSun">

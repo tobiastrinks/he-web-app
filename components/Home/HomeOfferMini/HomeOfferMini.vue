@@ -1,5 +1,12 @@
 <template>
-  <div class="home-offer-mini">
+  <div
+    class="home-offer-mini"
+    :class="{closed: !homeStore.offerMiniOpen}"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-delay="1000"
+    data-aos-once="true"
+  >
     <div class="home-offer-mini-inner">
       <div class="home-offer-mini-close">
         <FontAwesomeIcon
@@ -49,6 +56,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  computed: {
+    homeStore () { return this.$store.state.pageHomeStore; }
   }
 };
 </script>

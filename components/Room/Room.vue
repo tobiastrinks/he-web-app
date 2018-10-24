@@ -1,6 +1,12 @@
 <template>
     <div class="room">
-      <div class="room-head">
+      <div
+        class="room-head"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-delay="1500"
+        data-aos-once="true"
+      >
         <LocaleLink :to="routes.ROOMS">
           <ButtonSt class="room-back-button" arrow="left">
             <IntlText id="room.backToRoomsTop" />
@@ -12,7 +18,13 @@
           <IntlText id="room.backToRoomsTop" />
         </LocaleLink>
       </div>
-      <div class="room-images">
+      <div
+        class="room-images"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-delay="500"
+        data-aos-once="true"
+      >
         <RoomSlider :images="room.images" />
       </div>
       <RoomInfo
@@ -24,7 +36,13 @@
       <RoomPrices
         :room="room"
       />
-      <div class="room-request">
+      <div
+        class="room-request"
+        data-aos="zoom-in-down"
+        data-aos-duration="500"
+        data-aos-delay="500"
+        data-aos-once="true"
+      >
         <LocaleLink :to="routes.REQUEST" @click="prepareRequest">
           <ButtonSt class="room-request-button">
             <IntlText id="room.requestNow" />

@@ -23,7 +23,13 @@
           <IntlText id="arrangements.nav.backToOverview" />
         </LocaleLink>
       </div>
-      <div class="arrangements-items">
+      <div
+        class="arrangements-items"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-once="true"
+      >
         <div v-show="!arrStore.showHolidays" class="arrangements-items-seasons">
           <ArrangementsItem
             v-for="(item, index) in sortedArrangements"

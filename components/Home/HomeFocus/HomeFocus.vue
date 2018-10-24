@@ -2,6 +2,10 @@
     <div class="home-focus">
       <div
         class="home-focus-head"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-once="true"
       >
         <h2 class="home-focus-headline">
           <IntlText id="home.focus.headline" />

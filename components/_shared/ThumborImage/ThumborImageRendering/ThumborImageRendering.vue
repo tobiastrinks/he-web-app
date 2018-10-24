@@ -3,6 +3,7 @@
     <visual
       :image="imgUrl"
       :background="cover ? 'cover' : ''"
+      transition='vv-fade'
     >
     </visual>
     <img v-show="false" @load="imageLoaded" :src="loadingImgUrl" />

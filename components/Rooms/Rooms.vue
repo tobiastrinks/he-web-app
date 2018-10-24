@@ -12,7 +12,11 @@
         <div class="rooms-overview">
           <div class="rooms-overview-line">
             <div class="rooms-overview-doublerooms">
-              <RoomsWidgets :headline="content.doubleroomHeadline" :rooms="content.doubleroomItems" :final-item-count="4" />
+              <RoomsWidgets
+                :headline="content.doubleroomHeadline"
+                :rooms="content.doubleroomItems"
+                :final-item-count="4"
+              />
             </div>
           </div>
           <div class="rooms-overview-line">

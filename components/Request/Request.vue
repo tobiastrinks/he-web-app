@@ -9,10 +9,13 @@
           />
         </div>
         <RequestRooms
-          v-if="entryPoint === entryPoints.ROOM" :rooms="rooms"
+          v-if="entryPoint === entryPoints.ROOM"
+          :rooms="rooms"
           :opened="roomsOpened"
         />
-        <RequestBookingType :opened="bookingTypeOpened" />
+        <RequestBookingType
+          :opened="bookingTypeOpened"
+        />
         <RequestDates :opened="datesOpened" />
         <RequestRooms
           v-if="entryPoint === entryPoints.DEFAULT || entryPoint === entryPoints.ARRANGEMENT"
