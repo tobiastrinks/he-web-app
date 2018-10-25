@@ -31,21 +31,21 @@ push-to-ttregistry:
 deploy:
     steps:
         - add-to-known_hosts:
-            hostname: $TOBIASTRINKS_DROPLET_HOSTNAME
+            hostname: $HOTELEDISON_DROPLET_HOSTNAME
         - mktemp:
           envvar: KEY_TEMP_FILE
         - create-file:
           name: write key
           filename: $KEY_TEMP_FILE
-          content: $TOBIASTRINKS_DROPLET_PRIVATE
+          content: $HOTELEDISON_DROPLET_PRIVATE
           overwrite: true
           hide-from-log: true
         - script:
             name: stop application
-            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH down
+            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH down
         - script:
             name: remove image
-            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker rmi registry.ttrks.de/hotel-edison_web-app
+            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker rmi registry.ttrks.de/hotel-edison_web-app
         - script:
             name: pull image and restart
-            code: ssh -i $KEY_TEMP_FILE -l $TOBIASTRINKS_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $TOBIASTRINKS_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH up -d
+            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH up -d
