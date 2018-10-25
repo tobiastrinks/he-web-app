@@ -21,9 +21,13 @@
   }
 
   .home-offer-mini-items {
-    position: fixed;
-    z-index: 3;
-    right: 10px;
-    bottom: 0;
+
+    @media #{$md} {
+      position: fixed;
+      z-index: 3;
+      right: 10px;
+      bottom: 0;
+      margin: 0;
+    }
   }
 }
