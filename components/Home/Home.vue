@@ -10,13 +10,22 @@
       />
     </div>
     <div class="page-content">
-      <HomeOfferMini
-        @close="$store.commit('pageHomeStore/hideOfferMini')"
-        :headline="miniOffer.headline"
-        :description="miniOffer.description"
-        :button="miniOffer.button"
-        :buttonLink="miniOffer.buttonLink"
-      />
+      <div class="home-offer-mini-items">
+        <HomeOfferMini
+          v-for="(miniOffer, index) in miniOffers"
+          :key="index"
+          :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
+          @close="$store.commit('pageHomeStore/hideOfferMini', index)"
+          :headline="miniOffer.headline"
+          :description="miniOffer.description"
+          :button="miniOffer.button"
+          :buttonLink="miniOffer.buttonLink"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          :data-aos-delay="1000 * (miniOffers.length - index)"
+          data-aos-once="true"
+        />
+      </div>
       <div class="home-intro">
         <div class="home-stars">
           <img src="/home/stars.png" />
@@ -47,10 +56,10 @@ export default {
   computed: {
     homeStore () { return this.$store.state.pageHomeStore; },
     content () { return this.homeStore.content[0]; },
-    miniOffer () {
+    miniOffers () {
       const miniOffers = this.content.miniOffers;
       if (miniOffers.length) {
-        return miniOffers.map(item => item.fields)[0];
+        return miniOffers.map(item => item.fields);
       }
     }
   },

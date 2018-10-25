@@ -5,26 +5,22 @@
   box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
   width: 90%;
   max-width: 350px;
-  margin: 40px auto;
+  margin: 10px 0;
+  font-size: 90%;
 
   @media #{$md} {
     width: auto;
-    max-width: 380px;
-    margin: 0;
-    position: fixed;
-    z-index: 3;
-    right: 30px;
-    bottom: 30px;
+    max-width: 300px;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
   }
 
   &.closed {
-    opacity: 0;
+    opacity: 0 !important;
   }
 
   .home-offer-mini-inner {
     position: relative;
-    padding: 30px;
+    padding: 20px;
     border-top: 10px solid $color-primary;
     text-align: center;
 
@@ -32,7 +28,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      padding: 20px;
+      padding: 10px 15px;
 
       &:hover {
         cursor: pointer;
@@ -41,7 +37,7 @@
 
     .home-offer-mini-headline {
       font-weight: 600;
-      margin: 0 25px;
+      margin: 0 25px 10px;
     }
 
     .hr-short {
@@ -53,7 +49,7 @@
     }
 
     .home-offer-mini-button {
-      margin-top: 20px;
+      margin-top: 15px;
       text-align: center;
     }
   }

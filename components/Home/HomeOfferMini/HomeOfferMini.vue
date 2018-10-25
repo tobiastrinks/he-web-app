@@ -1,11 +1,7 @@
 <template>
   <div
     class="home-offer-mini"
-    :class="{closed: !homeStore.offerMiniOpen}"
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-delay="1000"
-    data-aos-once="true"
+    :class="{closed: !show}"
   >
     <div class="home-offer-mini-inner">
       <div class="home-offer-mini-close">
@@ -14,20 +10,14 @@
           @click="$emit('close')"
         />
       </div>
-      <p class="home-offer-mini-headline">
-        {{headline}}
-      </p>
-      <hr class="hr-short" />
-      <p class="home-offer-mini-description">
-        {{description}}
-      </p>
-      <div class="home-offer-mini-button">
-        <LocaleLink :to="buttonLink">
-          <ButtonSt>
-            {{button}}
-          </ButtonSt>
-        </LocaleLink>
-      </div>
+      <LocaleLink :to="buttonLink">
+        <p class="home-offer-mini-headline">
+          {{headline}}
+        </p>
+        <p class="home-offer-mini-description">
+          {{description}}
+        </p>
+      </LocaleLink>
     </div>
   </div>
 </template>
@@ -40,6 +30,10 @@ export default {
   name: 'HomeOfferMini',
   components: {ButtonSt, LocaleLink},
   props: {
+    show: {
+      type: Boolean,
+      required: true
+    },
     headline: {
       type: String,
       required: true
