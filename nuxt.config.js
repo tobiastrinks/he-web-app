@@ -46,12 +46,12 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-    },
-    vendor: ['aos']
+    }
+    // vendor: ['aos']
   },
   css: [
-    '~/assets/style/global.scss',
-    'aos/dist/aos.css'
+    '~/assets/style/global.scss'
+    // 'aos/dist/aos.css'
   ],
   router: {
     middleware: [
@@ -65,8 +65,8 @@ module.exports = {
   plugins: [
     '~/plugins/i18n.js',
     '~/plugins/fontawesome.js',
-    { src: '~/plugins/vueAgile.js', ssr: false },
-    { src: '~/plugins/aos.js', ssr: false }
+    { src: '~/plugins/vueAgile.js', ssr: false }
+    // { src: '~/plugins/aos.js', ssr: false }
   ],
   modules: [
     'nuxt-rfg-icon',
