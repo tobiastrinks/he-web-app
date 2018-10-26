@@ -9,9 +9,9 @@ module.exports = {
      * Environment-Variables on npm start will get ignored!
      */
     contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN || 'bc2803f81a91e210314097a8286e07ff02bed1bd6467df0e631de6b0be9ff6e7',
-    thumborUrl: process.env.THUMBOR_URL || 'https://images.hotel-edison.ttrks.de',
+    thumborUrl: process.env.THUMBOR_URL || 'https://images.hotel-edison.de',
     thumborAssetsUrl: process.env.THUMBOR_ASSETS_URL,
-    apiUrl: process.env.API_URL || 'https://api.hotel-edison.ttrks.de'
+    apiUrl: process.env.API_URL || 'https://api.hotel-edison.de'
   },
   head: {
     title: 'hotel-edison',
