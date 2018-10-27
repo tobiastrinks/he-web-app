@@ -114,6 +114,9 @@ export default {
     if (!this.requestStore.entryPoint) {
       this.$store.commit('pageRequestStore/setEntryPoint', entryPoints.DEFAULT);
     }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

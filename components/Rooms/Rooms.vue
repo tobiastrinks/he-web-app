@@ -41,6 +41,9 @@ export default {
   components: {HeadImg, RoomsWidgets},
   computed: {
     content () { return this.$store.state.pageRoomsStore.content[0]; }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

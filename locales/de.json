@@ -16,7 +16,8 @@
     "email": {
       "label": "E-Mail:",
       "value": "info@hotel-edison.de"
-    }
+    },
+    "gaOptOut": "Google Analytics wurde für Sie deaktiviert."
   },
   "nav": {
     "items": {

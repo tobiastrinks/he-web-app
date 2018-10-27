@@ -25,6 +25,9 @@ export default {
   computed: {
     contactStore () { return this.$store.state.pageContactStore; },
     content () { return this.contactStore.content[0]; }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

@@ -63,6 +63,9 @@ export default {
     content () {
       return this.$store.state.pageHotelStore.content[0];
     }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

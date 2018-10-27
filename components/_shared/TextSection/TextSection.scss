@@ -1,3 +1,5 @@
+@import "~/assets/style/variables.scss";
+
 .text-section {
   margin: 40px 0;
 
@@ -20,5 +22,9 @@
 
   .text-section-delimiter {
     margin-top: 40px;
+  }
+
+  a {
+    color: $color-primary;
   }
 }

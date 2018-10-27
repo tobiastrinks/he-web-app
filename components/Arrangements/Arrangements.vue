@@ -128,6 +128,9 @@ export default {
       // sort by date
       return groupedHolidays.sort((h1, h2) => h1[0].bookableFrom > h2[0].bookableFrom ? 1 : -1);
     }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

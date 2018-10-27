@@ -120,6 +120,9 @@ export default {
       this.$store.commit('pageRequestStore/setEntryPoint', entryPoints.ROOM);
       this.$store.commit('pageRequestStore/setRoom', this.room);
     }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

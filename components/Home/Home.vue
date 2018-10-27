@@ -64,6 +64,7 @@ export default {
     }
   },
   mounted () {
+    this.$ga.page(this.$router);
     this.$store.commit('navStore/enableOpacity');
   }
 };

@@ -38,6 +38,9 @@ export default {
     imprintStore () { return this.$store.state.pageImprintStore; },
     content () { return this.imprintStore.content[0]; },
     textSections () { return this.content.textSections; }
+  },
+  mounted () {
+    this.$ga.page(this.$router);
   }
 };
 </script>

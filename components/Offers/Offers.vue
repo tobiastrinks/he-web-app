@@ -79,6 +79,7 @@ export default {
     }
   },
   mounted () {
+    this.$ga.page(this.$router);
     this.scrollToAnchor();
   }
 };
