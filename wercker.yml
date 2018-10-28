@@ -1,51 +1,45 @@
 box:
-    id: node:latest
+  id: node:latest
 
 build:
-    steps:
-        - npm-install
-        - script:
-            name: build webapp with nuxt (webpack)
-            code: npm run build
-        - script:
-            name: copy application files
-            code: cp -a ./. "$WERCKER_OUTPUT_DIR"
+  steps:
+  - npm-install
+  - script:
+      name: build webapp with nuxt (webpack)
+      code: npm run build
+  - script:
+      name: copy application files
+      code: cp -a ./. "$WERCKER_OUTPUT_DIR"
 
 push-to-ttregistry:
-    steps:
-        - script:
-            name: cleanup docker image
-            code: |
-                rm -rf /pipeline/cache
-                rm -rf /root/.cache
-        - internal/docker-push:
-            registry: https://registry.ttrks.de/v2
-            repository: registry.ttrks.de/hotel-edison_web-app
-            username: $REGISTRY_USERNAME
-            password: $REGISTRY_PASSWORD
-            tag: $WERCKER_GIT_COMMIT,latest
-            author: $WERCKER_STARTED_BY
-            working-dir: "/pipeline/source"
-            cmd: npm start
+  steps:
+  - script:
+      name: cleanup docker image
+      code: |
+        rm -rf /pipeline/cache
+        rm -rf /root/.cache
+  - internal/docker-push:
+      registry: https://registry.ttrks.de/v2
+      repository: registry.ttrks.de/$IMAGE
+      username: $REGISTRY_USERNAME
+      password: $REGISTRY_PASSWORD
+      tag: $WERCKER_GIT_COMMIT,latest
+      author: $WERCKER_STARTED_BY
+      working-dir: "/pipeline/source"
+      cmd: npm start
 
 deploy:
-    steps:
-        - add-to-known_hosts:
-            hostname: $HOTELEDISON_DROPLET_HOSTNAME
-        - mktemp:
-          envvar: KEY_TEMP_FILE
-        - create-file:
-          name: write key
-          filename: $KEY_TEMP_FILE
-          content: $HOTELEDISON_DROPLET_PRIVATE
-          overwrite: true
-          hide-from-log: true
-#        - script:
-#            name: stop application
-#            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH down
-#        - script:
-#            name: remove image
-#            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker rmi registry.ttrks.de/hotel-edison_web-app
-#        - script:
-#            name: pull image and restart
-#            code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME docker-compose --file $DOCKERCOMPOSE_PATH up -d
+  steps:
+  - add-to-known_hosts:
+      hostname: $HOTELEDISON_DROPLET_HOSTNAME
+  - mktemp:
+    envvar: KEY_TEMP_FILE
+  - create-file:
+    name: write key
+    filename: $KEY_TEMP_FILE
+    content: $HOTELEDISON_DROPLET_PRIVATE
+    overwrite: true
+    hide-from-log: true
+  - script:
+      name: deploy application
+      code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME $DEPLOY_SCRIPT registry.ttrks.de/$IMAGE
