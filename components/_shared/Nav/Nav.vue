@@ -8,6 +8,7 @@
       <LocaleLink :to="routes.HOME">
         <div class="nav-mobile-bar-logo">
           <ThumborImage
+            v-if="content"
             :store="content.logoMobile"
             :dimensions="{
               mo: [100,0]
@@ -27,6 +28,7 @@
         <div class="nav-logo">
           <LocaleLink :to="routes.HOME">
             <ThumborImage
+              v-if="content"
               :store="content.logo"
               :dimensions="{
                 sm: [300,0],
@@ -85,7 +87,12 @@ export default {
   },
   computed: {
     store () { return this.$store.state.navStore; },
-    content () { return this.store.content[0]; },
+    content () {
+      const content = this.store.content;
+      if (content) {
+        return content[0];
+      }
+    },
     opacity () { return (this.couldHaveOpacity && this.store.opacityEnabled); }
   },
   methods: {
