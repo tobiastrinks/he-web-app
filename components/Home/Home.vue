@@ -20,7 +20,7 @@
           :description="miniOffer.description"
           :button="miniOffer.button"
           :buttonLink="miniOffer.buttonLink"
-          data-aos="fade-left"
+          data-aos="fade-right"
           data-aos-duration="1000"
           :data-aos-delay="1000 * (miniOffers.length - index)"
           data-aos-once="true"
