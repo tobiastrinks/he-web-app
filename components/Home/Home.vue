@@ -15,14 +15,15 @@
           v-for="(miniOffer, index) in miniOffers"
           :key="index"
           :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
+          :alignRight="index === 1"
           @close="$store.commit('pageHomeStore/hideOfferMini', index)"
           :headline="miniOffer.headline"
           :description="miniOffer.description"
           :button="miniOffer.button"
           :buttonLink="miniOffer.buttonLink"
-          data-aos="fade-right"
+          :data-aos="index === 0 ? 'fade-right' : 'fade-left'"
           data-aos-duration="1000"
-          :data-aos-delay="1000 * (miniOffers.length - index)"
+          :data-aos-delay="1000 * (index + 1)"
           data-aos-once="true"
         />
       </div>
