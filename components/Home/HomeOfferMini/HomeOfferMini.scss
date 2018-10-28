@@ -31,9 +31,9 @@
   .home-offer-mini-inner {
     position: relative;
     padding: 20px;
-    border-top: 10px solid $color-primary;
+    border-top: 10px solid #fff;
     text-align: center;
-    background-color: rgba($color-primary, .3);
+    background-color: $color-primary;
 
     .home-offer-mini-close {
       position: absolute;
