@@ -19,15 +19,4 @@
       }
     }
   }
-
-  .home-offer-mini-items {
-
-    @media #{$md} {
-      position: fixed;
-      z-index: 3;
-      left: 10px;
-      bottom: 0;
-      margin: 0;
-    }
-  }
 }

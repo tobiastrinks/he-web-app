@@ -1,7 +1,7 @@
 <template>
   <div
     class="home-offer-mini"
-    :class="{closed: !show}"
+    :class="{closed: !show, alignRight}"
   >
     <div class="home-offer-mini-inner">
       <div class="home-offer-mini-close" @click="$emit('close')">
@@ -38,6 +38,10 @@ export default {
   components: {ButtonSt, LocaleLink},
   props: {
     show: {
+      type: Boolean,
+      required: true
+    },
+    alignRight: {
       type: Boolean,
       required: true
     },
