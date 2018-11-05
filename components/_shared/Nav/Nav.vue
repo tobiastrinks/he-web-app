@@ -17,7 +17,7 @@
           />
         </div>
       </LocaleLink>
-      <a href="tel:+4915224679363">
+      <a :href="`tel:${$t('global.telephone.link')}`">
         <div class="nav-mobile-bar-icon">
           <FontAwesomeIcon :icon="['fas', 'phone']" />
         </div>
