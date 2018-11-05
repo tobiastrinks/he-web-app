@@ -1,5 +1,5 @@
 box:
-  id: node:latest
+  id: node:8
 
 build:
   steps:
