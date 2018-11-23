@@ -68,6 +68,11 @@
     display: none;
   }
 
+  .datepicker__header {
+    position: relative;
+    z-index: 1;
+  }
+
   .datepicker__month-button {
     background-image: url("/assets/icons/chevron-right.svg") !important;
   }

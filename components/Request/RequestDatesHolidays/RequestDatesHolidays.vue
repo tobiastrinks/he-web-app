@@ -19,7 +19,7 @@
               {{holiday.officialName}}:
             </td>
             <td class="request-dates-holidays-table-td">
-              {{$d(new Date(holiday.bookableFrom + 'T00:00:00'), 'short')}} - {{$d(new Date(holiday.bookableTo + 'T00:00:00'), 'short')}}
+              {{getBookableString(holiday.bookableFrom, holiday.bookableTo)}}
             </td>
           </tr>
         </tbody>
@@ -28,7 +28,9 @@
 </template>
 
 <script>
+import { getLocaleDateString } from '@/assets/js/dateUtils';
 import IntlText from '@/components/_shared/IntlText/IntlText';
+
 export default {
   name: 'RequestDatesHolidays',
   components: {IntlText},
@@ -54,6 +56,11 @@ export default {
     }
   },
   methods: {
+    getBookableString (bookableFrom, bookableTo) {
+      const f = new Date(bookableFrom + 'T00:00:00');
+      const t = new Date(bookableTo + 'T00:00:00');
+      return `${getLocaleDateString(f)} - ${getLocaleDateString(t)}`;
+    },
     selectHoliday (holiday) {
       this.$emit('setDates', {
         from: new Date(holiday.bookableFrom + 'T00:00:00'),

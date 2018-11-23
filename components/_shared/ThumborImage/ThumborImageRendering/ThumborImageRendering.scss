@@ -1,10 +1,12 @@
 @import '~/assets/style/variables.scss';
 
 .thumbor-image-rendering {
-  width: 100%;
 
-  .vv-visual, img {
+  &, .vv-visual, img {
     width: 100%;
+    height: auto;
+    /* IE 10 bug-fix */
+    border: none;
   }
 
   &.cover {

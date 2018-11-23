@@ -47,6 +47,7 @@ import HomeFocus from '@/components/Home/HomeFocus/HomeFocus';
 import HomeOfferMini from '@/components/Home/HomeOfferMini/HomeOfferMini';
 
 export default {
+  name: 'Home',
   components: {
     HomeOfferMini,
     HomeOverview,

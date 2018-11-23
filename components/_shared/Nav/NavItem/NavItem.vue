@@ -1,5 +1,5 @@
 <template>
-  <LocaleLink :to="to">
+  <LocaleLink :to="to" :block="linkBlock">
     <div class="nav-item" :class="{marked, active}">
       <IntlText
         :id="intlId"
@@ -30,6 +30,11 @@ export default {
     marked: {
       type: Boolean,
       required: false
+    },
+    linkBlock: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   computed: {

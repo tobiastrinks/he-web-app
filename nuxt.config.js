@@ -46,6 +46,20 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+    },
+    vendor: [
+      'babel-polyfill'
+    ],
+    babel: {
+      presets: [
+        [
+          'vue-app',
+          {
+            useBuiltIns: true,
+            targets: { ie: 11, uglify: true }
+          }
+        ]
+      ]
     }
   },
   css: [
@@ -65,7 +79,8 @@ module.exports = {
     '~/plugins/fontawesome.js',
     { src: '~/plugins/vueAgile.js', ssr: false },
     { src: '~/plugins/googleAnalytics.js', ssr: false },
-    { src: '~/plugins/aos.js', ssr: false }
+    { src: '~/plugins/aos.js', ssr: false },
+    { src: '~/plugins/vueCarousel.js', ssr: false }
   ],
   modules: [
     'nuxt-rfg-icon',

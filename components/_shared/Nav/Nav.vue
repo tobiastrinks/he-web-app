@@ -47,7 +47,7 @@
       </div>
       <div class="nav-right">
         <div class="nav-mobile-request-room">
-          <NavItem intlId="nav.items.request" :to="routes.REQUEST" :marked="true" />
+          <NavItem intlId="nav.items.request" :to="routes.REQUEST" :marked="true" :link-block="false" />
         </div>
       </div>
       <div class="nav-mobile-sun">

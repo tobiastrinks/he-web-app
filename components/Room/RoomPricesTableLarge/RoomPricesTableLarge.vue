@@ -86,7 +86,7 @@
             <span class="room-prices-table-large-earlybird-deadline">
               <IntlText
                 id="room.prices.earlyBird.deadline"
-                :values="{deadline: $d(new Date(earlyBird.deadline + 'T00:00:00'), 'short')}"
+                :values="{deadline: getLocaleDateString(new Date(earlyBird.deadline + 'T00:00:00'))}"
               />
             </span>
           </td>
@@ -106,6 +106,7 @@
 </template>
 
 <script>
+import { getLocaleDateString } from '@/assets/js/dateUtils';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import {priceTypes} from '@/components/Room/RoomPrices/constants';
 import Price from '@/components/_shared/Price/Price';
@@ -141,7 +142,8 @@ export default {
   },
   data () {
     return {
-      priceTypes
+      priceTypes,
+      getLocaleDateString
     };
   }
 };

@@ -2,10 +2,10 @@
   <p class="arrangements-item-prices-bookable">
     <IntlText v-if="prefix" id="arrangements.item.bookable" />
     <span v-if="arrangement.bookableFrom && arrangement.bookableTo">
-            {{$d(new Date(arrangement.bookableFrom + 'T00:00:00'), 'short')}}
-            <IntlText id="arrangements.item.bookableDelimiter" />
-            {{$d(new Date(arrangement.bookableTo + 'T00:00:00'), 'short')}}
-          </span>
+      {{getLocaleDateString(new Date(arrangement.bookableFrom + 'T00:00:00'))}}
+      <IntlText id="arrangements.item.bookableDelimiter" />
+      {{getLocaleDateString(new Date(arrangement.bookableTo + 'T00:00:00'))}}
+    </span>
     <span v-else-if="arrangement.bookableString.length">
       {{arrangement.bookableString}}
     </span>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import {getLocaleDateString} from '@/assets/js/dateUtils';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 
 export default {
@@ -27,10 +28,11 @@ export default {
       type: Boolean,
       default: true
     }
+  },
+  data () {
+    return {
+      getLocaleDateString
+    };
   }
 };
 </script>
-
-<style scoped>
-
-</style>

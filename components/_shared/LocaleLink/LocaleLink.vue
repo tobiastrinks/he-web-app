@@ -1,5 +1,5 @@
 <template>
-  <span @click.prevent="$emit('click')">
+  <span class="locale-link" :class="{ block }" @click.prevent="$emit('click')">
     <nuxt-link :to="getLocaleLink()">
       <slot></slot>
     </nuxt-link>
@@ -13,6 +13,11 @@ export default {
     to: {
       type: String,
       required: true
+    },
+    block: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   methods: {
@@ -29,3 +34,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  @import "LocaleLink";
+</style>

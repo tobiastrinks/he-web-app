@@ -21,8 +21,9 @@
 </template>
 
 <script>
-import IntlText from '@/components/_shared/IntlText/IntlText';
 import { getPersonLabel } from '@/components/Request/utils';
+import { getLocaleDateString } from '@/assets/js/dateUtils';
+import IntlText from '@/components/_shared/IntlText/IntlText';
 
 export default {
   name: 'RequestSummaryData',
@@ -79,8 +80,8 @@ export default {
       return bookingType;
     },
     dates () {
-      const from = this.$d(new Date(this.requestState.dates.from), 'short');
-      const to = this.$d(new Date(this.requestState.dates.to), 'short');
+      const from = getLocaleDateString(new Date(this.requestState.dates.from));
+      const to = getLocaleDateString(new Date(this.requestState.dates.to));
 
       return [this.$t('request.summary.data.dates', { from, to })];
     },
