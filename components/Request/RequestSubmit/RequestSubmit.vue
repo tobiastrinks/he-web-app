@@ -19,6 +19,7 @@
 <script>
 import axios from 'axios';
 import { validateEmail } from '@/components/Request/utils';
+import { getLocaleDateString } from '@/assets/js/dateUtils';
 import { bookingTypes, bookingTypesForm } from '@/components/Request/constants';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
@@ -74,8 +75,8 @@ export default {
           'de'
         ),
         dates: {
-          from: s.dates.from.toISOString(),
-          to: s.dates.to.toISOString()
+          from: getLocaleDateString(s.dates.from),
+          to: getLocaleDateString(s.dates.to)
         },
         activeArrangement: (s.bookingType === bookingTypes.ARR && s.activeArrangement)
           ? s.activeArrangement.officialName || s.activeArrangement.name

@@ -80,8 +80,8 @@ export default {
       return bookingType;
     },
     dates () {
-      const from = getLocaleDateString(new Date(this.requestState.dates.from));
-      const to = getLocaleDateString(new Date(this.requestState.dates.to));
+      const from = getLocaleDateString(this.requestState.dates.from);
+      const to = getLocaleDateString(this.requestState.dates.to);
 
       return [this.$t('request.summary.data.dates', { from, to })];
     },
