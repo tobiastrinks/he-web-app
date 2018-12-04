@@ -8,7 +8,7 @@
       :prices="season.prices"
     />
     <p class="offer-detailed-prices-format">
-      <IntlText id="offers.offerDetailed.priceFormat" />
+      {{offer.priceFormat}}
     </p>
   </div>
 </template>

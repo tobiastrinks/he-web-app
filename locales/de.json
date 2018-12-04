@@ -80,8 +80,7 @@
   },
   "offers": {
     "offerDetailed": {
-      "requestButton": "ANFRAGEN",
-      "priceFormat": "Preise pro Person und Tag"
+      "requestButton": "ANFRAGEN"
     },
     "roomButton": "JETZT ZIMMER ENTDECKEN"
   },
