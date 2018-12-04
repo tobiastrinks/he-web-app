@@ -17,6 +17,7 @@
           :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
           :alignRight="index === 1"
           @close="$store.commit('pageHomeStore/hideOfferMini', index)"
+          :template="miniOffer.template"
           :headline="miniOffer.headline"
           :description="miniOffer.description"
           :button="miniOffer.button"

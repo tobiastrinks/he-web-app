@@ -1,0 +1,78 @@
+@import "~/assets/style/variables.scss";
+
+.home-offer-mini-christmas {
+  background-color: #fff;
+  background-image: url("/home/christmas-tree.png");
+  background-position: 105% 105%;
+  background-size: 90px auto;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
+  width: 90%;
+  margin: 30px auto;
+  font-size: 90%;
+
+  @media #{$md} {
+    width: auto;
+    background-position: 105% 110%;
+    background-size: 130px auto;
+    max-width: 400px;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
+    margin: 0;
+    position: fixed;
+    z-index: 3;
+    left: 10px;
+    bottom: 10px;
+
+    &.alignRight {
+      right: 10px;
+      left: auto;
+    }
+  }
+
+  &.closed {
+    opacity: 0 !important;
+  }
+
+  .home-offer-mini-christmas-inner {
+    position: relative;
+    padding: 20px 90px 20px 30px;
+    border-top: 10px solid $color-primary;
+
+    @media #{$md} {
+      padding-right: 110px;
+    }
+
+    .home-offer-mini-christmas-close {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      padding: 10px 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .home-offer-mini-christmas-headline {
+      font-weight: 600;
+      margin: 0 25px 10px;
+    }
+
+    .hr-short {
+      margin: 15px auto;
+
+      @media #{$md} {
+        display: none;
+      }
+    }
+
+    .home-offer-mini-christmas-description {
+      margin: 10px 0 30px 0;
+    }
+
+    .home-offer-mini-christmas-button {
+      margin-top: 15px;
+    }
+  }
+}

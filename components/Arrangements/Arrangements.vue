@@ -131,6 +131,11 @@ export default {
   },
   mounted () {
     this.$ga.page(this.$router);
+
+    const opened = this.$route.query.s;
+    if (opened && opened === 'holiday') {
+      this.setShowHolidays(true);
+    }
   }
 };
 </script>
