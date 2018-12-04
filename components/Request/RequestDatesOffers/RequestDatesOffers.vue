@@ -1,5 +1,5 @@
 <template>
-  <div class="request-dates-offers">
+  <div v-if="offers.length" class="request-dates-offers">
     <p class="request-dates-offers-headline">
       <IntlText id="request.dates.offers.headline" />
     </p>
@@ -57,12 +57,16 @@ export default {
     }
   },
   created () {
-    this.offers = this.content.offers.map(offer => {
-      return {
-        store: offer.fields,
-        value: null
-      };
-    });
+    const storeOffers = this.content.offers;
+
+    if (storeOffers && storeOffers.length) {
+      this.offers = this.content.offers.map(offer => {
+        return {
+          store: offer.fields,
+          value: null
+        };
+      });
+    }
   }
 };
 </script>
