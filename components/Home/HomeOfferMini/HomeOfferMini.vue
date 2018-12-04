@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="template === templates.DEFAULT"
     class="home-offer-mini"
     :class="{closed: !show, alignRight}"
   >
@@ -27,15 +28,28 @@
       </div>
     </div>
   </div>
+  <HomeOfferMiniChristmas
+    v-else
+    class="home-offer-mini"
+    :show="show"
+    :alignRight="alignRight"
+    @close="$emit('close')"
+    :template="template"
+    :description="description"
+    :button="button"
+    :buttonLink="buttonLink"
+  />
 </template>
 
 <script>
+import { templates } from '@/components/Home/HomeOfferMini/constants';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import HomeOfferMiniChristmas from '@/components/Home/HomeOfferMiniChristmas/HomeOfferMiniChristmas';
 
 export default {
   name: 'HomeOfferMini',
-  components: {ButtonSt, LocaleLink},
+  components: {HomeOfferMiniChristmas, ButtonSt, LocaleLink},
   props: {
     show: {
       type: Boolean,
@@ -43,6 +57,10 @@ export default {
     },
     alignRight: {
       type: Boolean,
+      required: true
+    },
+    template: {
+      type: String,
       required: true
     },
     headline: {
@@ -61,6 +79,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  data () {
+    return {
+      templates
+    };
   },
   computed: {
     homeStore () { return this.$store.state.pageHomeStore; }
