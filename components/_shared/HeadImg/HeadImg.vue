@@ -34,7 +34,7 @@
       </p>
       <div class="head-img-sun" v-if="hasSun">
         <ThumborImage
-          static-url="/_shared/sun-transparent.png"
+          static-url="/shared/sun.jpg"
           :dimensions="{
             sm: [500, 0],
             md: [700, 0],

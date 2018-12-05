@@ -10,7 +10,7 @@
           <slot name="left"></slot>
         </div>
         <ThumborImage class="request-item-template-sun"
-                      static-url="/_shared/sun-transparent.png"
+                      static-url="/shared/sun.jpg"
                       :dimensions="{
               sm: [500, 0]
             }"

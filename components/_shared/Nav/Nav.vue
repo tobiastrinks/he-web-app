@@ -52,7 +52,7 @@
       </div>
       <div class="nav-mobile-sun">
         <ThumborImage
-          static-url="/_shared/sun.jpg"
+          static-url="/shared/sun.jpg"
           :dimensions="{
             mo: [300, 0],
             sm: [500, 0]
