@@ -1,4 +1,7 @@
 export const templates = {
   DEFAULT: 'default',
-  CHRISTMAS: 'christmas'
+  CHRISTMAS: 'christmas',
+  NEW_YEARS_EVE: 'newYearsEve',
+  VOUCHER: 'voucher',
+  STAMP: 'stamp'
 };

@@ -6,6 +6,26 @@
     margin-top: 0;
   }
 
+  .home-offer-mini-items {
+
+    @media #{$md} {
+
+      .home-offer-mini-items-left {
+        position: fixed;
+        z-index: 3;
+        left: 10px;
+        bottom: 10px;
+      }
+
+      .home-offer-mini-items-right {
+        position: fixed;
+        z-index: 3;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  }
+
   .home-intro {
     margin-bottom: 100px;
 

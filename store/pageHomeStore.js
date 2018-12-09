@@ -7,6 +7,7 @@ export const mutations = {
   setContent: (state, content) => {
     state.content = content;
     if (!state.offerMiniOpen && content) {
+      // initialize offerMiniOpen state
       state.offerMiniOpen = content[0].miniOffers.map(() => true);
     }
   },

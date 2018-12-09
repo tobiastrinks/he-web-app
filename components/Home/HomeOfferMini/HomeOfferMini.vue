@@ -2,7 +2,7 @@
   <div
     v-if="template === templates.DEFAULT"
     class="home-offer-mini"
-    :class="{closed: !show, alignRight}"
+    :class="{closed: !show}"
   >
     <div class="home-offer-mini-inner">
       <div class="home-offer-mini-close" @click="$emit('close')">
@@ -29,15 +29,36 @@
     </div>
   </div>
   <HomeOfferMiniChristmas
-    v-else
-    class="home-offer-mini"
+    v-else-if="template === templates.CHRISTMAS"
     :show="show"
-    :alignRight="alignRight"
     @close="$emit('close')"
     :template="template"
     :description="description"
     :button="button"
     :buttonLink="buttonLink"
+  />
+  <HomeOfferMiniNewYearsEve
+    v-else-if="template === templates.NEW_YEARS_EVE"
+    :show="show"
+    @close="$emit('close')"
+    :template="template"
+    :description="description"
+    :button="button"
+    :buttonLink="buttonLink"
+  />
+  <HomeOfferMiniVoucher
+    v-else-if="template === templates.VOUCHER"
+    :show="show"
+    @close="$emit('close')"
+    :template="template"
+    :description="description"
+    :button="button"
+    :buttonLink="buttonLink"
+  />
+  <HomeOfferMiniStamp
+    v-else
+    class="home-offer-mini"
+    :description="description"
   />
 </template>
 
@@ -46,16 +67,22 @@ import { templates } from '@/components/Home/HomeOfferMini/constants';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import HomeOfferMiniChristmas from '@/components/Home/HomeOfferMiniChristmas/HomeOfferMiniChristmas';
+import HomeOfferMiniNewYearsEve from '@/components/Home/HomeOfferMiniNewYearsEve/HomeOfferMiniNewYearsEve';
+import HomeOfferMiniVoucher from '@/components/Home/HomeOfferMiniVoucher/HomeOfferMiniVoucher';
+import HomeOfferMiniStamp from '@/components/Home/HomeOfferMiniStamp/HomeOfferMiniStamp';
 
 export default {
   name: 'HomeOfferMini',
-  components: {HomeOfferMiniChristmas, ButtonSt, LocaleLink},
+  components: {
+    HomeOfferMiniStamp,
+    HomeOfferMiniChristmas,
+    HomeOfferMiniNewYearsEve,
+    HomeOfferMiniVoucher,
+    ButtonSt,
+    LocaleLink
+  },
   props: {
     show: {
-      type: Boolean,
-      required: true
-    },
-    alignRight: {
       type: Boolean,
       required: true
     },
