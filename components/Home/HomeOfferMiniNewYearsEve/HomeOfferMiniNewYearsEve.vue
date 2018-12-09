@@ -1,20 +1,20 @@
 <template>
   <div
-    class="home-offer-mini home-offer-mini-christmas"
+    class="home-offer-mini home-offer-mini-new-years-eve"
     :class="{closed: !show}"
   >
-    <div class="home-offer-mini-inner home-offer-mini-christmas-inner">
+    <div class="home-offer-mini-inner home-offer-mini-new-years-eve-inner">
       <div class="home-offer-mini-close" @click="$emit('close')">
         <FontAwesomeIcon
           :icon="['fas', 'times']"
         />
       </div>
       <LocaleLink :to="buttonLink">
-        <p class="home-offer-mini-description home-offer-mini-christmas-description">
-          {{description}}
+        <p class="home-offer-mini-description home-offer-mini-new-years-eve-description">
+          <vue-markdown :source="description" />
         </p>
       </LocaleLink>
-      <div class="home-offer-mini-button home-offer-mini-christmas-button">
+      <div class="home-offer-mini-button home-offer-mini-new-years-eve-button">
         <LocaleLink :to="buttonLink">
           <ButtonSt :align-left="true">
             {{button}}
@@ -28,10 +28,11 @@
 <script>
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import VueMarkdown from 'vue-markdown';
 
 export default {
-  name: 'HomeOfferMiniChristmas',
-  components: {ButtonSt, LocaleLink},
+  name: 'HomeOfferMiniNewYearsEve',
+  components: {VueMarkdown, ButtonSt, LocaleLink},
   props: {
     show: {
       type: Boolean,
@@ -58,5 +59,5 @@ export default {
 
 <style scoped lang="scss">
   @import "../HomeOfferMini/HomeOfferMini";
-  @import "HomeOfferMiniChristmas";
+  @import "HomeOfferMiniNewYearsEve";
 </style>

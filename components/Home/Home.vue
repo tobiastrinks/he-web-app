@@ -11,22 +11,28 @@
     </div>
     <div class="page-content">
       <div class="home-offer-mini-items">
-        <HomeOfferMini
-          v-for="(miniOffer, index) in miniOffers"
-          :key="index"
-          :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
-          :alignRight="index === 1"
-          @close="$store.commit('pageHomeStore/hideOfferMini', index)"
-          :template="miniOffer.template"
-          :headline="miniOffer.headline"
-          :description="miniOffer.description"
-          :button="miniOffer.button"
-          :buttonLink="miniOffer.buttonLink"
-          :data-aos="index === 0 ? 'fade-right' : 'fade-left'"
-          data-aos-duration="1000"
-          :data-aos-delay="1000 * (index + 1)"
-          data-aos-once="true"
-        />
+        <div
+          v-for="position in ['left', 'right', 'other']"
+          :key="position"
+          :class="`home-offer-mini-items-${position}`"
+        >
+          <HomeOfferMini
+            v-for="(miniOffer, index) in miniOffers"
+            v-if="position === miniOffer.position && miniOffer.template !== 'default'"
+            :key="index"
+            :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
+            @close="$store.commit('pageHomeStore/hideOfferMini', index)"
+            :template="miniOffer.template"
+            :headline="miniOffer.headline"
+            :description="miniOffer.description"
+            :button="miniOffer.button"
+            :buttonLink="miniOffer.buttonLink"
+            :data-aos="position === 'left' ? 'fade-left' : 'fade-right'"
+            data-aos-duration="1000"
+            :data-aos-delay="1000 * (index + 1)"
+            data-aos-once="true"
+          />
+        </div>
       </div>
       <div class="home-intro">
         <div class="home-stars">
@@ -46,11 +52,13 @@ import IntroText from '@/components/_shared/IntroText/IntroText';
 import HomeOverview from '@/components/Home/HomeOverview/HomeOverview';
 import HomeFocus from '@/components/Home/HomeFocus/HomeFocus';
 import HomeOfferMini from '@/components/Home/HomeOfferMini/HomeOfferMini';
+import HomeOfferMiniNewYearsEve from '@/components/Home/HomeOfferMiniNewYearsEve/HomeOfferMiniNewYearsEve';
 
 export default {
   name: 'Home',
   components: {
     HomeOfferMini,
+    HomeOfferMiniNewYearsEve,
     HomeOverview,
     HomeFocus,
     IntroText,
@@ -62,7 +70,9 @@ export default {
     miniOffers () {
       const miniOffers = this.content.miniOffers;
       if (miniOffers.length) {
-        return miniOffers.map(item => item.fields);
+        return miniOffers.map(item => item.fields).slice().sort((a, b) =>
+          a.index === b.index ? 0 : a.index > b.index ? 1 : -1
+        );
       }
     }
   },
