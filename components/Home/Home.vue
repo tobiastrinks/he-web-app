@@ -27,7 +27,7 @@
             :description="miniOffer.description"
             :button="miniOffer.button"
             :buttonLink="miniOffer.buttonLink"
-            :data-aos="position === 'left' ? 'fade-left' : 'fade-right'"
+            :data-aos="position === 'left' ? 'fade-right' : 'fade-left'"
             data-aos-duration="1000"
             :data-aos-delay="1000 * (index + 1)"
             data-aos-once="true"
