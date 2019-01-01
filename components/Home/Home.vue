@@ -10,7 +10,7 @@
       />
     </div>
     <div class="page-content">
-      <div class="home-offer-mini-items">
+      <div v-if="miniOffers && miniOffers.length > 0" class="home-offer-mini-items">
         <div
           v-for="position in ['left', 'right', 'other']"
           :key="position"
@@ -69,10 +69,12 @@ export default {
     content () { return this.homeStore.content[0]; },
     miniOffers () {
       const miniOffers = this.content.miniOffers;
-      if (miniOffers.length) {
+      if (miniOffers && miniOffers.length) {
         return miniOffers.map(item => item.fields).slice().sort((a, b) =>
           a.index === b.index ? 0 : a.index > b.index ? 1 : -1
         );
+      } else {
+        return [];
       }
     }
   },
