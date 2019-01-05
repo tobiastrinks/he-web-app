@@ -68,7 +68,8 @@ export default {
       if (rooms.length) {
         const years = rooms[0].prices.map(priceItem => priceItem.fields.year);
         return years.filter((module, index, self) => {
-          return self.indexOf(module) === index;
+          const currentYear = new Date().getFullYear();
+          return self.indexOf(module) === index && module >= currentYear;
         }).sort();
       }
       return [];

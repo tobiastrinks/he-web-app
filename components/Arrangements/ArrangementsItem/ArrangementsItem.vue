@@ -74,6 +74,7 @@ export default {
     years () {
       const years = this.arrangements
         .flatMap(arrangement => arrangement.bookableYears)
+        .filter(year => year >= new Date().getFullYear())
         .sort();
       return years.filter((module, index, self) => {
         return self.indexOf(module) === index;

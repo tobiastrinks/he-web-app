@@ -18,7 +18,7 @@
         >
           <HomeOfferMini
             v-for="(miniOffer, index) in miniOffers"
-            v-if="position === miniOffer.position && miniOffer.template !== 'default'"
+            v-if="position === miniOffer.position"
             :key="index"
             :show="homeStore.offerMiniOpen && homeStore.offerMiniOpen[index]"
             @close="$store.commit('pageHomeStore/hideOfferMini', index)"
