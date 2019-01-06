@@ -88,7 +88,8 @@ export default {
     }
 
     const mountPriceYear = getLocalStorage('room.prices.year');
-    if (mountPriceYear) {
+    const currentYear = new Date().getFullYear();
+    if (mountPriceYear && mountPriceYear >= currentYear) {
       this.$store.commit('pageRoomStore/setPriceYear', mountPriceYear);
     }
   }
