@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { getLocaleDateString } from '@/assets/js/dateUtils';
+import {getContentfulDateString, getLocaleDateString} from '@/assets/js/dateUtils';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 
 export default {
@@ -37,9 +37,10 @@ export default {
   computed: {
     holidays () {
       const allHolidays = this.$store.state.arrangementsStore.content
-        .filter(arrangement =>
-          arrangement.holiday
-        );
+        .filter(arrangement => {
+          const d = new Date();
+          return arrangement.holiday && arrangement.bookableFrom >= getContentfulDateString(d);
+        });
       // get the upcoming next 3
       return allHolidays.sort((a, b) => {
         return a.bookableFrom > b.bookableTo ? 1 : -1;
