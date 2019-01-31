@@ -28,7 +28,7 @@
         :type="priceType"
         :year="priceYear"
       />
-      <RoomPricesNotes v-if="room.notes && room.notes.length" :notes="room.notes" />
+      <RoomPricesNotes v-if="room.notes && room.notes.length && notesActive" :notes="room.notes" />
       <RoomPricesConditions />
     </div>
 </template>
@@ -55,14 +55,15 @@ export default {
     return { priceTypes };
   },
   computed: {
-    priceType () { return this.$store.state.pageRoomStore.priceType; },
+    pageRoomStore () { return this.$store.state.pageRoomStore; },
+    priceType () { return this.pageRoomStore.priceType; },
     priceTypeLabels () {
       return {
         HP: this.getPriceTypeLabel(priceTypes.HP),
         UF: this.getPriceTypeLabel(priceTypes.UF)
       };
     },
-    priceYear () { return this.$store.state.pageRoomStore.priceYear; },
+    priceYear () { return this.pageRoomStore.priceYear; },
     priceYearAvailable () {
       const rooms = this.rooms;
       if (rooms.length) {
@@ -74,7 +75,11 @@ export default {
       }
       return [];
     },
-    rooms () { return this.$store.state.roomsStore.content; }
+    rooms () { return this.$store.state.roomsStore.content; },
+    notesActive () {
+      const notesActive = this.pageRoomStore.notesActive;
+      return notesActive[this.priceType] && notesActive[this.priceType][this.priceYear.toString()];
+    }
   },
   methods: {
     getPriceTypeLabel (id) {

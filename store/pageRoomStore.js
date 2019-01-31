@@ -1,6 +1,7 @@
 export const state = () => ({
   priceType: null,
-  priceYear: null
+  priceYear: null,
+  notesActive: {}
 });
 
 export const mutations = {
@@ -9,5 +10,11 @@ export const mutations = {
   },
   setPriceYear (state, value) {
     state.priceYear = value;
+  },
+  setNotesActive (state, value) {
+    state.notesActive = value;
+  },
+  resetNotesActive (state) {
+    state.notesActive = {};
   }
 };

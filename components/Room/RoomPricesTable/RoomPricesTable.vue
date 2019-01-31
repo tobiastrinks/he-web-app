@@ -131,22 +131,50 @@ export default {
         });
       }
       return [];
+    },
+    pageRoomStore () {
+      return this.$store.state.pageRoomStore;
     }
   },
   methods: {
+    setNotesActive (priceKey) {
+      const newNotesActive = {...this.pageRoomStore.notesActive};
+      const type = this.type;
+      const year = this.year.toString();
+
+      // should ignore if already active
+      if (newNotesActive[type] && newNotesActive[type][year]) {
+        return;
+      }
+      // only Uf price keys should activate notes for UF price type
+      if (type === priceTypes.UF && !priceKey.includes('Uf')) {
+        return;
+      }
+
+      if (!newNotesActive[type]) {
+        newNotesActive[type] = {};
+      }
+      newNotesActive[type][year] = true;
+      this.$store.commit('pageRoomStore/setNotesActive', newNotesActive);
+    },
     getNote (priceObj, priceKey) {
       if (priceObj.note1keys) {
         if (priceObj.note1keys.filter(key => key === priceKey).length) {
+          this.setNotesActive(priceKey);
           return '*';
         }
       }
       if (priceObj.note2keys) {
         if (priceObj.note2keys.filter(key => key === priceKey).length) {
+          this.setNotesActive(priceKey);
           return '**';
         }
       }
       return '';
     }
+  },
+  beforeMount () {
+    this.$store.commit('pageRoomStore/resetNotesActive');
   }
 };
 </script>
