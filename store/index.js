@@ -1,6 +1,7 @@
 export const state = () => ({
   locales: ['de', 'en'],
-  locale: null
+  locale: null,
+  cookieBannerClosed: true
 });
 
 export const mutations = {
@@ -8,5 +9,8 @@ export const mutations = {
     if (state.locales.indexOf(locale) !== -1) {
       state.locale = locale;
     }
+  },
+  setCookieBannerClosed (state, content) {
+    state.cookieBannerClosed = content;
   }
 };

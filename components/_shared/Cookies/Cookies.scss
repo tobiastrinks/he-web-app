@@ -1,0 +1,37 @@
+@import "~/assets/style/variables.scss";
+
+.cookies {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
+  padding: 15px 0;
+
+  .cookies-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cookies-text {
+    font-size: 80%;
+    margin-right: 20px;
+
+    a {
+      color: $color-primary !important;
+    }
+  }
+
+  .cookies-close {
+    font-size: 90%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
