@@ -64,10 +64,6 @@
     color: $color-primary;
   }
 
-  .datepicker__wrapper.isEmpty .datepicker__clear-button {
-    display: none;
-  }
-
   .datepicker__header {
     position: relative;
     z-index: 1;
@@ -81,10 +77,14 @@
     border-color: $color-primary;
   }
 
-  .datepicker__month-day:not(.datepicker__month-day--disabled) {
+  .datepicker__month-day {
+    border: none !important;
 
-    &:hover {
-      cursor: pointer;
+    &:not(.datepicker__month-day--disabled) {
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 

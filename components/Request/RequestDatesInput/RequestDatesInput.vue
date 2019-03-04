@@ -5,12 +5,13 @@
           ref="datePicker"
           :class="{isEmpty}"
           :key="key"
-          :startingDateValue="dates.from"
-          :endingDateValue="dates.to"
+          :starting-date-value="dates.from"
+          :ending-date-value="dates.to"
           :i18n="localeConfig"
+          :first-day-of-week="1"
           format="DD.MM.YYYY"
-          @checkInChanged="newCheckIn"
-          @checkOutChanged="newCheckOut"
+          @check-in-changed="newCheckIn"
+          @check-out-changed="newCheckOut"
         />
       </no-ssr>
     </div>
@@ -52,13 +53,13 @@ export default {
         night: this.$t(`${pre}.night`),
         nights: this.$t(`${pre}.nights`),
         'day-names': [
-          this.$t(`${pre}.dayNames.sun`),
           this.$t(`${pre}.dayNames.mon`),
           this.$t(`${pre}.dayNames.tue`),
           this.$t(`${pre}.dayNames.wed`),
           this.$t(`${pre}.dayNames.thu`),
           this.$t(`${pre}.dayNames.fri`),
-          this.$t(`${pre}.dayNames.sat`)
+          this.$t(`${pre}.dayNames.sat`),
+          this.$t(`${pre}.dayNames.sun`)
         ],
         'check-in': this.$t(`${pre}.checkIn`),
         'check-out': this.$t(`${pre}.checkOut`),
