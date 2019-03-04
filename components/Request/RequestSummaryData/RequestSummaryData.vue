@@ -74,7 +74,7 @@ export default {
       if (this.requestState.activeArrangement) {
         bookingType.push(
           this.$t('request.summary.data.bookingTypeArrangementPrefix') +
-          this.requestState.activeArrangement.officialName
+          (this.requestState.activeArrangement.officialName || this.requestState.activeArrangement.name)
         );
       }
       return bookingType;
