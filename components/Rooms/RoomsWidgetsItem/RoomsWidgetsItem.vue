@@ -7,7 +7,10 @@
               v-if="image.fields.file"
               :store="image"
               :dimensions="{
-                mo: [600, 400]
+                mo: [
+                  600,
+                  fullHeight ? 600 : 400
+                ]
               }"
               :cover="true"
             />
