@@ -19,7 +19,7 @@ push-to-ttregistry:
         rm -rf /pipeline/cache
         rm -rf /root/.cache
   - internal/docker-push:
-      repository: tobiastrinks99/he-web-app
+      repository: tobiastrinks99/$IMAGE
       username: $REGISTRY_USERNAME
       password: $REGISTRY_PASSWORD
       tag: $WERCKER_GIT_COMMIT,latest
@@ -41,4 +41,4 @@ deploy:
     hide-from-log: true
   - script:
       name: deploy application
-      code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME $DEPLOY_SCRIPT registry.ttrks.de/$IMAGE
+      code: ssh -i $KEY_TEMP_FILE -l $HOTELEDISON_DROPLET_USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOTELEDISON_DROPLET_HOSTNAME $DEPLOY_SCRIPT tobiastrinks99/$IMAGE
