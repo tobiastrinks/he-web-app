@@ -1,6 +1,6 @@
 <template>
     <div class="room-info">
-      <div class="room-info-row">
+      <div v-if="groundPlanImage" class="room-info-row">
         <div class="room-info-ground-plan">
           <ThumborImage
             :store="groundPlanImage"
@@ -10,7 +10,7 @@
           />
         </div>
       </div>
-      <div class="room-info-row">
+      <div class="room-info-row" :class="{ fullWidth: groundPlanImage === undefined }">
         <div class="room-info-text">
           <article class="room-info-text-description">
             {{description}}
@@ -42,8 +42,7 @@ export default {
   components: {LocaleLink, IntlText, ButtonSt, ThumborImage},
   props: {
     groundPlanImage: {
-      type: Object,
-      required: true
+      type: Object
     },
     description: {
       type: String,

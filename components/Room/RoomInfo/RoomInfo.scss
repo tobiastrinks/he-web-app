@@ -21,8 +21,10 @@
     flex-direction: column;
     justify-content: center;
 
-    @media #{$sm} {
-      width: 45%;
+    &:not(.fullWidth) {
+      @media #{$sm} {
+        width: 45%;
+      }
     }
 
     .room-info-ground-plan {
