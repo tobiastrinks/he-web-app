@@ -19,8 +19,7 @@ push-to-ttregistry:
         rm -rf /pipeline/cache
         rm -rf /root/.cache
   - internal/docker-push:
-      registry: https://registry.ttrks.de/v2
-      repository: registry.ttrks.de/$IMAGE
+      repository: tobiastrinks99/he-web-app
       username: $REGISTRY_USERNAME
       password: $REGISTRY_PASSWORD
       tag: $WERCKER_GIT_COMMIT,latest
