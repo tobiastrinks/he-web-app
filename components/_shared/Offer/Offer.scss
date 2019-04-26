@@ -28,6 +28,9 @@
 
   .offer-row {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media #{$md} {
       width: 50%;
@@ -52,10 +55,7 @@
     .offer-row-center {
 
       @media #{$md} {
-        position: absolute;
-        left: 13%;
-        bottom: 50%;
-        transform: translateY(50%);
+        margin-left: 10%;
         width: 80%;
         max-width: 580px;
       }
@@ -84,12 +84,11 @@
   }
 
   .offer-button {
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: right;
 
     @media #{$md} {
-      position: absolute;
-      right: 7%;
+      margin-right: 10%;
       bottom: 20px;
     }
   }
