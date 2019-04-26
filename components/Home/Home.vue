@@ -41,7 +41,7 @@
         <IntroText :content="content.introduction" />
       </div>
       <HomeOverview :items="content.overviewItems" />
-      <HomeFocus />
+      <HomeFocus v-if="content.focusOffers && content.focusOffers.length > 0" />
     </div>
   </div>
 </template>

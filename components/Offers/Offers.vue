@@ -15,16 +15,18 @@
         :id="offer.fields.anchor"
       />
     </div>
-    <p class="offers-other-items-headline">
-      {{content.otherOffersHeadline}}
-    </p>
-    <div class="offers-other-items">
-      <OffersItem
-        v-for="(offer, index) in content.otherOffers"
-        :key="index"
-        :offer="offer"
-        :id="offer.fields.anchor"
-      />
+    <div v-if="content.otherOffers && content.otherOffers.length > 0" class="offers-other">
+      <p class="offers-other-items-headline">
+        {{content.otherOffersHeadline}}
+      </p>
+      <div class="offers-other-items">
+        <OffersItem
+          v-for="(offer, index) in content.otherOffers"
+          :key="index"
+          :offer="offer"
+          :id="offer.fields.anchor"
+        />
+      </div>
     </div>
     <div class="offers-footer">
       <p class="offers-footer-note">
