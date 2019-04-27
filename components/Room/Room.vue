@@ -100,6 +100,10 @@ export default {
     },
     minPrice () {
       const prices = this.room.prices.slice();
+      if (prices.some(price => price.fields.onlyOnRequest)) {
+        return;
+      }
+
       const maxYearPrice = prices.sort((a, b) => a.fields.year < b.fields.year ? 1 : -1)[0];
 
       return maxYearPrice.fields.janUf;

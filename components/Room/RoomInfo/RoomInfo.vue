@@ -21,7 +21,7 @@
                 <IntlText id="room.info.request" />
               </ButtonSt>
             </LocaleLink>
-            <p class="room-info-text-request-text">
+            <p v-if="minPrice" class="room-info-text-request-text">
               <IntlText id="room.info.minPrice" :values="{price: `${minPrice} €`}" />
             </p>
           </div>
@@ -49,8 +49,7 @@ export default {
       required: true
     },
     minPrice: {
-      type: Number,
-      required: true
+      type: Number
     }
   },
   data: () => {
