@@ -19,3 +19,7 @@ const getLogFile = () => {
 exports.logReq = (method, requestedUrl, message) => {
   log(`${method} ${requestedUrl} ${message}`, getLogFile());
 };
+
+exports.log = (message) => {
+  log(message, getLogFile());
+};

@@ -2,6 +2,7 @@ const { Nuxt, Builder } = require('nuxt');
 const app = require('express')();
 const Raven = require('raven');
 const { logReq } = require('./logger');
+const ContentfulHelper = require('./assets/js/contentfulHelper');
 
 // Must configure Raven before doing anything else with it
 Raven.config(process.env.SENTRY_DNS).install();
@@ -15,6 +16,19 @@ app.use(Raven.errorHandler());
 const host = process.env.HOST || '0.0.0.0';
 const port = 3000;
 app.set('port', port);
+
+// contentful endpoint
+const contentfulHelper = new ContentfulHelper();
+app.get('/cf', function (req, res) {
+  const contentTypes = req.query.contentTypes.split(',');
+  const locale = req.query.locale;
+
+  contentfulHelper.getByContentTypesAndLocale(contentTypes, locale)
+    .then(result => {
+      res.json(result);
+    })
+    .catch(console.error);
+});
 
 // Import and Set Nuxt.js options
 let config = require('./nuxt.config.js');
