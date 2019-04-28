@@ -1,6 +1,7 @@
 const contentful = require('contentful');
 const axios = require('axios');
 const fs = require('fs');
+const { log } = require('../../logger');
 
 module.exports = class ContentfulHelper {
   constructor () {
@@ -87,11 +88,11 @@ module.exports = class ContentfulHelper {
       const contentType = contentTypes[x];
       const filePath = `${this.cfBackupDir}/${locale}/${contentType}.json`;
       if (fs.existsSync(filePath)) {
-        console.warn(`fallBackToBackup for ${contentType}`);
+        log(`fallBackToBackup for ${contentType}`);
         const data = fs.readFileSync(filePath, 'utf8');
         result[contentType] = JSON.parse(data);
       } else {
-        console.error(`fallBackToBackup failed for ${contentType}`);
+        log(`fallBackToBackup failed for ${contentType}`);
       }
     }
 
