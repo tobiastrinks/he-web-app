@@ -27,6 +27,7 @@ export const state = () => ({
   email: null,
   phone: null,
   gdpr: false,
+  pending: false,
   submitted: false
 });
 
@@ -115,7 +116,11 @@ export const mutations = {
   setGdpr: (state, content) => {
     state.gdpr = content;
   },
-  submit: (state) => {
+  pending: (state, pending = true) => {
+    state.pending = pending;
+  },
+  submitted: (state) => {
+    state.pending = false;
     state.submitted = true;
   }
 };

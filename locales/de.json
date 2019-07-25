@@ -220,6 +220,7 @@
     },
     "submit": {
       "button": "JETZT UNVERBINDLICH ANFRAGEN",
+      "pending": "WIRD GESENDET...",
       "error": "Entschuldigen Sie bitte. Es ist ein Fehler aufgetreten. Nehmen Sie bitte direkt Kontakt per Telefon oder E-Mail auf."
     },
     "confirmation": {
