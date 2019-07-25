@@ -1,7 +1,8 @@
 <template>
     <div class="request-submit">
-      <ButtonSt @click="submitRequest" :inverted="true" :disabled="validateForm !== true">
-        <IntlText id="request.submit.button" />
+      <ButtonSt @click="submitRequest" :inverted="true" :disabled="validateForm !== true || requestStore.pending">
+        <IntlText v-if="!requestStore.pending" id="request.submit.button" />
+        <IntlText v-else id="request.submit.pending" />
       </ButtonSt>
       <div class="request-submit-contact">
         <div class="request-submit-contact-text">
@@ -115,15 +116,20 @@ export default {
       return request;
     },
     submitRequest () {
-      const validation = this.validateForm;
+      if (this.requestStore.pending) {
+        return;
+      }
 
+      const validation = this.validateForm;
       if (validation === true) {
+        this.$store.commit('pageRequestStore/pending');
         axios.post(`${process.env.apiUrl}/contact/booking-request`, this.constructRequest())
           .then(() => {
-            this.$store.commit('pageRequestStore/submit');
+            this.$store.commit('pageRequestStore/submitted');
             window.scrollTo(0, 0);
           })
           .catch(error => {
+            this.$store.commit('pageRequestStore/pending', false);
             alert(this.$t('request.submit.error'));
             console.error(error);
           });

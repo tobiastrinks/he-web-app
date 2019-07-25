@@ -207,6 +207,7 @@
     },
     "submit": {
       "button": "SEND REQUEST",
+      "pending": "SENDING...",
       "error": "We have to apologize. Something went wrong. Please contact us via e-mail or phone."
     },
     "confirmation": {
