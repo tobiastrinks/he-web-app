@@ -1,7 +1,8 @@
 export const state = () => ({
   locales: ['de', 'en'],
   locale: null,
-  cookieBannerClosed: true
+  cookieBannerClosed: true,
+  popupClosed: true
 });
 
 export const mutations = {
@@ -12,5 +13,8 @@ export const mutations = {
   },
   setCookieBannerClosed (state, content) {
     state.cookieBannerClosed = content;
+  },
+  setPopupClosed (state, content) {
+    state.popupClosed = content;
   }
 };
