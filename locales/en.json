@@ -218,5 +218,9 @@
     "map": {
       "headline": "CONTACT US"
     }
+  },
+  "popup": {
+    "text": "Aufgrund von technischen Arbeiten sind wir am 20.11.2019 nur bedingt telefonisch erreichbar. Gern können Sie uns Ihre Anfragen per Email oder über unser Anfragenformular zusenden. Ab dem 21.11.2019 sind wir für Sie wieder wie gewohnt erreichbar.",
+    "button": "Zur Webseite"
   }
 }
