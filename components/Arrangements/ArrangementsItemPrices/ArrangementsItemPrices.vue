@@ -29,7 +29,10 @@
                 {{room.nameShort}}
               </td>
               <td class="arrangements-item-prices-table-td">
-                <Price>{{getRoomPrice(room.prices, activeYear)}}</Price>
+                <Price v-if="getRoomPrice(room.prices, activeYear)">
+                  {{getRoomPrice(room.prices, activeYear)}}
+                </Price>
+                <IntlText v-else id="arrangements.item.noPrice" />
               </td>
             </tr>
           </tbody>

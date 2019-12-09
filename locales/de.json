@@ -95,7 +95,8 @@
       "bookable": "Buchbarkeit: ",
       "bookableDelimiter": " bis zum ",
       "requestButton": "Anfragen",
-      "priceFormat": "Preise pro Person und Tag"
+      "priceFormat": "Preise pro Person und Tag",
+      "noPrice": "auf Anfrage"
     }
   },
   "request": {
