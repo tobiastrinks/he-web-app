@@ -30,12 +30,14 @@
     </div>
     <div class="offers-footer">
       <p class="offers-footer-note">
-        {{content.footerNote}}
+        <vue-markdown>
+          {{content.footerNote}}
+        </vue-markdown>
       </p>
       <div class="offers-footer-button">
-        <LocaleLink :to="routes.ROOMS">
+        <LocaleLink :to="content.ctaButtonLink">
           <ButtonSt>
-            <IntlText id="offers.roomButton" />
+            {{ content.ctaButton }}
           </ButtonSt>
         </LocaleLink>
       </div>
@@ -51,10 +53,11 @@ import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import IntlText from '@/components/_shared/IntlText/IntlText';
 import OffersItem from '@/components/Offers/OffersItem/OffersItem';
+import VueMarkdown from 'vue-markdown';
 
 export default {
   name: 'Offers',
-  components: {OffersItem, IntlText, ButtonSt, LocaleLink, Offer, HeadImg},
+  components: {OffersItem, IntlText, ButtonSt, LocaleLink, Offer, HeadImg, VueMarkdown},
   data () {
     return {
       routes
