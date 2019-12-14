@@ -8,15 +8,15 @@
 
   @media #{$md} {
     display: flex;
-    height: 400px;
+    min-height: 400px;
   }
 
   @media #{$lg} {
-    height: 430px;
+    min-height: 430px;
   }
 
   @media #{$xl} {
-    height: 460px;
+    min-height: 460px;
   }
 
   &:not(.imageAlignLeft) {
@@ -40,7 +40,7 @@
       height: 200px;
 
       @media #{$md} {
-        height: 100%;
+        height: initial;
       }
     }
 
@@ -48,7 +48,7 @@
       padding: 30px 15px 15px;
 
       @media #{$md} {
-        padding: 0;
+        padding: 30px 0;
       }
     }
 
