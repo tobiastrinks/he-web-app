@@ -46,6 +46,25 @@
     :button="button"
     :buttonLink="buttonLink"
   />
+  <HomeOfferMiniEaster
+    v-else-if="template === templates.EASTER"
+    :show="show"
+    @close="$emit('close')"
+    :template="template"
+    :headline="headline"
+    :description="description"
+    :button="button"
+    :buttonLink="buttonLink"
+  />
+  <HomeOfferMiniRestaurant
+    v-else-if="template === templates.RESTAURANT"
+    :show="show"
+    @close="$emit('close')"
+    :template="template"
+    :headline="headline"
+    :button="button"
+    :buttonLink="buttonLink"
+  />
   <HomeOfferMiniVoucher
     v-else-if="template === templates.VOUCHER"
     :show="show"
@@ -70,10 +89,14 @@ import HomeOfferMiniChristmas from '@/components/Home/HomeOfferMiniChristmas/Hom
 import HomeOfferMiniNewYearsEve from '@/components/Home/HomeOfferMiniNewYearsEve/HomeOfferMiniNewYearsEve';
 import HomeOfferMiniVoucher from '@/components/Home/HomeOfferMiniVoucher/HomeOfferMiniVoucher';
 import HomeOfferMiniStamp from '@/components/Home/HomeOfferMiniStamp/HomeOfferMiniStamp';
+import HomeOfferMiniEaster from '@/components/Home/HomeOfferMiniEaster/HomeOfferMiniEaster';
+import HomeOfferMiniRestaurant from '@/components/Home/HomeOfferMiniRestaurant/HomeOfferMiniRestaurant';
 
 export default {
   name: 'HomeOfferMini',
   components: {
+    HomeOfferMiniRestaurant,
+    HomeOfferMiniEaster,
     HomeOfferMiniStamp,
     HomeOfferMiniChristmas,
     HomeOfferMiniNewYearsEve,

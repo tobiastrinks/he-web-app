@@ -1,0 +1,44 @@
+@import "~/assets/style/variables.scss";
+
+.home-offer-mini-easter {
+  background-image: url("/home/easter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  max-width: 300px;
+
+  @media #{$md} {
+    width: 400px;
+    background-position: 105% 110%;
+    background-size: 130px auto;
+  }
+
+
+  .home-offer-mini-easter-inner {
+    padding: 0;
+    background-color: transparent;
+
+    .home-offer-mini-easter-description {
+      text-align: left;
+      margin-left: 40%;
+      padding: 30px 10px;
+      background-color: rgba(255, 255, 255, .8);
+
+      @media #{$xl} {
+        padding: 20px 10px;
+      }
+
+      .home-offer-mini-easter-description-headline   {
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+    }
+
+    .home-offer-mini-easter-button {
+      text-align: left;
+
+      @media #{$md} {
+        display: block;
+      }
+    }
+  }
+}
