@@ -1,0 +1,29 @@
+@import "~/assets/style/variables.scss";
+
+.home-offer-mini-restaurant {
+  background-image: url("/home/linden-und-fein-logo.png");
+  background-position: 50% 15px !important;
+  background-size: auto 80px !important;
+  background-repeat: no-repeat;
+  max-width: 300px;
+
+  .home-offer-mini-restaurant-inner {
+    padding: 85px 0 15px;
+    text-align: center;
+    background-color: transparent;
+
+    .home-offer-mini-restaurant-description {
+      margin: 10px 0;
+      font-style: normal;
+      display: none;
+    }
+
+    .home-offer-mini-restaurant-button {
+      text-align: center;
+
+      @media #{$md} {
+        display: block;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@
       <div class="hotel-intro">
         <IntroText :content="content.introduction" />
       </div>
-      <div class="hotel-restaurant-wrapper">
+      <div class="hotel-restaurant-wrapper" id="restaurant">
         <HeadImgSection
           :image="content.restaurantHeadImg.fields.image"
           :headline="content.restaurantHeadImg.fields.headline"
@@ -48,6 +48,7 @@ import HeadImgSection from '@/components/_shared/HeadImgSection/HeadImgSection';
 import HotelRestaurant from '@/components/Hotel/HotelRestaurant/HotelRestaurant';
 import HotelWellness from '@/components/Hotel/HotelWellness/HotelWellness';
 import HotelRooms from '@/components/Hotel/HotelRooms/HotelRooms';
+import { offsetTop } from '@/assets/js/domUtils';
 
 export default {
   name: 'Hotel',
@@ -66,6 +67,18 @@ export default {
   },
   mounted () {
     this.$ga.page(this.$router);
+    const { s } = this.$route.query;
+    this.scrollToSection(s);
+  },
+  methods: {
+    scrollToSection (sectionId) {
+      const selectedSection = document.getElementById(sectionId);
+      window.setTimeout(() => {
+        if (selectedSection) {
+          window.scrollTo({ top: offsetTop(selectedSection), left: 0, behavior: 'smooth' });
+        }
+      }, 500);
+    }
   }
 };
 </script>
