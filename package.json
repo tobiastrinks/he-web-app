@@ -21,7 +21,7 @@
     "@fortawesome/vue-fontawesome": "0.0.22",
     "@nuxtjs/sitemap": "^0.1.1",
     "aos": "3.0.0-beta.6",
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "babel-polyfill": "6.26.0",
     "contentful": "latest",
     "contentful-rich-text-vue-renderer": "^1.1.3",
