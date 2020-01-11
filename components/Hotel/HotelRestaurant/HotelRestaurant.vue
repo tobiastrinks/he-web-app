@@ -1,23 +1,46 @@
 <template>
     <div class="hotel-restaurant">
-      <HotelRestaurantItem
-        v-for="(item, index) in restaurantItems"
-        :key="index"
-        :content="item.fields"
-        :alignLeft="index % 2 > 0"
-        :data-aos="(index % 2 > 0) ? 'fade-left' : 'fade-right'"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-        data-aos-once="true"
-      />
+      <div class="hotel-restaurant-head-img">
+        <ThumborImage
+          :store="content.restaurantImgWide"
+          :dimensions="{
+            mo: [600, 0],
+            sm: [1200, 380]
+          }"
+        />
+        <div class="hotel-restaurant-columns">
+          <div class="hotel-restaurant-columns-portraet">
+            <ThumborImage
+              :store="content.restaurantImgPortraet"
+              :dimensions="{
+                mo: [260, 0],
+                xl: [360, 0]
+              }"
+            />
+          </div>
+          <div class="hotel-restaurant-columns-text">
+            <RichTextRenderer :document="content.restaurantText" />
+            <div class="hotel-restaurant-columns-text-button">
+              <LocaleLink :to="content.restaurantButtonLink">
+                <ButtonSt>
+                  {{ content.restaurantButtonText }}
+                </ButtonSt>
+              </LocaleLink>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
-import HotelRestaurantItem from '../HotelRestaurantItem/HotelRestaurantItem';
+import RichTextRenderer from 'contentful-rich-text-vue-renderer';
+import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
+import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
 export default {
   name: 'HotelRestaurant',
-  components: {HotelRestaurantItem},
+  components: {LocaleLink, ButtonSt, RichTextRenderer, ThumborImage},
   computed: {
     content () {
       return this.$store.state.pageHotelStore.content[0];
@@ -28,3 +51,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  @import "HotelRestaurant";
+</style>

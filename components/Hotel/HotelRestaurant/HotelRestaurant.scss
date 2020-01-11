@@ -1,0 +1,90 @@
+@import '~/assets/style/variables.scss';
+
+.hotel-restaurant {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  @media #{$md} {
+    max-width: 800px;
+  }
+
+  @media #{$lg} {
+    max-width: 1100px;
+  }
+
+  .hotel-restaurant-head-img {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .hotel-restaurant-columns {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media #{$sm} {
+      flex-direction: row;
+    }
+
+    @media #{$md} {
+      margin-top: 40px;
+    }
+
+    .hotel-restaurant-columns-portraet {
+      text-align: center;
+      margin-top: 30px;
+
+      @media #{$sm} {
+        width: 50%;
+        margin-top: 0;
+      }
+
+      img {
+        width: 90%;
+        max-width: 200px;
+
+        @media #{$sm} {
+          width: 70%;
+          max-width: 260px;
+        }
+
+        @media #{$lg} {
+          width: 340px;
+          max-width: none;
+        }
+      }
+    }
+
+    .hotel-restaurant-columns-text {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: justify;
+
+      @media #{$sm} {
+        width: 50%;
+        padding-right: 5%;
+      }
+
+      hr {
+        width: 20px;
+        height: 4px;
+        margin: 20px 0;
+        border: none;
+        background-color: #000;
+      }
+
+      .hotel-restaurant-columns-text-button {
+        margin-top: 20px;
+        text-align: center;
+
+        @media #{$sm} {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
