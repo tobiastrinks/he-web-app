@@ -32,7 +32,7 @@
     "contact": "contact",
     "imprint": "imprint",
     "dataProtection": "data-protection",
-    "copyright": "Hotel Edison GmbH © 2018"
+    "copyright": "Hotel Edison GmbH © {year}"
   },
   "home": {
     "focus": {

@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="footer-nav-copyright">
-        <IntlText id="footer.copyright" />
+        <IntlText id="footer.copyright" :values="{ year }" />
       </div>
     </div>
 </template>
@@ -37,6 +37,11 @@ export default {
     return {
       routes
     };
+  },
+  computed: {
+    year () {
+      return new Date().getFullYear();
+    }
   }
 };
 </script>
