@@ -29,6 +29,26 @@
             </div>
           </div>
         </div>
+        <div class="hotel-restaurant-slider">
+          <no-ssr>
+            <Carousel :perPage="1" :minSwipeDistance="50">
+              <Slide v-for="(image, key) in content.restaurantSlider" :key="key">
+                <div class="hotel-restaurant-slider-item">
+                  <div class="hotel-restaurant-slider-item-inner">
+                    <ThumborImage
+                      :store="image"
+                      :dimensions="{
+                        mo: [600, 0],
+                        sm: [900, 0]
+                      }"
+                      :cover="true"
+                    />
+                  </div>
+                </div>
+              </Slide>
+            </Carousel>
+          </no-ssr>
+        </div>
       </div>
     </div>
 </template>
@@ -38,9 +58,11 @@ import RichTextRenderer from 'contentful-rich-text-vue-renderer';
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
 import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
   name: 'HotelRestaurant',
-  components: {LocaleLink, ButtonSt, RichTextRenderer, ThumborImage},
+  components: {LocaleLink, ButtonSt, RichTextRenderer, ThumborImage, Carousel, Slide},
   computed: {
     content () {
       return this.$store.state.pageHotelStore.content[0];
