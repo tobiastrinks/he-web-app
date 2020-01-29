@@ -1,0 +1,18 @@
+@import '~/assets/style/variables.scss';
+
+.restaurant {
+
+  .page-content {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    @media #{$md} {
+      max-width: 800px;
+    }
+
+    @media #{$lg} {
+      max-width: 1100px;
+    }
+  }
+}

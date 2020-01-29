@@ -22,6 +22,10 @@ export const modules = {
   arrangements: {
     storeName: 'arrangementsStore',
     contentType: 'arrangement'
+  },
+  restaurant: {
+    storeName: 'pageRestaurantStore',
+    contentType: 'pageRestaurant'
   }
 };
 
@@ -38,7 +42,9 @@ export const pageModules = {
   hotel: {
     storeName: 'pageHotelStore',
     contentType: 'pageHotel',
-    modules: []
+    modules: [
+      modules.restaurant
+    ]
   },
   rooms: {
     storeName: 'pageRoomsStore',
@@ -53,6 +59,11 @@ export const pageModules = {
       modules.roomPriceEarlyBird,
       modules.bookingConditions
     ]
+  },
+  restaurant: {
+    storeName: 'pageRestaurantStore',
+    contentType: 'pageRestaurant',
+    modules: []
   },
   offers: {
     storeName: 'pageOffersStore',
