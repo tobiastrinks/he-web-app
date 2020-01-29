@@ -1,0 +1,74 @@
+@import '~/assets/style/variables.scss';
+
+.restaurant-columns {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @media #{$sm} {
+    flex-direction: row;
+  }
+
+  @media #{$md} {
+    margin-top: 40px;
+  }
+
+  .restaurant-columns-portraet {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+
+    @media #{$sm} {
+      display: block;
+      width: 50%;
+      margin-top: 0;
+    }
+
+    img {
+      width: 90%;
+      max-width: 200px;
+
+      @media #{$sm} {
+        width: 70%;
+        max-width: none;
+      }
+
+      @media #{$lg} {
+        width: 60%;
+      }
+    }
+  }
+
+  .restaurant-columns-text {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: justify;
+
+    @media #{$sm} {
+      width: 50%;
+      padding-right: 7.5%;
+    }
+
+    @media #{$lg} {
+      padding-right: 10%;
+    }
+
+    hr {
+      width: 20px;
+      height: 4px;
+      margin: 20px 0;
+      border: none;
+      background-color: #000;
+    }
+
+    .restaurant-columns-text-button {
+      margin-top: 20px;
+      text-align: center;
+
+      @media #{$sm} {
+        text-align: left;
+      }
+    }
+  }
+}

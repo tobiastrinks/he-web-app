@@ -9,6 +9,7 @@
         :arrows="images.length > 1"
         :prevArrow="left"
         :nextArrow="right"
+        :pauseOnHover="false"
       >
         <div
           v-for="(image, key) in images"

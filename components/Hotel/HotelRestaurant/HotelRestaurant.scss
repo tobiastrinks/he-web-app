@@ -13,13 +13,6 @@
     max-width: 1100px;
   }
 
-  .hotel-restaurant-head-img {
-
-    img {
-      width: 100%;
-    }
-  }
-
   .hotel-restaurant-columns {
     width: 100%;
     margin-top: 30px;
@@ -34,28 +27,21 @@
       margin-top: 40px;
     }
 
-    .hotel-restaurant-columns-portraet {
-      display: none;
-      text-align: center;
+    .hotel-restaurant-columns-img {
       margin-top: 30px;
+      text-align: center;
 
       @media #{$sm} {
-        display: block;
         width: 50%;
         margin-top: 0;
       }
 
       img {
-        width: 90%;
-        max-width: 200px;
+        width: 100%;
 
         @media #{$sm} {
-          width: 70%;
+          width: 100%;
           max-width: none;
-        }
-
-        @media #{$lg} {
-          width: 60%;
         }
       }
     }
@@ -66,12 +52,8 @@
       text-align: justify;
 
       @media #{$sm} {
-        width: 50%;
-        padding-right: 7.5%;
-      }
-
-      @media #{$lg} {
-        padding-right: 10%;
+        width: 45%;
+        margin-left: 5%;
       }
 
       hr {
@@ -89,33 +71,6 @@
         @media #{$sm} {
           text-align: left;
         }
-      }
-    }
-  }
-
-  .hotel-restaurant-slider {
-    width: 100%;
-    margin: 40px auto;
-
-    @media #{$sm} {
-      width: 85%;
-    }
-
-    @media #{$lg} {
-      width: 80%;
-    }
-
-    .hotel-restaurant-slider-item {
-      position: relative;
-      width: 100%;
-      padding-top: 55%;
-
-      .hotel-restaurant-slider-item-inner {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
       }
     }
   }

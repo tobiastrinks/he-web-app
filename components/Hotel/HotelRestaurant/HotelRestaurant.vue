@@ -1,20 +1,13 @@
 <template>
     <div class="hotel-restaurant">
-      <div class="hotel-restaurant-head-img">
-        <ThumborImage
-          :store="content.restaurantImgWide"
-          :dimensions="{
-            mo: [600, 0],
-            sm: [1200, 380]
-          }"
-        />
-        <div class="hotel-restaurant-columns">
-          <div class="hotel-restaurant-columns-portraet">
+      <RestaurantHeadImg />
+      <div class="hotel-restaurant-columns">
+          <div class="hotel-restaurant-columns-img">
             <ThumborImage
-              :store="content.restaurantImgPortraet"
+              :store="content.restaurantImgColumn"
               :dimensions="{
-                mo: [260, 0],
-                xl: [360, 0]
+                mo: [400, 0],
+                sm: [700, 0]
               }"
             />
           </div>
@@ -28,41 +21,28 @@
               </LocaleLink>
             </div>
           </div>
-        </div>
-        <div class="hotel-restaurant-slider">
-          <no-ssr>
-            <Carousel :perPage="1" :minSwipeDistance="50">
-              <Slide v-for="(image, key) in content.restaurantSlider" :key="key">
-                <div class="hotel-restaurant-slider-item">
-                  <div class="hotel-restaurant-slider-item-inner">
-                    <ThumborImage
-                      :store="image"
-                      :dimensions="{
-                        mo: [600, 0],
-                        sm: [900, 0]
-                      }"
-                      :cover="true"
-                    />
-                  </div>
-                </div>
-              </Slide>
-            </Carousel>
-          </no-ssr>
-        </div>
       </div>
     </div>
 </template>
 
 <script>
-import RichTextRenderer from 'contentful-rich-text-vue-renderer';
+import RestaurantHeadImg from '@/components/Restaurant/RestaurantHeadImg/RestaurantHeadImg';
+import RestaurantColumns from '@/components/Restaurant/RestaurantColumns/RestaurantColumns';
 import ThumborImage from '@/components/_shared/ThumborImage/ThumborImage';
-import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
+import RichTextRenderer from 'contentful-rich-text-vue-renderer';
 import LocaleLink from '@/components/_shared/LocaleLink/LocaleLink';
-import { Carousel, Slide } from 'vue-carousel';
+import ButtonSt from '@/components/_shared/ButtonSt/ButtonSt';
 
 export default {
   name: 'HotelRestaurant',
-  components: {LocaleLink, ButtonSt, RichTextRenderer, ThumborImage, Carousel, Slide},
+  components: {
+    ButtonSt,
+    LocaleLink,
+    ThumborImage,
+    RestaurantColumns,
+    RestaurantHeadImg,
+    RichTextRenderer
+  },
   computed: {
     content () {
       return this.$store.state.pageHotelStore.content[0];

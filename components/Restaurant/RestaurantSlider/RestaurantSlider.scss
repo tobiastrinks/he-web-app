@@ -1,0 +1,28 @@
+@import '~/assets/style/variables.scss';
+
+.restaurant-slider {
+  width: 100%;
+  margin: 40px auto;
+
+  @media #{$sm} {
+    width: 85%;
+  }
+
+  @media #{$lg} {
+    width: 80%;
+  }
+
+  .restaurant-slider-item {
+    position: relative;
+    width: 100%;
+    padding-top: 55%;
+
+    .restaurant-slider-item-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
