@@ -50,6 +50,9 @@
       width: 100%;
       box-sizing: border-box;
       text-align: justify;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       @media #{$sm} {
         width: 45%;
