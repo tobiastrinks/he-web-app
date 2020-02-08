@@ -105,8 +105,8 @@ export default {
       }
 
       const maxYearPrice = prices.sort((a, b) => a.fields.year < b.fields.year ? 1 : -1)[0];
-
-      return maxYearPrice.fields.janUf;
+      const { janUf, marUf, mayUf, julUf, jan, mar, may, jul } = maxYearPrice.fields;
+      return [janUf, marUf, mayUf, julUf, jan, mar, may, jul].sort((a, b) => a > b ? 1 : -1)[0];
     },
     suggestedRoom () {
       const rooms = this.$store.state.roomsStore.content;
