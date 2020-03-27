@@ -1,6 +1,5 @@
 <template>
   <div class="nav" :class="{opacity: (opacity && !this.store.mobileOpen)}">
-    <TickerBar />
     <div class="nav-mobile-bar">
       <div class="nav-mobile-bar-icon" @click="switchMobileNav">
         <FontAwesomeIcon v-show="!this.store.mobileOpen" :icon="['fas', 'bars']" />
@@ -62,6 +61,7 @@
         />
       </div>
     </div>
+    <TickerBar />
   </div>
 </template>
 
