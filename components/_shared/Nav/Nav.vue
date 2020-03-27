@@ -1,5 +1,6 @@
 <template>
   <div class="nav" :class="{opacity: (opacity && !this.store.mobileOpen)}">
+    <TickerBar />
     <div class="nav-mobile-bar">
       <div class="nav-mobile-bar-icon" @click="switchMobileNav">
         <FontAwesomeIcon v-show="!this.store.mobileOpen" :icon="['fas', 'bars']" />
@@ -70,10 +71,12 @@ import ThumborImage from '~/components/_shared/ThumborImage/ThumborImage';
 import LocaleLink from '~/components/_shared/LocaleLink/LocaleLink';
 import NavItem from './NavItem/NavItem';
 import NavLocale from './NavLocale/NavLocale';
+import TickerBar from '@/components/_shared/TickerBar/TickerBar';
 
 export default {
   name: 'Nav',
   components: {
+    TickerBar,
     ThumborImage,
     LocaleLink,
     NavItem,
