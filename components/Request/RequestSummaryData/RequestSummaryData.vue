@@ -98,9 +98,6 @@ export default {
     extras () {
       const extras = this.requestState.extras;
       const result = [];
-      if (extras.parkingSpace) {
-        result.push(this.$t('request.extras.parkingSpace'));
-      }
       if (extras.pet) {
         result.push(this.$t('request.extras.pet'));
       }
