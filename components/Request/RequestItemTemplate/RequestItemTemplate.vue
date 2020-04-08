@@ -9,12 +9,7 @@
         <div class="request-item-template-slot">
           <slot name="left"></slot>
         </div>
-        <ThumborImage class="request-item-template-sun"
-                      static-url="/_shared/sun-transparent.png"
-                      :dimensions="{
-              sm: [500, 0]
-            }"
-        />
+        <img class="request-item-template-sun" src="/_shared/sun.jpg" />
       </div>
       <div class="request-item-template-rows right">
         <h2>{{headline}}</h2>
@@ -27,11 +22,9 @@
 </template>
 
 <script>
-import ThumborImage from '~/components/_shared/ThumborImage/ThumborImage';
 
 export default {
   name: 'RequestItemTemplate',
-  components: { ThumborImage },
   props: {
     headline: {
       type: String,

@@ -11,7 +11,6 @@ export const state = () => ({
   activeArrangement: null,
   persons: null,
   extras: {
-    parkingSpace: false,
     pet: false
   },
   comments: null,
@@ -73,9 +72,6 @@ export const mutations = {
     } else {
       state.persons = [content];
     }
-  },
-  setExtrasParkingSpace: (state, content) => {
-    state.extras.parkingSpace = content;
   },
   setExtrasPet: (state, content) => {
     state.extras.pet = content;

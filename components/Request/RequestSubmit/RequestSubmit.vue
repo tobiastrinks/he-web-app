@@ -90,8 +90,8 @@ export default {
           const age = this.$t('request.persons.fromLabel', 'de', {from: person.minAge});
           return `${person.count} ${age}`;
         }).join(', '),
-        extras: (s.extras.parkingSpace || s.extras.pet)
-          ? ['parkingSpace', 'pet'].filter(key => s.extras[key]).map(key => {
+        extras: (s.extras.pet)
+          ? ['pet'].filter(key => s.extras[key]).map(key => {
             return this.$t(`request.extras.${key}`, 'de');
           }).join(', ')
           : undefined,
