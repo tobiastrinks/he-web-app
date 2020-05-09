@@ -59,12 +59,30 @@
     }
 
     .room-prices-table-large-td-only-on-request {
-      position: absolute;
-      left: 12%;
-      top: 65%;
-      right: 0;
-      transform: translateY(-50%);
-      text-align: center;
+      position: relative;
+
+      &.setHeight {
+        height: 150px;
+      }
+
+      .room-prices-table-large-td-only-on-request-inner {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        font-weight: bold;
+        width: 65vw;
+        max-width: 500px;
+        text-align: justify;
+
+        @media #{$md} {
+          width: 500px;
+          max-width: unset;
+        }
+
+        @media #{$xl} {
+          width: 650px;
+        }
+      }
     }
   }
 }

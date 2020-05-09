@@ -43,8 +43,11 @@
           <td
             v-if="onlyOnRequest"
             class="room-prices-table-large-td-only-on-request"
+            :class="{ setHeight: type !== priceTypes.HP }"
           >
-            <IntlText id="room.prices.onlyOnRequest" />
+            <div class="room-prices-table-large-td-only-on-request-inner">
+              <IntlText id="room.prices.onlyOnRequest" />
+            </div>
           </td>
           <td
             class="room-prices-table-large-td"

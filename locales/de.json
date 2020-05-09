@@ -70,7 +70,7 @@
         "label": "mit Frühbucherrabatt",
         "deadline": "(Buchung bis {deadline})"
       },
-      "onlyOnRequest": "Preise auf Anfrage"
+      "onlyOnRequest": "Durch die behördlich vorgeschriebene Auslastungsobergrenze von 60% können wir derzeit keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns dann schnellstmöglich mit Ihnen in Verbindung."
     },
     "requestNow": "JETZT ANFRAGEN",
     "backToRoomsBottom": "zurück zur Zimmerübersicht",

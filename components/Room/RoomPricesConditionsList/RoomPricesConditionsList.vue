@@ -6,15 +6,20 @@
         :key="index"
         class="room-prices-conditions-list-li"
       >
-        {{bookingConditionItem}}
+        <vue-markdown>{{bookingConditionItem}}</vue-markdown>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown';
+
 export default {
   name: 'RoomPricesConditionsList',
+  components: {
+    VueMarkdown
+  },
   computed: {
     bookingConditionContent () {
       return this.$store.state.bookingConditionsStore.content[0];
