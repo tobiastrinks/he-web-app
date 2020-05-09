@@ -208,7 +208,8 @@
           "invalid": "Bitte eine gültige E-Mail angeben"
         },
         "phone": {
-          "label": "Telefon"
+          "label": "Telefon*",
+          "invalid": "Bitte eine Telefonnummer angeben"
         },
         "gdpr": {
           "label": "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu.",
