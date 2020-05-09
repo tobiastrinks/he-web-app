@@ -61,7 +61,7 @@
         />
       </div>
     </div>
-    <TickerBar />
+<!--    <TickerBar />-->
   </div>
 </template>
 
@@ -71,12 +71,10 @@ import ThumborImage from '~/components/_shared/ThumborImage/ThumborImage';
 import LocaleLink from '~/components/_shared/LocaleLink/LocaleLink';
 import NavItem from './NavItem/NavItem';
 import NavLocale from './NavLocale/NavLocale';
-import TickerBar from '@/components/_shared/TickerBar/TickerBar';
 
 export default {
   name: 'Nav',
   components: {
-    TickerBar,
     ThumborImage,
     LocaleLink,
     NavItem,
