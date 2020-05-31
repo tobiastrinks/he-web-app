@@ -1,7 +1,7 @@
 {
   "global": {
     "company": "Hotel Edison GmbH",
-    "street": "Dünenstrasse 15",
+    "street": "Dünenstraße 15",
     "city": "18225 Ostseebad Kühlungsborn",
     "telephone": {
       "label": "telephone:",
@@ -16,32 +16,34 @@
     "email": {
       "label": "e-mail:",
       "value": "info@hotel-edison.de"
-    }
+    },
+    "gaOptOut": "Google Analytics has been deactivated.",
+    "cookies": "We use cookies to optimize our website for you and to be able to improve it continuously. By continuing to use the website you agree to the use of cookies. For more information on cookies, please see our <a href=\"{dataProtectionLink}\">privacy policy</a>"
   },
   "nav": {
     "items": {
       "hotel": "HOTEL",
       "rooms": "ROOMS & PRICES",
-      "restaurant": "RESTAURANT",
+      "restaurant": "RESTAURANT & BAR",
       "offers": "OFFERS",
       "contact": "CONTACT",
       "request": "REQUEST ROOM"
     }
   },
   "footer": {
-    "contact": "contact",
-    "imprint": "imprint",
-    "dataProtection": "data-protection",
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "dataProtection": "Privacy Policy",
     "copyright": "Hotel Edison GmbH © {year}"
   },
   "home": {
     "focus": {
       "headline": "SPOTLIGHT",
-      "subheadline": "...this is potentially quite interesting to you!"
+      "subheadline": "...this might also interest you!"
     }
   },
   "room": {
-    "backToRoomsTop": "BACK TO ROOMS OVERVIEW",
+    "backToRoomsTop": "BACK TO OVERVIEW",
     "info": {
       "request": "REQUEST",
       "minPrice": "from {price} per person"
@@ -52,10 +54,10 @@
       "UF": "bed and breakfast",
       "season": {
         "label": "<b>season</b>",
-        "jan": "jan., feb., nov., dec.",
-        "mar": "mar., apr., oct.",
-        "may": "may, jun., sep.",
-        "jul": "jul., aug."
+        "jan": "Jan., Feb., Nov., Dec.",
+        "mar": "Mar., Apr., Oct.",
+        "may": "May, Jun., Sep.",
+        "jul": "Jul., Aug."
       },
       "arrangement": {
         "label": "arr.-discount",
@@ -67,28 +69,34 @@
       "earlyBird": {
         "label": "with early-bird discount",
         "deadline": "(booking until {deadline})"
-      }
+      },
+      "onlyOnRequest": "Due to the officially prescribed capacity utilisation limit of 60%, we are currently unable to provide automatic availability and price information. Please ask for the desired travel period. We will then contact you as soon as possible."
     },
     "requestNow": "REQUEST NOW",
     "backToRoomsBottom": "back to rooms",
     "suggestion": {
-      "headline": "THIS IS POTENTIALLY QUITE INTERESTING TO YOU",
+      "headline": "THIS MIGHT ALSO INTEREST YOU",
       "button": "SHOW MORE"
     }
   },
   "offers": {
+    "offerDetailed": {
+      "requestButton": "REQUEST"
+    },
     "roomButton": "EXPLORE ROOMS"
   },
   "arrangements": {
     "nav": {
       "backToOverview": "BACK TO OVERVIEW",
-      "season": "seasonal offers",
-      "holiday": "holiday offers"
+      "season": "Seasonal Offers",
+      "holiday": "Holiday Offers"
     },
     "item": {
       "bookable": "bookability: ",
       "bookableDelimiter": " until ",
-      "requestButton": "Request"
+      "requestButton": "Request",
+      "priceFormat": "price per person and day",
+      "noPrice": "on request only"
     }
   },
   "request": {
@@ -153,7 +161,7 @@
     },
     "comments": {
       "headline": "comments",
-      "placeholder": "What else can we do for you? Do you have any questions?"
+      "placeholder": "What else can we do for you? Are there any questions?"
     },
     "summary": {
       "headline": "summary",
@@ -200,14 +208,21 @@
           "invalid": "Please insert a valid e-mail address"
         },
         "phone": {
-          "label": "telephone"
+          "label": "telephone*",
+          "invalid": "Please insert a valid telephone number"
+        },
+        "gdpr": {
+          "label": "I have read the privacy policy and agree to it.",
+          "invalid": "Please agree to our privacy policy.",
+          "yes": "zugestimmt",
+          "no": "nicht zugestimmt"
         }
       }
     },
     "submit": {
       "button": "SEND REQUEST",
       "pending": "SENDING...",
-      "error": "We have to apologize. Something went wrong. Please contact us via e-mail or phone."
+      "error": "We have to apologize. Something went wrong. Please contact us via e-mail or phone: 038293 / 42-0"
     },
     "confirmation": {
       "backHome": "BACK TO HOME"
@@ -219,7 +234,7 @@
     }
   },
   "popup": {
-    "text": "Aufgrund von technischen Arbeiten sind wir am 20.11.2019 nur bedingt telefonisch erreichbar. Gern können Sie uns Ihre Anfragen per Email oder über unser Anfragenformular zusenden. Ab dem 21.11.2019 sind wir für Sie wieder wie gewohnt erreichbar.",
+    "text": "",
     "button": "Zur Webseite"
   }
 }
