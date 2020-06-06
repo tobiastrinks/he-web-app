@@ -80,6 +80,7 @@
     }
   },
   "offers": {
+    "headNote": "Due to the officially prescribed capacity utilisation limit of 60%, we are currently unable to provide automatic availability and price information. Please ask for the desired travel period. We will contact you as soon as possible and inform you about availability and prices.",
     "offerDetailed": {
       "requestButton": "REQUEST"
     },
