@@ -18,7 +18,8 @@
       "value": "info@hotel-edison.de"
     },
     "gaOptOut": "Google Analytics has been deactivated.",
-    "cookies": "We use cookies to optimize our website for you and to be able to improve it continuously. By continuing to use the website you agree to the use of cookies. For more information on cookies, please see our <a href=\"{dataProtectionLink}\">privacy policy</a>"
+    "cookies": "We use cookies to optimize our website for you and to be able to improve it continuously. By continuing to use the website you agree to the use of cookies. For more information on cookies, please see our <a href=\"{dataProtectionLink}\">privacy policy</a>",
+    "fromLabel": "from"
   },
   "nav": {
     "items": {

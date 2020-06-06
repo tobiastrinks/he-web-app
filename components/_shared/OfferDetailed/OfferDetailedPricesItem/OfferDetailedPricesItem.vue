@@ -14,7 +14,7 @@
           </td>
           <td class="offer-detailed-prices-item-values-price">
             <Price>
-              <span>ab</span>
+              <span>{{$t('global.fromLabel')}}</span>
               {{prices[index]}}
             </Price>
           </td>
