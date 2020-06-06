@@ -80,6 +80,7 @@
     }
   },
   "offers": {
+    "headNote": "Durch die behördlich vorgeschriebene Auslastungsobergrenze von 60% können wir derzeit keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns dann schnellstmöglich mit Ihnen in Verbindung und teilen Ihnen die Verfügbarkeit sowie die jeweils geltenden Preise mit.",
     "offerDetailed": {
       "requestButton": "ANFRAGEN"
     },

@@ -24,6 +24,9 @@
         </LocaleLink>
       </div>
       <div class="arrangements-items">
+        <div class="arrangements-items-head-note">
+          {{ $t('offers.headNote') }}
+        </div>
         <div v-show="!arrStore.showHolidays" class="arrangements-items-seasons">
           <ArrangementsItem
             v-for="(item, index) in sortedArrangements"

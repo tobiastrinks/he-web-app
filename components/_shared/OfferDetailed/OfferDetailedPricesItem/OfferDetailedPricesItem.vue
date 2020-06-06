@@ -13,7 +13,10 @@
             {{room}}
           </td>
           <td class="offer-detailed-prices-item-values-price">
-            <Price>{{prices[index]}}</Price>
+            <Price>
+              <span>ab</span>
+              {{prices[index]}}
+            </Price>
           </td>
         </tr>
       </tbody>
