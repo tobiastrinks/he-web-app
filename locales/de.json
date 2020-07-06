@@ -1,7 +1,7 @@
 {
   "global": {
     "company": "Hotel Edison GmbH",
-    "street": "Dünenstrasse 15",
+    "street": "Dünenstraße 15",
     "city": "18225 Ostseebad Kühlungsborn",
     "telephone": {
       "label": "Telefon:",
@@ -18,7 +18,8 @@
       "value": "info@hotel-edison.de"
     },
     "gaOptOut": "Google Analytics wurde für Sie deaktiviert.",
-    "cookies": "Um unsere Webseite für Sie optimal zu gestalten und fortlaufend verbessern zu können, verwenden wir Cookies. Durch die weitere Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu. Weitere Informationen zu Cookies erhalten Sie in unserer <a href=\"{dataProtectionLink}\">Datenschutzerklärung</a>"
+    "cookies": "Um unsere Webseite für Sie optimal zu gestalten und fortlaufend verbessern zu können, verwenden wir Cookies. Durch die weitere Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu. Weitere Informationen zu Cookies erhalten Sie in unserer <a href=\"{dataProtectionLink}\">Datenschutzerklärung</a>",
+    "fromLabel": "ab"
   },
   "nav": {
     "items": {
@@ -223,7 +224,7 @@
     "submit": {
       "button": "JETZT UNVERBINDLICH ANFRAGEN",
       "pending": "WIRD GESENDET...",
-      "error": "Entschuldigen Sie bitte. Es ist ein Fehler aufgetreten. Nehmen Sie bitte direkt Kontakt per Telefon oder E-Mail auf."
+      "error": "Entschuldigen Sie bitte. Es ist ein Fehler aufgetreten. Nehmen Sie bitte direkt Kontakt per Telefon oder E-Mail auf: 038293 / 42-0"
     },
     "confirmation": {
       "backHome": "ZURÜCK ZUR STARTSEITE"
@@ -235,7 +236,7 @@
     }
   },
   "popup": {
-    "text": "Aufgrund von technischen Arbeiten sind wir am 20.11.2019 nur bedingt telefonisch erreichbar. Gern können Sie uns Ihre Anfragen per Email oder über unser Anfragenformular zusenden. Ab dem 21.11.2019 sind wir für Sie wieder wie gewohnt erreichbar.",
+    "text": "",
     "button": "Zur Webseite"
   }
 }

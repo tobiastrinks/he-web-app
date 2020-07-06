@@ -30,7 +30,7 @@
               </td>
               <td class="arrangements-item-prices-table-td">
                 <Price v-if="getRoomPrice(room.prices, activeYear)">
-                  <span>ab</span>
+                  <span>{{$t('global.fromLabel')}}</span>
                   {{getRoomPrice(room.prices, activeYear)}}
                 </Price>
                 <IntlText v-else id="arrangements.item.noPrice" />
