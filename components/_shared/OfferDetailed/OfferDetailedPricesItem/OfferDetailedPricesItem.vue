@@ -13,10 +13,7 @@
             {{room}}
           </td>
           <td class="offer-detailed-prices-item-values-price">
-            <Price>
-              <span>{{$t('global.fromLabel')}}</span>
-              {{prices[index]}}
-            </Price>
+            <span>{{$t('arrangements.item.noPrice')}}</span>
           </td>
         </tr>
       </tbody>
