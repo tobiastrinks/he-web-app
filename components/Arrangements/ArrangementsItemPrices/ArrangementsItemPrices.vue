@@ -73,7 +73,11 @@ export default {
   methods: {
     getRoomPrice (prices) {
       const price = prices.filter(price => price.fields.year.toString() === this.activeYear)[0];
-      return Math.ceil(price.fields[this.arrangement.priceKey]);
+      if (price.fields.onlyOnRequest) {
+        return null;
+      } else {
+        return Math.ceil(price.fields[this.arrangement.priceKey]);
+      }
     }
   }
 };
