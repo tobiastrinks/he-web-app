@@ -71,7 +71,7 @@
         "label": "mit Frühbucherrabatt",
         "deadline": "(Buchung bis {deadline})"
       },
-      "onlyOnRequest": "Durch die behördlich vorgeschriebene Auslastungsobergrenze von 60% können wir derzeit keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns dann schnellstmöglich mit Ihnen in Verbindung."
+      "onlyOnRequest": "Zur Sicherheit unserer Gäste lasten wir unser Haus derzeit bewusst nicht zu 100% aus. Wir können daher keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns schnellstmöglich mit Ihnen in Verbindung."
     },
     "requestNow": "JETZT ANFRAGEN",
     "backToRoomsBottom": "zurück zur Zimmerübersicht",
@@ -81,7 +81,7 @@
     }
   },
   "offers": {
-    "headNote": "Durch die behördlich vorgeschriebene Auslastungsobergrenze von 60% können wir derzeit keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns dann schnellstmöglich mit Ihnen in Verbindung und teilen Ihnen die Verfügbarkeit sowie die jeweils geltenden Preise mit.",
+    "headNote": "Zur Sicherheit unserer Gäste lasten wir unser Haus derzeit bewusst nicht zu 100% aus. Wir können daher keine automatischen Verfügbarkeiten und Preisangaben erstellen. Bitte fragen Sie den gewünschten Reisezeitraum an. Wir setzen uns schnellstmöglich mit Ihnen in Verbindung.",
     "offerDetailed": {
       "requestButton": "ANFRAGEN"
     },
